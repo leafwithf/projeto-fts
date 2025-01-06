@@ -1,64 +1,78 @@
-function toggleMenu() {
-    const menuItems = document.querySelector('.menu-items');
-    menuItems.classList.toggle('active');
-}
+let slideIndexCarousel = 0;
+let slideIntervalCarousel = setInterval(nextSlideCarousel, 5000); 
 
-let slideIndex = 0;
-let slideInterval = setInterval(nextSlide, 5000); 
+let slideIndexFinePrints = 0;
+let slideIntervalFinePrints = setInterval(nextSlideFinePrints, 5000); 
 
-function showSlide(index) {
+function showSlideCarousel(index) {
     const slides = document.getElementsByClassName("carousel-slide");
     
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
     }
 
-    slideIndex = index;
-    if (slideIndex >= slides.length) slideIndex = 0;
-    else if (slideIndex < 0) slideIndex = slides.length - 1;
+    slideIndexCarousel = index;
+    if (slideIndexCarousel >= slides.length) slideIndexCarousel = 0;
+    else if (slideIndexCarousel < 0) slideIndexCarousel = slides.length - 1;
 
-    slides[slideIndex].style.display = "block";
+    slides[slideIndexCarousel].style.display = "block";
 }
 
-function nextSlide() {
-    slideIndex++;
-    if (slideIndex >= document.getElementsByClassName("carousel-slide").length) {
-        slideIndex = 0;
+function nextSlideCarousel() {
+    slideIndexCarousel++;
+    const slides = document.getElementsByClassName("carousel-slide");
+    if (slideIndexCarousel >= slides.length) {
+        slideIndexCarousel = 0;
     }
-    showSlide(slideIndex);
+    showSlideCarousel(slideIndexCarousel);
 }
 
-function changeSlide(direction) {
-    clearInterval(slideInterval); 
-    slideIndex += direction;
-    if (slideIndex < 0) slideIndex = document.getElementsByClassName("carousel-slide").length - 1;
-    else if (slideIndex >= document.getElementsByClassName("carousel-slide").length) slideIndex = 0;
+function changeSlideCarousel(direction) {
+    clearInterval(slideIntervalCarousel); 
+    slideIndexCarousel += direction;
+    const slides = document.getElementsByClassName("carousel-slide");
+    if (slideIndexCarousel < 0) slideIndexCarousel = slides.length - 1;
+    else if (slideIndexCarousel >= slides.length) slideIndexCarousel = 0;
 
-    showSlide(slideIndex);
-    slideInterval = setInterval(nextSlide, 5000);
+    showSlideCarousel(slideIndexCarousel);
+    slideIntervalCarousel = setInterval(nextSlideCarousel, 5000);
+}
+
+function showSlideFinePrints(index) {
+    const slides = document.getElementsByClassName("finePrints-slide");
+    
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+
+    slideIndexFinePrints = index;
+    if (slideIndexFinePrints >= slides.length) slideIndexFinePrints = 0;
+    else if (slideIndexFinePrints < 0) slideIndexFinePrints = slides.length - 1;
+
+    slides[slideIndexFinePrints].style.display = "block";
+}
+
+function nextSlideFinePrints() {
+    slideIndexFinePrints++;
+    const slides = document.getElementsByClassName("finePrints-slide");
+    if (slideIndexFinePrints >= slides.length) {
+        slideIndexFinePrints = 0;
+    }
+    showSlideFinePrints(slideIndexFinePrints);
+}
+
+function changeSlideFinePrints(direction) {
+    clearInterval(slideIntervalFinePrints); 
+    slideIndexFinePrints += direction;
+    const slides = document.getElementsByClassName("finePrints-slide");
+    if (slideIndexFinePrints < 0) slideIndexFinePrints = slides.length - 1;
+    else if (slideIndexFinePrints >= slides.length) slideIndexFinePrints = 0;
+
+    showSlideFinePrints(slideIndexFinePrints);
+    slideIntervalFinePrints = setInterval(nextSlideFinePrints, 5000);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    showSlide(slideIndex);
+    showSlideCarousel(slideIndexCarousel);
+    showSlideFinePrints(slideIndexFinePrints);
 });
-    document.addEventListener("DOMContentLoaded", function() {
-        const counters = document.querySelectorAll('.stats-number');
-        const speed = 200;
-
-        counters.forEach(counter => {
-            const updateCount = () => {
-                const target = +counter.getAttribute('data-target').replace(/\D/g, '');
-                const count = +counter.innerText;
-                const increment = target / speed;
-
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(updateCount, 1);
-                } else {
-                    counter.innerText = target;
-                }
-            };
-
-            updateCount();
-        });
-    });
