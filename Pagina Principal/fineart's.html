@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/cliente.css">
+    <link rel="icon" href="VideosFts/Logo.ico" type="logo">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>M. I. A.</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="VideosFts/Logo1.png" alt="Logo da MIA, empresa de segurança inteligente">
+                <span class="logo-name">M. I. A.</span>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="index.html#quem-somos">Sobre Nós</a></li>
+                    <li><a href="index.html#outras-areas">Serviços</a></li>
+                    <li><a href="problema.html">Problemas?</a></li>
+                </ul>
+            </nav>
+            <div class="user-icon">
+                <a href="login.html">
+                    <i class="fas fa-user-circle user-photo"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="space"></div>
+    <div class="segurança">
+        <h1>Segurança da sua casa está...</h1>
+        <div class="camera-status">
+            <img src="VideosFts/sirene.png" alt="Status da Câmera" style="width: 50px; height: auto;">
+            <span class="online-text">ONLINE</span>
+        </div>
+    </div>
+    <div class="chat-icon" onclick="toggleChat()">
+        <img src="VideosFts/chat.png" alt="Ícone de chat com o assistente virtual" width="75" height="75">
+    </div>
+    <div class="chat-icon" onclick="toggleChat()"></div>
+
+    <div class="chat-window" id="chat-window">
+        <div class="chat-header">
+            Falco - Assistente Virtual
+            <span class="close-chat" onclick="toggleChat()">&#x2715;</span>
+        </div>
+        <div class="chat-content" id="chat-content">
+            <div class="bot-message">Olá! Como posso ajudar com sua segurança?</div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="user-input" placeholder="Digite sua mensagem...">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+    
+    <div class="testimonials-section">
+        <div class="card map-card">
+            <div id="map">
+                <div class="sensor-point" style="top: 37%; left: 47%;">S1</div>
+                <div class="sensor-point" style="top: 20%; left: 81%;">S2</div>
+                <div class="sensor-point" style="top: 85%; left: 20%;">S3</div>
+                <div class="sensor-point" style="top: 80%; left: 60%;">S4</div>
+
+                <div class="camera-point" style="top: 9%; left: 15%;">C1</div>
+                <div class="camera-point" style="top: 14%; left: 80%;">C2</div>
+                <div class="camera-point" style="top: 88%; left: 15%;">C3</div>
+                <div class="camera-point" style="top: 78%; left: 80%;">C4</div>
+                <div class="camera-point" style="top: 78%; left: 48%;">C5</div>
+            </div>  
+            <div class="problemas">
+                <button id="reporterror" onclick="window.location.href='Problema.html';">Reportar Erro</button>
+            </div>
+        </div> 
+    </div>
+    <br>
+    <div class="text1">
+        <h1>Ultimos Dados Coletados</h1>
+    </div>
+
+    <div class="space2"></div>
+    <div class="container">
+        <div class="dashboard">
+            <div class="card">
+                <h2>🌡️ Temperatura</h2>
+                <div class="sensor-value" id="temperature">--°C</div>
+                <canvas id="temperatureChart"></canvas>
+            </div>
+            <div class="card">
+                <h2>💧 Umidade</h2>
+                <div class="sensor-value" id="humidity">--%</div>
+                <canvas id="humidityChart"></canvas>
+            </div>
+            <div class="card">
+                <h2>🌬️ Qualidade do Ar</h2>
+                <div class="sensor-value" id="airQuality">--</div>
+                <canvas id="airQualityChart"></canvas>
+            </div>
+            <div class="card">
+                <h2>🔊 Nível de Ruído</h2>
+                <div class="sensor-value" id="noiseLevel">-- dB</div>
+                <canvas id="noiseLevelChart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+        <br><br>
+        <div class="segurança">
+            <h1>Câmeras</h1>
+        </div>
+        <div class="video-section">
+            <div class="video-carousel">
+                <div class="carousel-container">
+                    <video id="carousel-video" controls width="800" src="VideosFts/Video 1.mp4"></video>
+                    <div class="carousel-buttons"> 
+                        <button onclick="showVideo('VideosFts/frente.mp4')">C3</button>
+                        <button onclick="showVideo('VideosFts/sala.mp4')">C4</button>
+                        <button onclick="showVideo('VideosFts/cozinha.mp4')">C2</button>
+                        <button onclick="showVideo('VideosFts/jardim.mp4')">C1</button>
+                        <button onclick="showVideo('VideosFts/quarto1.mp4')">C5</button>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Endereço</h3>
+                <p><strong>São José do Rio Preto</strong><br>
+                    R. Marechal Deodoro da Fonseca, 4181<br>
+                    Vila Santa Cruz – SP, 15014-060, Brasil</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><strong>São José do Rio Preto</strong><br>
+                   +55 17 0123-4567</p>
+                <p><strong>São Paulo</strong><br>
+                    +55 17 0123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links úteis</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="problema.html">Problemas</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com" target="_blank"><img src="VideosFts/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.facebook.com" target="_blank"><img src="VideosFts/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com" target="_blank"><img src="VideosFts/instagram.png" alt="Instagram"></a>
+                <a href="https://www.youtube.com" target="_blank"><img src="VideosFts/youtube.png" alt="YouTube"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cliente.js"></script>
+</body>
+</html>
