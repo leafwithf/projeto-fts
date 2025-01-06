@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.I.A.</title>
+    <link rel="stylesheet" href="css/endereço.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="js/endereço.js" defer></script>
+    <script src="js/cadastro.js" defer></script>
+</head>
+<body>
+    <canvas id="backgroundCanvas"></canvas>
+
+    <div class="wrapper">
+        <div class="progress-menu">
+            <h2>Processo...</h2>
+            <br>
+            <ul>
+                <li class="active"><i class="fas fa-check"></i> Termos</li>
+                <li class="active"><i class="fas fa-check"></i> Dados de Login</li>
+                <li class="active"><i class="fas fa-check"></i> Contato</li>
+                <li class="active"><i class="fas fa-check"></i> Endereço</li>
+                <li>Finalizado</li>
+            </ul>
+        </div>
+
+        <div class="login-container">
+            <div class="header">
+                <img src="VideosFts/Logo2.png" alt="Logo" class="logo">
+                <span class="title">Cadastro M.I.A.</span>
+                <span class="subtitle">Seja Bem-Vindo(a)!</span>
+            </div>
+            <form action="contato.html" method="GET">
+                <div class="form-content" id="main-content">
+                    <br>
+                    <h2>4º Passo:</h2> 
+                    <h3>Insira as informações finais</h3>
+                    <div class="elemento"></div>
+                    <div class="container">
+                        <div class="input-group">
+                            <div class="input-wrapper">
+                                <h3>UF</h3>
+                                <input type="text" id="estado" oninput="filterStates()">
+                                <ul id="stateSuggestions" class="suggestions"></ul>
+                            </div> 
+                            <div class="input-wrapper">
+                                <h3>NÚMERO</h3>
+                                <input type="text" id="numero">
+                            </div>
+                        </div>
+                        <div class="elemento"></div>
+                        <div class="input-group">
+                            <div class="input-wrapper">
+                                <h3>CIDADE</h3>
+                                <input type="text" id="cidade" oninput="showSuggestions()">
+                                <ul id="citySuggestions" class="suggestions"></ul>
+                            </div>
+                            
+                            <div class="input-wrapper">
+                                <h3>RUA</h3>
+                                <input type="text" id="rua">
+                            </div>
+                        </div>
+                        <div class="elemento"></div>
+                        <div class="input-group">
+                            <div class="input-wrapper">
+                                <h3>BAIRRO</h3>
+                                <input type="text" id="bairro">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elemento"></div>
+                    <div class="buttons">
+                        <a href="contato.html" class="btn return-button">
+                            <i class="fas fa-arrow-left"></i> Voltar
+                        </a>
+                        <a href="finalizado.html" class="btn next-button">
+                            <i class="fas fa-arrow-right"></i> Próximo
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

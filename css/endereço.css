@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#backgroundCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.elemento {
+    background-color: transparent;
+    padding: 10px;
+}
+
+.wrapper {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.progress-menu {
+    background: #ffffff;
+    color: #CC0733;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    text-align: center;
+}
+
+.progress-menu h2 {
+    margin-bottom: 20px;
+}
+
+.progress-menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.progress-menu li {
+    margin-bottom: 15px;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+
+.progress-menu li.active {
+    font-weight: bold;
+}
+
+.progress-menu li i {
+    margin-right: 10px;
+    color: #CC0733;
+}
+
+.login-container {
+    background: #ffffff;
+    color: #CC0733;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header .logo {
+    width: 70px;
+    margin-bottom: 10px;
+}
+
+.header .title {
+    font-size: 40px;
+}
+
+.header .subtitle {
+    font-size: 20px;
+}
+
+.form-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+.input-wrapper .input-label {
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    background-color: #ffffff;
+    color: white;
+    padding: 0 5px;
+    font-size: 16px;
+}
+
+.input-wrapper input {
+    padding: 10px;
+    border: 2px solid #CC0733;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+    color: #333;
+}
+
+#estado {
+    width: 200px;
+    text-align: center;
+}
+
+#cidade {
+    flex: 1;
+}
+
+button, .btn {
+    background-color: white;
+    color: #CC0733;
+    border: 0px solid #CC0733;
+    padding: 10px 20px;
+    border-radius:10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 200px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center; /* Centraliza o texto nos botões */
+}
+
+button i, .return-button i, .next-button i {
+    margin-right: 5px;
+    border: #CC0733;
+}
+
+button:hover, .return-button:hover, .next-button:hover {
+    background-color: #e0e0e0;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.suggestions {
+    position: absolute;
+    top: 100%; /* Posiciona abaixo do campo de input */
+    left: 0;
+    width: 100%;
+    background-color: white; /* Fundo branco */
+    color: #333; /* Cor do texto */
+    border: 0px solid #CC0733;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #ffffff;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .login-container, .progress-menu {
+        width: 90%;
+    }
+}
