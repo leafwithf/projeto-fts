@@ -8,6 +8,7 @@ body {
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
     background-color: transparent;
 }
 
@@ -47,10 +48,10 @@ body {
     from { opacity: 0.5; }
     to { opacity: 1; }
 }
-
 .sobreposição {
     position: relative;
     text-align: center;
+    margin-top: 50px; /* Garante que o texto não fique muito próximo do carrossel */
 }
 
 .text-before {
@@ -63,6 +64,7 @@ body {
     z-index: 1;
     margin-right: 10%;
 }
+
 .text-after {
     font-size: 4vw;
     font-weight: 300;
@@ -72,6 +74,7 @@ body {
     right: 29%;
     z-index: 1;
 }
+
 .container {
     display: flex;
     justify-content: center;  
@@ -125,7 +128,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-        position: relative;
+    position: relative;
 }
 
 .menu-toggle {
@@ -160,7 +163,39 @@ body {
 
 .menu ul li a:hover {
     color: #B3A6CC;
-    /* Mudar a cor do Hover (Quando passa o mouse em cima) */
+}
+
+/* Mostrar o menu toggle apenas em dispositivos móveis */
+@media (max-width: 768px) {
+    .menu ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .menu ul.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostrar o ícone de hambúrguer em telas menores */
+    }
+}
+
+/* Estilizando o ícone de hambúrguer */
+.menu-toggle span {
+    background-color: #fff;
+    width: 30px;
+    height: 3px;
+    margin: 5px auto;
+    border-radius: 3px;
 }
 
 .black-text{
@@ -210,9 +245,8 @@ body {
         font-size: 1rem;
     }
 }
-
 .text-box-fine {
-    margin-bottom: 2%; 
+    margin-bottom: 2%;
 }
 
 .centralize-text-fine {
@@ -222,14 +256,17 @@ body {
     text-align: center;
     margin: 2% auto;
 }
+
 .finePrints {
     position: relative;
     max-width: 80%;
     align-items: center;
     overflow: hidden;
     margin: auto;
-    height: 70vh;
+    height: 70vh; /* Tamanho para telas grandes */
 }
+
+/* Estilo para o carrossel do Fine Arts */
 .finePrints-slide {
     width: 100%; 
     height: 100%; 
@@ -242,6 +279,8 @@ body {
     height: 100%;
     object-fit: cover; 
 }
+
+/* Ajustes para telas menores */
 
 .footer-container {
     width: 100%;
@@ -301,3 +340,32 @@ body {
     height: auto;
 }
 
+@media (max-width: 768px) {
+    .finePrints {
+        max-width: 90%; /* Menor largura em dispositivos móveis */
+        height: 50vh;  /* Reduz a altura para se ajustar ao formato de tela menor */
+    }
+
+    .finePrints-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+    }
+}
+
+@media (max-width: 480px) {
+    .finePrints {
+        max-width: 95%; /* Largura ainda menor para telas muito pequenas */
+        height: 40vh;  /* Reduz ainda mais a altura para telas menores */
+    }
+}
+@media (max-width: 768px) {
+    .text-before {
+        font-size: 8vw; /* Ajuste maior para o mobile */
+    }
+
+    .text-after {
+        font-size: 5vw; /* Ajuste maior para o mobile */
+        transform: translateY(140%); /* Ajuste a posição no mobile */
+    }
+}
