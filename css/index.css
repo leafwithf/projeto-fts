@@ -85,16 +85,10 @@ body {
     align-items: center;  
     flex-direction: column 2;
     height: 35vh;       
+    margin-top: 10%;
     color: #674F99; /*Cor das palavras no textoPequeno*/ 
 }
 
-.container-fine {
-    display: fixed;
-    justify-content: center;  
-    align-items: center;  
-    height: 35vh;       
-    color: #674F99; /*Cor das palavras no textoPequeno*/ 
-}
 
 .header-container {
     display: flex;
@@ -112,7 +106,7 @@ body {
     vertical-align: middle;
 }
 
-.logo {
+.logo { 
     display: flex;
     align-items: center;
     margin-right: 30%;
@@ -122,7 +116,7 @@ body {
 .logo img {
     width:37%;
     height: auto;
-    margin-right: 10%;
+    margin-right: 1%;
 }
 
 .logo-name {
@@ -130,6 +124,17 @@ body {
     font-size: 3.5em;
     font-weight: 900;
 }
+@media (max-width: 768px) {
+    .logo img {
+        width: auto; /* Deixe a largura automática para que a proporção da imagem seja mantida */
+        height: 3.5em; /* Ajusta a altura para combinar com o tamanho do texto */
+    }
+
+    .logo-name {
+        font-size: 3.5em; /* Mantém o tamanho do texto */
+    }
+}
+
 
 .menu {
     display: flex;
@@ -173,28 +178,64 @@ body {
     color: #B3A6CC;
 }
 
-/* Mostrar o menu toggle apenas em dispositivos móveis */
+/* Ajustes do menu hambúrguer para tela cheia no mobile */
 @media (max-width: 768px) {
     .menu ul {
-        display: none;
-        position: absolute;
-        top: 100%;
+        display: flex; /* Exibe o menu, mas inicialmente ele está fora da tela */
+        position: fixed;
+        top: 0;
         left: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        padding: 20px;
-        text-align: center;
+        width: 100%;
+        height: 100vh; /* Menu ocupa toda a altura da tela */
+        background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+        padding: 50px 0; /* Ajuste de espaçamento para o menu */
+        text-align: center; /* Centraliza as opções do menu */
+        flex-direction: column;
+        justify-content: center; /* Centraliza as opções verticalmente */
         gap: 20px;
+        z-index: 1000; /* Garante que o menu fique acima de outros conteúdos */
+        transform: translateY(-100%); /* Inicialmente posicionado fora da tela (acima) */
+        transition: transform 0.5s ease; /* Transição suave quando o menu aparecer */
     }
 
     .menu ul.active {
-        display: flex;
-        flex-direction: column;
+        transform: translateY(0); /* Quando a classe "active" é adicionada, o menu aparece */
     }
 
     .menu-toggle {
-        display: flex; /* Mostrar o ícone de hambúrguer em telas menores */
+        display: flex; /* Exibe o ícone de hambúrguer */
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1001; /* Garante que o ícone de hambúrguer fique acima de tudo */
     }
+
+    .menu-toggle span {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        border-radius: 3px;
+    }
+
+    .menu ul li a {
+        color: white;
+        font-size: 2rem; /* Tamanho maior para o mobile */
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        display: block;
+        padding: 20px 0;
+    }
+
+    .menu ul li a:hover {
+        color: #B3A6CC; /* Cor de destaque ao passar o mouse */
+    }
+    .logo, .logo-name,.user-icon, .menu-toggle{
+        margin-right: 20%;
+        margin-left: 0%;
+        position: center;
+    }
+ 
 }
 
 /* Estilizando o ícone de hambúrguer */
@@ -205,21 +246,19 @@ body {
     margin: 5px auto;
     border-radius: 3px;
 }
-
-.black-text{
-    color: #000000;
-    font-size: large;
-}
-.text-box {
-    margin-bottom: 1%;
-}
-
 .centralize-text {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     margin: 2% auto;
+}
+.black-text{
+    color: #000000;
+    font-size: large;
+}
+.text-box {
+    margin-bottom: 1%;
 }
 
 .littleTextLeft, .littleTextRight {
@@ -234,33 +273,34 @@ body {
 @media (max-width: 768px) {
     .littleTextLeft, .littleTextRight {
         width: 90%; /* Aumenta a largura para ocupar mais espaço na tela */
-        margin-top: -100%; /* Espaçamento praticamente zero */
+        margin-top: 0; /* Ajusta o espaçamento superior para evitar sobreposição */
+        text-align: center; /* Centraliza o texto */
+        line-height: 1.6; /* Melhora a legibilidade do texto */
     }
-    .container{
+
+    .container {
         margin: 0 auto;
-        margin-top: -30%;
-    }
-    .container-fine{
-        margin: 0 auto;
-        margin-top: 20%;
-    }
-    .centralize-text-fine {
+        margin-top: 10%; /* Ajusta o espaçamento superior para ficar mais próximo do topo */
         display: flex;
-        flex-direction: column; /* Inverte a ordem dos textos, colocando os títulos acima */
-        align-items: center;
-        text-align: center;
-        margin: 2% auto;
+        flex-direction: column;
+        align-items: center; /* Alinha o conteúdo ao centro */
+        justify-content: flex-start; /* Garante que os conteúdos fiquem alinhados no topo */
     }
 
-    .centralize-text-fine h1 {
-    
-        font-size: 2rem; /* Ajuste de tamanho para os títulos */
-        margin-bottom: 10%; /* Espaçamento abaixo do título */
-    }
-    .title-box{
-        margin-bottom: 110%;
+    .title-box1, .title-box2 {
+        width: 100%; /* Garantir que o box ocupe a largura total */
+        text-align: center; /* Alinha o texto no centro */
+        margin-top: 0; /* Ajusta o espaçamento superior para não sobrepor */
+        margin-bottom: 2%; /* Dá um pequeno espaçamento na parte inferior */
     }
 
+    .title-box1 {
+        margin-top: 5%; /* Ajuste o espaçamento superior para o primeiro título */
+    }
+
+    .title-box2 {
+        margin-top: 5%; /* Ajuste o espaçamento superior para o segundo título */
+    }
 }
 
 .title-box{
@@ -271,23 +311,26 @@ body {
     margin-bottom: 2%;
 }
 
-/* Para tela maior que 768px, mantém a ordem normal */
-@media (min-width: 768px) {
-    .centralize-text-fine {
-        display: flex;
-        flex-direction: column; /* Normalmente, os títulos e textos ficam na ordem tradicional */
-        align-items: center;
-        text-align: center;
-        margin: 2% auto;
-    }
-}
-
-
 .finePrints {
     position: relative;
     max-width: 80%;
     align-items: center;
     height: 80vh; /* Tamanho para telas grandes */
+}
+.container-fine {
+    display: fixed;
+    justify-content: center;  
+    align-items: center;  
+    height: 35vh;   
+    margin-top: -40%;    
+    color: #674F99; /*Cor das palavras no textoPequeno*/ 
+}
+.centralize-text-fine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 2% auto;
 }
 
 /* Estilo para o carrossel do Fine Arts */
@@ -371,7 +414,23 @@ body {
         overflow: hidden;
         align-items: center; /* Alinha o conteúdo no centro verticalmente */
     }
+    .container-fine{
+        margin: 0 auto;
+        margin-top: 40%;
+    }
+    .centralize-text-fine {
+        display: flex;
+        flex-direction: column; /* Inverte a ordem dos textos, colocando os títulos acima */
+        align-items: center;
+        text-align: center;
+        margin: 2% auto;
+    }
 
+    .centralize-text-fine h1 {
+    
+        font-size: 2rem; /* Ajuste de tamanho para os títulos */
+        margin-bottom: 10%; /* Espaçamento abaixo do título */
+    }
     .finePrints-slide img {
         width: 100%; /* Mantém a largura 100% do contêiner */
         height: 50vh; /* Define uma altura fixa para criar o formato retangular */
