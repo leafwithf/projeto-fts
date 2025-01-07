@@ -127,15 +127,14 @@ body {
 @media (max-width: 768px) {
     .logo img {
         width: auto; /* Deixe a largura automática para que a proporção da imagem seja mantida */
-        height: 3.5em; /* Ajusta a altura para combinar com o tamanho do texto */
+        height: 4em;
+        margin-right: 8%; /* Ajusta a altura para combinar com o tamanho do texto */
     }
 
     .logo-name {
         font-size: 3.5em; /* Mantém o tamanho do texto */
     }
 }
-
-
 .menu {
     display: flex;
     align-items: center;
@@ -146,16 +145,20 @@ body {
 
 .menu-toggle {
     display: none;
-    flex-direction: column;
-    gap: 5px;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    z-index: 1001;
 }
 
-.menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    border-radius: 2px;
+.menu-toggle i {
+    font-size: 30px; /* Tamanho do ícone */
+    color: white;    /* Cor do ícone */
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle i:hover {
+    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
 }
 
 .menu ul {
@@ -178,48 +181,36 @@ body {
     color: #B3A6CC;
 }
 
-/* Ajustes do menu hambúrguer para tela cheia no mobile */
 @media (max-width: 768px) {
     .menu ul {
-        display: flex; /* Exibe o menu, mas inicialmente ele está fora da tela */
+        display: flex;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh; /* Menu ocupa toda a altura da tela */
-        background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
-        padding: 50px 0; /* Ajuste de espaçamento para o menu */
-        text-align: center; /* Centraliza as opções do menu */
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 50px 0;
+        text-align: center;
         flex-direction: column;
-        justify-content: center; /* Centraliza as opções verticalmente */
+        justify-content: center;
         gap: 20px;
-        z-index: 1000; /* Garante que o menu fique acima de outros conteúdos */
-        transform: translateY(-100%); /* Inicialmente posicionado fora da tela (acima) */
-        transition: transform 0.5s ease; /* Transição suave quando o menu aparecer */
+        z-index: 1000;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease;
     }
 
     .menu ul.active {
-        transform: translateY(0); /* Quando a classe "active" é adicionada, o menu aparece */
+        transform: translateY(0);
     }
 
     .menu-toggle {
-        display: flex; /* Exibe o ícone de hambúrguer */
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        z-index: 1001; /* Garante que o ícone de hambúrguer fique acima de tudo */
-    }
-
-    .menu-toggle span {
-        width: 30px;
-        height: 3px;
-        background-color: white;
-        border-radius: 3px;
+        display: flex; /* Exibe o ícone de hambúrguer no mobile */
     }
 
     .menu ul li a {
         color: white;
-        font-size: 2rem; /* Tamanho maior para o mobile */
+        font-size: 2rem;
         font-weight: bold;
         text-decoration: none;
         text-transform: uppercase;
@@ -228,15 +219,16 @@ body {
     }
 
     .menu ul li a:hover {
-        color: #B3A6CC; /* Cor de destaque ao passar o mouse */
+        color: #B3A6CC;
     }
-    .logo, .logo-name,.user-icon, .menu-toggle{
-        margin-right: 10%;
+
+    .logo, .logo-name, .user-icon, .menu-toggle {
+        margin-right: 20%;
         margin-left: 0%;
         position: center;
     }
- 
 }
+
 
 /* Estilizando o ícone de hambúrguer */
 .menu-toggle span {
@@ -352,12 +344,11 @@ body {
     background-color: #333;
     color: white;
     display: flex;
-    justify-content: space-between; /* Espaça as seções de forma que uma fique à esquerda e outra à direita */
+    justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
     box-sizing: border-box;
 }
-
 .footer-logo {
     display: flex;
     align-items: center;
@@ -375,37 +366,31 @@ body {
 .footer-left {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;     /* Alinha à esquerda */
-    flex: 1 1 250px;             /* Garante que ocupe o espaço necessário à esquerda */
-}
-
-.footer-left .footer-section {
-    margin-bottom: 20px;         /* Espaço entre o contato e outras seções */
-}
-
-.footer-social {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;  /* Alinha os itens à esquerda */
-    flex: 1;                      /* Garante que o social ocupe todo o espaço à esquerda */
-    margin-right: 20px;           /* Espaço entre o social e os outros elementos */
-}
-
-.footer-links {
+    align-items: flex-start;
     flex: 1 1 250px;
-    column-count: 2;              /* Define 2 colunas */
-    column-gap: 10px;             /* Espaçamento entre as colunas */
-    margin-top: -7%;
-    min-width: 100px;
-    box-sizing: border-box;
-    text-align: center; 
-    font-size: 20px;           /* Alinha os links à direita */
 }
+.footer-section{
+    margin-top: -4%;
+}
+.footer-left .footer-section {
+    margin-bottom: 2px;         /* Espaço entre o contato e outras seções */
+}
+.footer-left .footer-links {
+    margin-bottom: 2px;         /* Espaço entre o contato e outras seções */
+}
+.footer-links {
+    display: flex; /* Corrigido para flexbox */
+    justify-content: flex-start; /* Alinha os links à esquerda */
+    column-gap: 25px; /* Espaço entre os links */
+    font-size: 20px;
+    margin-top: 0; /* Remove qualquer margem superior que possa afetar o alinhamento */
+    margin-left: 0; /* Remove a margem esquerda excessiva */
+    text-align: left; /* Alinha os links à esquerda */
+}
+
 
 .footer-links ul {
     list-style: none;             /* Remove os marcadores da lista */
-    padding: 0;                   /* Remove o espaçamento interno da lista */
-    margin: 0;                    /* Remove as margens da lista */
 }
 
 .footer-links a {
@@ -416,54 +401,32 @@ body {
 .footer-links a:hover {
     text-decoration: underline;  /* Adiciona o underline ao passar o mouse */
 }
-
-.footer-text {
-    margin-top: -22vh;
-    transform: translateX(31vh); /* Ajuste o valor conforme necessário */
-}
-
-.footer-social {
+.footer-social{
     display: flex;
-    align-items: center;
-    justify-content: flex-start;  /* Alinha os itens à esquerda */
-    flex: 1;       
-    margin-top: -20vh;
-    width: 50%;
-    height: 50%;               /* Garante que o social ocupe todo o espaço à esquerda */
-    margin-left: 20%;           /* Espaço entre o social e os outros elementos */
+    bottom: 20px;
+    justify-content: flex-start;   /* Alinha as imagens ao topo horizontalmente */
+    align-items: center;       /* Centraliza as imagens verticalmente */
+    margin-left: 25vh;         /* Ajuste conforme necessário */
+    margin-top: 5vh;           /* Reduza o valor para elevar o eixo Y */
+    height: 1vh;              /* Defina uma altura maior */
+}   
+.footer-social img {
+    width: 15%;      
+    margin-top: -10%;          /* Ajuste proporcional da largura */
+    height: auto;              /* Mantém a proporção da imagem */
+    margin: 0 5px;            /* Espaçamento entre as imagens */
 }
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;     /* Centraliza o logo no meio */
-    flex-basis: 100%;             /* Garante que o logo ocupe toda a largura disponível */
-    margin: 0 auto; 
-    margin-top: 4%;              /* Garante que o logo fique centralizado */
+.linkedin {
+    width: 15%; /* Ajuste proporcional */
 }
-
+.instagram {
+    width: 15%; /* Ajuste proporcional */
+}
 .footer-logo img {
     width: auto;
     height: 10.5em;
     margin: 0;                    /* Remove margens desnecessárias */
 }
-
-/* Adiciona a estrutura para alinhar o contato e social à esquerda */
-.footer-left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex; /* Alinha à esquerda */
-    flex: 1 1 250px; /* Garante que ocupe o espaço necessário à esquerda */
-}
-
-.footer-left .footer-social {
-    margin-bottom: 20px; /* Espaço entre as seções de social e contato */
-}
-
-
-
-
-
 @media (max-width: 768px) {
     .footer-logo img {
         margin-left: 3%;
@@ -472,29 +435,49 @@ body {
     }
 
 }
-.footer-links {
-    columns: 2;               /* Cria duas colunas */
-    column-gap: 25px;   
-    margin-top: 10%;       /* Espaço entre as colunas */
-    margin-left: 2%;
-    text-align: center;       /* Centraliza o texto dentro das colunas */
-}
 
-    .footer-text {
+@media (max-width: 768px) {
+    .footer-links {
+        justify-content: center; /* Centraliza os links em telas menores */
+        margin-top: 0;            /* Remove a margem superior */
+        margin-left: 0;           /* Remove a margem à esquerda */
+        text-align: center;       /* Centraliza o texto dos links */
+        column-gap: 15px;         /* Diminui o espaço entre os links */
+    }
+}
+.footer-social {
     display: flex;
-    align-items: center;         /* Alinha verticalmente no centro */
-    justify-content: center;     /* Alinha horizontalmente no centro */
-    text-align: center;   
-    margin-left: -10vh; 
-    margin-top: 5vh;      /* Garante que o texto também fique centralizado */
+    justify-content: center;   /* Centraliza as imagens horizontalmente */
+    align-items: center;       /* Centraliza as imagens verticalmente */
+    margin-left: 25vh;
+    margin-top: 15vh;
+}
+.footer-links{
+    margin-top: 15%;
+    margin-left: 35%;
 }
 
 .footer-social img {
-    margin-left: 5vh;
-    margin-top: 20vh;
-    width: 70%;
-    height: auto;
+    width: 30%;    /* Define uma largura fixa para todas as imagens */
+    height: auto;  /* Mantém a proporção da altura com base na largura */
+    margin-top: -150vh; /* Espaço entre as imagens */
+    margin-left: -45%;
+    margin-right: 100%;
 }
+
+.linkedin{
+    width: 37vh;  /* Garante que todas as imagens tenham o mesmo tamanho */
+    height: auto; /* Mantém a proporção */
+    margin-top: 4%;
+}
+
+.instagram {
+    width: 63vh;  /* Garante que todas as imagens tenham o mesmo tamanho */
+    height: auto; /* Mantém a proporção */
+    margin-top: 12%;
+}
+
+
 
 @media (max-width: 768px) {
     .finePrints {
