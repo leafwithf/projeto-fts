@@ -26,6 +26,7 @@ body {
     background-color:transparent;
     padding: 8%;
 }
+
 .carousel {
     position: relative;
     max-width: 100%;
@@ -34,6 +35,7 @@ body {
     height: 70vh;
     z-index: 1; /* Garante que o carrossel fique abaixo do menu */
 }
+
 .carousel-slide img {
     width: 100%;
     height: 100%;
@@ -48,6 +50,8 @@ body {
     from { opacity: 0.5; }
     to { opacity: 1; }
 }
+
+/* Ajuste para o texto LeafwithF e QUEM SOU */
 .sobreposição {
     position: relative;
     text-align: center;
@@ -83,6 +87,7 @@ body {
     height: 35vh;       
     color: #674F99; /*Cor das palavras no textoPequeno*/ 
 }
+
 .container-fine {
     display: fixed;
     justify-content: center;  
@@ -90,6 +95,7 @@ body {
     height: 35vh;       
     color: #674F99; /*Cor das palavras no textoPequeno*/ 
 }
+
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -98,6 +104,7 @@ body {
     background-color: #674F99;
     /*Mudar a cor do Header*/
 }
+
 .user-icon .fa-user-circle {
     font-size: 4rem;
     color: #f5f5f5;
@@ -123,6 +130,7 @@ body {
     font-size: 3.5em;
     font-weight: 900;
 }
+
 .menu {
     display: flex;
     align-items: center;
@@ -202,9 +210,8 @@ body {
     color: #000000;
     font-size: large;
 }
-
 .text-box {
-    margin-bottom: 2%; 
+    margin-bottom: 1%;
 }
 
 .centralize-text {
@@ -215,61 +222,78 @@ body {
     margin: 2% auto;
 }
 
-.littleTextLeft {
+.littleTextLeft, .littleTextRight {
     text-align: justify;
     width: 70%; 
-    margin-top: 5%; /* Ajustado para um espaçamento mais uniforme */
+    margin-top: 10%; /* Espaçamento praticamente zero */
     margin-left: 0; /* Garantir alinhamento na centralização */
+    margin-right: 0;
     line-height: 1.6; /* Melhorar a legibilidade do texto */
 }
-
-.littleTextRight {
-    text-align: justify;
-    width: 70%; 
-    margin-top: 5%; /* Igualado com littleTextLeft */
-    margin-right: 0; /* Garantir alinhamento na centralização */
-    line-height: 1.6; /* Melhorar a legibilidade do texto */
-}
-
-/* Responsividade */
+/* Ajustes de responsividade */
 @media (max-width: 768px) {
-    .text-before, .text-after {
-        font-size: 1.5rem;
+    .littleTextLeft, .littleTextRight {
+        width: 90%; /* Aumenta a largura para ocupar mais espaço na tela */
+        margin-top: -100%; /* Espaçamento praticamente zero */
+    }
+    .container{
+        margin: 0 auto;
+        margin-top: -30%;
+    }
+    .container-fine{
+        margin: 0 auto;
+        margin-top: 20%;
+    }
+    .centralize-text-fine {
+        display: flex;
+        flex-direction: column; /* Inverte a ordem dos textos, colocando os títulos acima */
+        align-items: center;
+        text-align: center;
+        margin: 2% auto;
     }
 
-    .centralize-text h1 {
-        font-size: 2rem;
+    .centralize-text-fine h1 {
+    
+        font-size: 2rem; /* Ajuste de tamanho para os títulos */
+        margin-bottom: 10%; /* Espaçamento abaixo do título */
+    }
+    .title-box{
+        margin-bottom: 110%;
     }
 
-    .centralize-text h3 {
-        font-size: 1rem;
-    }
+}
+
+.title-box{
+    display: flex;
+    margin-top: 40%;
 }
 .text-box-fine {
     margin-bottom: 2%;
 }
 
-.centralize-text-fine {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 2% auto;
+/* Para tela maior que 768px, mantém a ordem normal */
+@media (min-width: 768px) {
+    .centralize-text-fine {
+        display: flex;
+        flex-direction: column; /* Normalmente, os títulos e textos ficam na ordem tradicional */
+        align-items: center;
+        text-align: center;
+        margin: 2% auto;
+    }
 }
+
 
 .finePrints {
     position: relative;
     max-width: 80%;
     align-items: center;
-    overflow: hidden;
-    margin: auto;
-    height: 70vh; /* Tamanho para telas grandes */
+    height: 80vh; /* Tamanho para telas grandes */
 }
 
 /* Estilo para o carrossel do Fine Arts */
 .finePrints-slide {
-    width: 100%; 
-    height: 100%; 
+    width: 150vh; 
+    height: 80vh; 
     overflow: hidden; 
     border-radius: 2vh; 
 }
@@ -279,8 +303,6 @@ body {
     height: 100%;
     object-fit: cover; 
 }
-
-/* Ajustes para telas menores */
 
 .footer-container {
     width: 100%;
@@ -339,33 +361,39 @@ body {
     width: 30px;
     height: auto;
 }
-
 @media (max-width: 768px) {
     .finePrints {
-        max-width: 90%; /* Menor largura em dispositivos móveis */
-        height: 50vh;  /* Reduz a altura para se ajustar ao formato de tela menor */
+        width: 90%; /* Ajusta a largura da imagem para um retângulo menor */
+        height: auto;
+        margin: 0 auto; /* Centraliza a imagem horizontalmente */
+        display: flex; /* Garante que o contêiner seja flexível */
+        justify-content: center; /* Centraliza o conteúdo dentro do contêiner */
+        overflow: hidden;
+        align-items: center; /* Alinha o conteúdo no centro verticalmente */
     }
 
     .finePrints-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; 
+        width: 100%; /* Mantém a largura 100% do contêiner */
+        height: 50vh; /* Define uma altura fixa para criar o formato retangular */
+        object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+        border-radius: 2vh; /* Arredonda apenas a parte superior */
     }
 }
 
-@media (max-width: 480px) {
-    .finePrints {
-        max-width: 95%; /* Largura ainda menor para telas muito pequenas */
-        height: 40vh;  /* Reduz ainda mais a altura para telas menores */
-    }
-}
+
 @media (max-width: 768px) {
     .text-before {
-        font-size: 8vw; /* Ajuste maior para o mobile */
+        transform: translateY(-400%);
+        font-size: 15vw; /* Ajuste maior para o mobile */
     }
-
     .text-after {
-        font-size: 5vw; /* Ajuste maior para o mobile */
-        transform: translateY(140%); /* Ajuste a posição no mobile */
+        font-size: 11vw; /* Ajuste maior para o mobile */
+        transform: translateY(-400%) translateX(20%); /* Combinação de ambas as transformações */
+    }
+    
+
+    /* Ajuste para garantir que o texto não sobreponha outros conteúdos */
+    .sobreposição {
+        margin-top: 20vh; /* Maior margem no mobile para evitar sobreposição */
     }
 }
