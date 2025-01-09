@@ -1,5 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
+html, body {
+    overflow-x: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #ffffff; /* Cor do texto para o modo escuro */
+    }
+    .user-icon{
+        color: rgb(255, 255, 255); /* Cor do ícone de usuário no modo escuro */
+    }
+
+    .logo-name  {
+        color: rgb(255, 255, 255); /* Cor do nome do logo no modo escuro */
+    }
+    .logo{
+        color: rgb(255, 255, 255); /* Cor do logo no modo escuro */
+    }
+    .footer-left{
+        color: rgb(255, 255, 255); /* Cor do texto no rodapé no modo escuro */
+    }
+    .footer-right{
+        color: rgb(255, 255, 255); /* Cor do texto no rodapé no modo escuro */
+    }
+    .footer-logo{
+        color: rgb(255, 255, 255); /* Cor do logo no rodapé no modo escuro */
+    }
+}
 * {
     box-sizing: border-box;
 }
@@ -8,7 +36,6 @@ body {
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     background-color: transparent;
 }
 
@@ -33,7 +60,7 @@ body {
     overflow: hidden;
     margin: auto;
     height: 70vh;
-    z-index: 1; /* Garante que o carrossel fique abaixo do menu */
+    z-index: 1;
 }
 
 .carousel-slide img {
@@ -51,11 +78,10 @@ body {
     to { opacity: 1; }
 }
 
-/* Ajuste para o texto LeafwithF e QUEM SOU */
 .sobreposição {
     position: relative;
     text-align: center;
-    margin-top: 50px; /* Garante que o texto não fique muito próximo do carrossel */
+    margin-top: 50px;
 }
 
 .text-before {
@@ -223,7 +249,7 @@ body {
     }
 
     .logo, .logo-name, .user-icon, .menu-toggle {
-        margin-right: 20%;
+        margin-right: 25%;
         margin-left: 0%;
         position: center;
     }
