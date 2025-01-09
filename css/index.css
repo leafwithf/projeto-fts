@@ -338,147 +338,93 @@ body {
     height: 100%;
     object-fit: cover; 
 }
-.footer-container {
-    width: 100%;
-    padding: 20px 0;
-    background-color: #333;
-    color: white;
+.footer {
+    background-color: #674F99;
+    color: #fff;
+    padding: 1% 2% 4% 2%;
+  }
+  
+  .footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     flex-wrap: wrap;
-    box-sizing: border-box;
-}
-.footer-logo {
+  }
+  
+  .footer-left h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .footer-left p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .footer-left a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  
+  .footer-left a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .footer-right {
+    margin-top: 1%;
     display: flex;
-    align-items: center;
-    justify-content: center;     /* Centraliza o logo no meio */
-    flex-basis: 100%;             /* Garante que o logo ocupe toda a largura disponível */
-    margin: 0 auto;               /* Garante que o logo fique centralizado */
-}
-
-.footer-logo img {
-    width: auto;
-    height: 10.5em;
-    margin: 0;                    /* Remove margens desnecessárias */
-}
-
-.footer-left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1 1 250px;
-}
-.footer-section{
-    margin-top: -4%;
-}
-.footer-left .footer-section {
-    margin-bottom: 2px;         /* Espaço entre o contato e outras seções */
-}
-.footer-left .footer-links {
-    margin-bottom: 2px;         /* Espaço entre o contato e outras seções */
-}
-.footer-links {
-    display: flex; /* Corrigido para flexbox */
-    justify-content: flex-start; /* Alinha os links à esquerda */
-    column-gap: 25px; /* Espaço entre os links */
-    font-size: 20px;
-    margin-top: 0; /* Remove qualquer margem superior que possa afetar o alinhamento */
-    margin-left: 0; /* Remove a margem esquerda excessiva */
-    text-align: left; /* Alinha os links à esquerda */
-}
-
-
-.footer-links ul {
-    list-style: none;             /* Remove os marcadores da lista */
-}
-
-.footer-links a {
-    color: white;                /* Define a cor dos links como branca */
-    text-decoration: none;       /* Remove o underline por padrão */
-}
-
-.footer-links a:hover {
-    text-decoration: underline;  /* Adiciona o underline ao passar o mouse */
-}
-.footer-social{
-    display: flex;
-    bottom: 20px;
-    justify-content: flex-start;   /* Alinha as imagens ao topo horizontalmente */
-    align-items: center;       /* Centraliza as imagens verticalmente */
-    margin-left: 25vh;         /* Ajuste conforme necessário */
-    margin-top: 5vh;           /* Reduza o valor para elevar o eixo Y */
-    height: 1vh;              /* Defina uma altura maior */
-}   
-.footer-social img {
-    width: 15%;      
-    margin-top: -10%;          /* Ajuste proporcional da largura */
-    height: auto;              /* Mantém a proporção da imagem */
-    margin: 0 5px;            /* Espaçamento entre as imagens */
-}
-.linkedin {
-    width: 15%; /* Ajuste proporcional */
-}
-.instagram {
-    width: 15%; /* Ajuste proporcional */
-}
-.footer-logo img {
-    width: auto;
-    height: 10.5em;
-    margin: 0;                    /* Remove margens desnecessárias */
-}
-@media (max-width: 768px) {
-    .footer-logo img {
-        margin-left: 3%;
-        width: auto; /* Deixe a largura automática para que a proporção da imagem seja mantida */
-        height: 6.5em; /* Ajusta a altura para combinar com o tamanho do texto */
+    gap: 40px;
+  }
+  
+  .footer-right ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-right li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-right a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .footer-right a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-logo {
+    margin-top: -8%;
+    margin-left: 40%;
+    height: auto;
+    width: 35%;
+  }
+  
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
     }
-
-}
-
-@media (max-width: 768px) {
-    .footer-links {
-        justify-content: center; /* Centraliza os links em telas menores */
-        margin-top: 0;            /* Remove a margem superior */
-        margin-left: 0;           /* Remove a margem à esquerda */
-        text-align: center;       /* Centraliza o texto dos links */
-        column-gap: 15px;         /* Diminui o espaço entre os links */
+  
+    .footer-right {
+      flex-direction: column;
+      align-items: center;
     }
-}
-.footer-social {
-    display: flex;
-    justify-content: center;   /* Centraliza as imagens horizontalmente */
-    align-items: center;       /* Centraliza as imagens verticalmente */
-    margin-left: 25vh;
-    margin-top: 15vh;
-}
-.footer-links{
-    margin-top: 15%;
-    margin-left: 35%;
-}
-
-.footer-social img {
-    width: 30%;    /* Define uma largura fixa para todas as imagens */
-    height: auto;  /* Mantém a proporção da altura com base na largura */
-    margin-top: -150vh; /* Espaço entre as imagens */
-    margin-left: -45%;
-    margin-right: 100%;
-}
-
-.linkedin{
-    width: 37vh;  /* Garante que todas as imagens tenham o mesmo tamanho */
-    height: auto; /* Mantém a proporção */
-    margin-top: 4%;
-}
-
-.instagram {
-    width: 63vh;  /* Garante que todas as imagens tenham o mesmo tamanho */
-    height: auto; /* Mantém a proporção */
-    margin-top: 12%;
-}
-
-
-
+  
+    .footer-right ul {
+      text-align: center;
+    }
+  }
 @media (max-width: 768px) {
     .finePrints {
         width: 90%; /* Ajusta a largura da imagem para um retângulo menor */
