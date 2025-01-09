@@ -127,7 +127,7 @@ body {
     align-items: center;  
     flex-direction: column 2;
     height: 35vh;       
-    margin-top: 10%;
+    margin-top: 5%;
     color: #674F99; /*Cor das palavras no textoPequeno*/ 
 }
 
@@ -300,10 +300,11 @@ body {
 
 .littleTextLeft, .littleTextRight {
     text-align: justify;
-    width: 70%; 
-    margin-top: 10%; /* Espaçamento praticamente zero */
+    width: 80%; 
+    margin-top: 5%; /* Espaçamento praticamente zero */
     margin-left: 0; /* Garantir alinhamento na centralização */
     margin-right: 0;
+    font-size: 2.5vh;
     line-height: 1.6; /* Melhorar a legibilidade do texto */
 }
 /* Ajustes de responsividade */
@@ -312,6 +313,7 @@ body {
         width: 90%; /* Aumenta a largura para ocupar mais espaço na tela */
         margin-top: 0; /* Ajusta o espaçamento superior para evitar sobreposição */
         text-align: center; /* Centraliza o texto */
+        font-size: medium;
         line-height: 1.6; /* Melhora a legibilidade do texto */
     }
 
