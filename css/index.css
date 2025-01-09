@@ -64,19 +64,19 @@ body {
     max-width: 100%;
     overflow: hidden;
     margin: auto;
-    height: 70vh;
+    height: 40vh;
     z-index: 1;
 }
 
 .carousel-slide img {
     width: 100%;
-    height: 100%;
+    height: 50%;
     object-fit: cover; 
 }
 
 .carousel, .finePrints {
     max-width: 100%;
-    height: 100vh; /* Ajusta para que o carrossel e a imagem se ajustem à altura da tela */
+    height: 60%; /* Ajusta para que o carrossel e a imagem se ajustem à altura da tela */
     overflow: hidden;
 }
 
