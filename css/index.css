@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 html, body {
-    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Garante que não haja rolagem horizontal */
 }
-
 @media (prefers-color-scheme: dark) {
     body {
         color: #ffffff; /* Cor do texto para o modo escuro */
@@ -28,8 +31,9 @@ html, body {
         color: rgb(255, 255, 255); /* Cor do logo no rodapé no modo escuro */
     }
 }
+
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Evita que margens e padding ultrapassem o tamanho do elemento */
 }
 
 body {
@@ -37,6 +41,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: transparent;
+    overflow-y: auto; /* Certifique-se de que a rolagem vertical seja permitida */
 }
 
 .elemento {
@@ -69,6 +74,12 @@ body {
     object-fit: cover; 
 }
 
+.carousel, .finePrints {
+    max-width: 100%;
+    height: 100vh; /* Ajusta para que o carrossel e a imagem se ajustem à altura da tela */
+    overflow: hidden;
+}
+
 .fade {
     animation: fadeEffect 1s;
 }
@@ -81,9 +92,14 @@ body {
 .sobreposição {
     position: relative;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px; /* Ajuste para evitar sobreposição */
 }
 
+.sobreposição, .container, .footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 .text-before {
     font-size: 6vw;
     font-weight: 1000;
@@ -249,7 +265,7 @@ body {
     }
 
     .logo, .logo-name, .user-icon, .menu-toggle {
-        margin-right: 25%;
+        margin-right: 10%;
         margin-left: 0%;
         position: center;
     }
