@@ -156,14 +156,14 @@ body {
 }
 
 .logo img {
-    width:37%;
+    width:6em;
     height: auto;
     margin-right: 1%;
 }
 
 .logo-name {
     color: white;
-    font-size: 3.5em;
+    font-size: 5.4em;
     font-weight: 900;
 }
 @media (max-width: 768px) {
@@ -420,7 +420,7 @@ body {
   .social-icons a {
     color: #fff;
     margin-right: 10px;
-    font-size: 1.2rem;
+    font-size: 2rem;
   }
   
   .footer-right {
@@ -453,7 +453,7 @@ body {
     margin-left: 43%;
   }
   .footer-logo img {
-    margin-top: -75%;
+    margin-top: -85%;
     max-width: 200%;
     height: auto;
     width: 100%;
@@ -496,7 +496,7 @@ body {
     }
   
     .social-icons a {
-      font-size: 1rem;
+      font-size: 2rem;
       margin: 0 5px;
     }
   
