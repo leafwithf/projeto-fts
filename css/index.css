@@ -539,13 +539,13 @@ body {
 
 @media (max-width: 768px) {
     .text-before {
-        transform: translateY(-360%);
+        transform: translateY(-300%);
         font-size: 18vw; /* Ajuste maior para o mobile */
     }
     .text-after {
         font-size: 12vw; /* Ajuste maior para o mobile */
         font-weight: 300;
-        transform: translateY(-390%) translateX(13%); /* Combinação de ambas as transformações */
+        transform: translateY(-340%) translateX(13%); /* Combinação de ambas as transformações */
     }
     
     .sobreposição {
