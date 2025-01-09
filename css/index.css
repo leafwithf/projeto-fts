@@ -264,10 +264,13 @@ body {
         color: #B3A6CC;
     }
 
+    .user-icon,.fa-user-circle{
+        margin-left: 15%;
+    }
     .logo, .logo-name, .user-icon, .menu-toggle {
-        margin-right: 10%;
-        margin-left: 0%;
-        position: center;
+        margin-right: 20%;
+        margin-left: -6%;
+        position: flex;
     }
 }
 
