@@ -324,11 +324,12 @@ body {
     }
 
     .user-icon,.fa-user-circle{
-        margin-left: 10%;
+        margin-left: 25%;
+        margin-right: 10%;
     }
     .logo, .logo-name, .user-icon, .menu-toggle {
-        margin-right: 20%;
-        margin-left: -6%;
+        margin-right: 15%;
+        margin-left: -8%;
         position: flex;
     }
 }
@@ -497,58 +498,100 @@ body {
     box-shadow: 0 2rem 4rem rgba(0,0,0,0.3);  
     transition: all 0.35s;
 }
-/* Estilos para dispositivos móveis */
 @media (max-width: 768px) {
     .finePrints-slide {
-        width: 220px; /* Largura da polaroid */
-        height: 300px; /* Altura da polaroid */
+        margin-bottom: -10%; /* Ajuste a margem superior para alinhar corretamente */
+        width: auto; /* Defina a largura da polaroid */
+        height: auto; /* Defina a altura da polaroid proporcional à largura */
         position: relative;
-        margin: 15px auto; /* Centraliza a polaroid horizontalmente */
+        margin: 0 auto; /* Centraliza a polaroid horizontalmente */
     }
 
     .finePrints-slide img {
-        width: 100% !important; /* A imagem ocupa 100% da largura da polaroid */
-        height: 100% !important; /* A imagem ocupa 100% da altura da polaroid */
-        object-fit: cover; /* Garante que a imagem preencha a polaroid sem distorção */
-        border-radius: 8px; /* Borda arredondada da imagem */
-    }
-
-    /* Polaroid (a borda) será colocada atrás da imagem */
-    .finePrints-slide::before {
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        right: 5px;
-        bottom: 5px;
-        border-radius: 8px; /* Borda arredondada da polaroid */
-        z-index: -2; /* A polaroid ficará atrás da imagem */
-        background-color: #f4f4f4; /* Cor de fundo da polaroid */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombras para efeito 3D */
-    }
-
+        width: 200% !important; /* Aumenta a largura da imagem além da largura da polaroid */
+        height: 200% !important; /* Ajusta a altura proporcional à largura */
+        object-position: center; /* Mantém a imagem centralizada */
+        margin-left: -45%;    
+        margin-top: 100%;
+}
+    
     .caption-container {
-        margin-top: 10px; /* Ajusta a distância entre a imagem e os captions */
+        margin-top: 5px; /* Ajusta a distância entre a imagem e os captions */
         text-align: center;
     }
 
     .caption {
         margin-top: 5px;
+        margin-left: 20px;
     }
 
     .caption h4, .caption h5 {
         font-size: 0.9rem; /* Tamanho pequeno da fonte */
         margin-bottom: 5px;
+        margin-top: -30%;
         text-align: center;
     }
 
     .caption h2 {
         font-size: 0.8rem; /* Tamanho pequeno da fonte */
-        margin-bottom: 5px;
+        margin-bottom: 2px;
     }
 
     .caption h6 {
         font-size: 0.7rem; /* Tamanho pequeno da fonte */
-        margin-bottom: 5px;
+        margin-bottom: 0px;
+        margin-top: 10%;
+    }
+
+    /* Código adicional para .item */
+    .item {
+        width: 100%; /* Ajuste a largura da polaroid */
+        display: inline-block;
+        margin-top: 2rem;
+        filter: grayscale(100%);
+        transition: transform 0.35s ease;
+        margin-bottom: 3rem;
+    }
+
+    .item .polaroid:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        transition: all 0.35s;
+    }
+
+    .item:nth-of-type(4n+1) {
+        transform: scale(1, 1) rotate(5deg);
+        transition: all 0.35s;
+    }
+
+    .item:nth-of-type(4n+1) .polaroid:before {
+        height: 100%;
+        width: 100%;  
+        right: 0%;
+        box-shadow: 0 2.5rem 2.5rem rgba(0,0,0,0.9);  
+    }
+
+    .item:hover {
+        filter: none;
+        transform: scale(1, 1) rotate(0deg) !important;
+        transition: all 0.35s;
+    }
+
+    .item:hover .polaroid:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        transform: rotate(0deg);
+        height: 100%;
+        width: 100%;
+        bottom: 0%;
+        right: 0%;
+        box-shadow: 0 2rem 4rem rgba(0,0,0,0.3);  
+        transition: all 0.35s;
+    }
+    .container-fine{
+        margin-top: 30%;
     }
 }
 
