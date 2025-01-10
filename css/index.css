@@ -500,23 +500,23 @@ body {
 }
 @media (max-width: 768px) {
     .finePrints-slide {
-        margin-bottom: -10%; /* Ajuste a margem superior para alinhar corretamente */
         width: auto; /* Defina a largura da polaroid */
-        height: auto; /* Defina a altura da polaroid proporcional à largura */
+        height: 300% !important; /* Defina a altura da polaroid proporcional à largura */
         position: relative;
         margin: 0 auto; /* Centraliza a polaroid horizontalmente */
     }
 
     .finePrints-slide img {
-        width: 200% !important; /* Aumenta a largura da imagem além da largura da polaroid */
-        height: 200% !important; /* Ajusta a altura proporcional à largura */
+        width: 250% !important; /* Aumenta a largura da imagem além da largura da polaroid */
+        height: 250% !important; /* Ajusta a altura proporcional à largura */
         object-position: center; /* Mantém a imagem centralizada */
-        margin-left: -45%;    
-        margin-top: 100%;
+        margin-left: -75%;    
+        margin-top: -30% !important;
+        margin-bottom: 70% !important;
 }
     
     .caption-container {
-        margin-top: 5px; /* Ajusta a distância entre a imagem e os captions */
+        margin-top: 500px; /* Ajusta a distância entre a imagem e os captions */
         text-align: center;
     }
 
