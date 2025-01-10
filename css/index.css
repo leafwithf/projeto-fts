@@ -7,6 +7,11 @@ html, body {
     height: 100%;
     overflow-x: hidden; /* Garante que não haja rolagem horizontal */
 }
+.dark-mode .logo {
+    filter: none; /* Remove filtros */
+    opacity: 1;    /* Garante visibilidade */
+  }
+  
 @media (prefers-color-scheme: dark) {
     body {
         color: #ffffff; /* Cor do texto para o modo escuro */
@@ -341,11 +346,13 @@ body {
         margin-top: 5%; /* Ajuste o espaçamento superior para o segundo título */
     }
 }
-
-.title-box{
+.title-box {
     display: flex;
-    margin-top: 40%;
+    margin-top: 5%; /* Espaço acima do título */
+    margin-bottom: 3%; /* Espaço abaixo do título */
+    color: #674F99; /* Cor do texto */
 }
+
 .text-box-fine {
     margin-bottom: 2%;
 }
@@ -354,37 +361,130 @@ body {
     position: relative;
     max-width: 80%;
     align-items: center;
-    height: 80vh; /* Tamanho para telas grandes */
+    height: auto; /* Ajusta a altura dinamicamente */
+    margin-bottom: 5%; /* Espaço abaixo do carrossel */
 }
 .container-fine {
-    display: fixed;
+    margin-top: 0; 
+    display: flex;
     justify-content: center;  
     align-items: center;  
-    height: 35vh;   
-    margin-top: -40%;    
-    color: #674F99; /*Cor das palavras no textoPequeno*/ 
+    flex-direction: column;
+    height: auto; 
+    width: 100%;
+    padding: 0 2rem;
+    text-align: center;
 }
+
+.polaroid {
+    background: #ffffff; /* Cor branca para o quadrado ao redor */
+    padding: 4rem; /* Aumentei o padding para dar mais espaço ao redor da imagem */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* Sombra mais forte */
+    position: relative;
+    overflow: hidden;
+    width: 50%;  /* Aumentei o tamanho fixo do quadrado */
+    height: 50%; /* Ajustei a altura para ser igual à largura, mantendo o formato quadrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+}
+
+.polaroid > img {
+    width: 50%; /* Faz a imagem ocupar toda a largura do quadrado */
+    height: 50%; /* Faz a imagem ocupar toda a altura do quadrado */
+    object-fit: hidden; /* A imagem preenche o espaço do quadrado sem distorcer */
+   
+}
+
+.item {
+    width: 55%; /* Largura ajustada para exibição */
+    display: inline-block;
+    margin-top: 2rem;
+    filter: grayscale(100%);
+    transition: transform 0.35s ease;
+    margin-bottom: 3rem;
+}
+
+.item .polaroid:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    transition: all 0.35s;
+}
+
+.item:nth-of-type(4n+1) {
+    transform: scale(1, 1) rotate(5deg);
+    transition: all 0.35s;
+}
+
+.item:nth-of-type(4n+1) .polaroid:before {
+    height: 100%;
+    width: 100%;  
+    right: 0%;
+    box-shadow: 0 2.5rem 2.5rem rgba(0,0,0,0.9);  
+}
+
+.item:hover {
+    filter: none;
+    transform: scale(1, 1) rotate(0deg) !important;
+    transition: all 0.35s;
+}
+
+.item:hover .polaroid:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    transform: rotate(0deg);
+    height: 100%;
+    width: 100%;
+    bottom: 0%;
+    right: 0%;
+    box-shadow: 0 2rem 4rem rgba(0,0,0,0.3);  
+    transition: all 0.35s;
+}
+
+@media (max-width: 768px) {
+    .item {
+        width: 45%; 
+    }
+}
+
 .centralize-text-fine {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 2% auto;
+    margin: 0% auto;
 }
-
-/* Estilo para o carrossel do Fine Arts */
 .finePrints-slide {
-    width: 150vh; 
-    height: 80vh; 
-    overflow: hidden; 
-    border-radius: 2vh; 
+    width: 70%; /* Tamanho fixo da polaroid, ajustável conforme a necessidade */
+    height: 70%; /* Ajustei para ser um quadrado também */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2% 5% rgba(0, 0, 0, 0.3); /* Sombra em todos os lados da polaroid */
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
 }
 
 .finePrints-slide img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; 
+    height: 10%;
+    margin-top: 1%;
+    margin-bottom: 40%;
+    margin-left: 0%;
+    margin-right: 0%;
+    object-fit: cover;
+    display: block;
 }
+.caption {
+    font-size: 1.8rem;
+    margin-top: -30%;
+    line-height: 2em;
+    color: #674F99;
+  }
 .footer {
     background-color: #674F99;
     color: #fff;
@@ -480,8 +580,6 @@ body {
       align-items: center;
     }
 }
-
-/* Media Queries para dispositivos móveis */
 @media (max-width: 768px) {
     .footer-logo img{
        margin-top: 60%;
