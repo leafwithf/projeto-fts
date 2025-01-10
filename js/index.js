@@ -38,6 +38,46 @@ function changeSlideCarousel(direction) {
     slideIntervalCarousel = setInterval(nextSlideCarousel, 5000);
 }
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    showSlideCarousel(slideIndexCarousel);
+    showSlideFinePrints(slideIndexFinePrints);
+});
+function toggleMenu() {
+    const menuItems = document.getElementById("menu-items");
+    menuItems.classList.toggle("active");
+}
+function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark-mode');
+}
+
+let captionIndex = 0;
+let captionInterval = setInterval(nextCaption, 5000); // 8 segundos entre os captions
+
+function showCaption(index) {
+    const captions = document.querySelectorAll(".caption");
+
+    // Remove visibilidade de todos os captions
+    captions.forEach((caption) => caption.classList.remove("visible"));
+
+    // Atualiza o índice
+    captionIndex = index;
+    if (captionIndex >= captions.length) captionIndex = 0;
+    if (captionIndex < 0) captionIndex = captions.length - 1;
+
+    // Torna o caption atual visível
+    captions[captionIndex].classList.add("visible");
+}
+
+function nextCaption() {
+    captionIndex++;
+    showCaption(captionIndex);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    showCaption(captionIndex);
+});
+
 function showSlideFinePrints(index) {
     const slides = document.getElementsByClassName("finePrints-slide");
     
@@ -70,16 +110,4 @@ function changeSlideFinePrints(direction) {
 
     showSlideFinePrints(slideIndexFinePrints);
     slideIntervalFinePrints = setInterval(nextSlideFinePrints, 5000);
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    showSlideCarousel(slideIndexCarousel);
-    showSlideFinePrints(slideIndexFinePrints);
-});
-function toggleMenu() {
-    const menuItems = document.getElementById("menu-items");
-    menuItems.classList.toggle("active");
-}
-function toggleDarkMode() {
-    document.documentElement.classList.toggle('dark-mode');
 }

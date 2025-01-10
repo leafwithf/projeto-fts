@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
+@font-face {
+    font-family: 'Bodega';
+    src: url('Fontes/Bodega-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Definir a fonte para todo o conteúdo dentro da caption-container */
+.caption-container {
+    font-family: 'Bodega', cursive;
+    font-size: 50px; /* Tamanho da fonte aumentado */
+}
+
+/* Caso queira uma fonte diferente para a .caption */
+.caption {
+    font-family: 'Bodega', cursive;
+    font-size: 100%; /* Tamanho da fonte aumentado */
+    font-weight: bold;
+    font-display: swap;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -443,10 +465,32 @@ body {
     box-shadow: 0 2rem 4rem rgba(0,0,0,0.3);  
     transition: all 0.35s;
 }
-
 @media (max-width: 768px) {
     .item {
-        width: 45%; 
+        width: 90%; /* Ajusta para ocupar 90% da largura em telas pequenas */
+    }
+
+    .polaroid {
+        width: 80%; /* Ajusta o tamanho da polaroid */
+        height: 80%; /* Mantém a proporção */
+        padding: 2rem; /* Ajusta o padding para um melhor ajuste */
+    }
+
+    .finePrints-slide {
+        width: 100%; /* Ajusta para a largura total */
+    }
+
+    .caption {
+        font-size: 1.4rem; /* Reduz o tamanho da legenda em telas pequenas */
+    }
+
+    .title-box {
+        margin-top: 2%; /* Ajusta o espaçamento acima do título */
+        margin-bottom: 1%; /* Ajusta o espaçamento abaixo do título */
+    }
+
+    .container-fine {
+        padding: 0 1rem; /* Ajusta o padding */
     }
 }
 
@@ -479,12 +523,34 @@ body {
     object-fit: cover;
     display: block;
 }
+
 .caption {
+    position: absolute; /* Permite sobrepor na mesma posição */
+    margin-top: -50%; /* Alinha na parte inferior, ajuste conforme necessário */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Centraliza em relação ao meio */
     font-size: 1.8rem;
-    margin-top: -30%;
     line-height: 2em;
     color: #674F99;
-  }
+    opacity: 0; /* Inicialmente invisível */
+    z-index: 1;
+    transition: opacity 1s ease; /* Transição mais longa e suave */
+}
+
+.caption.visible {
+    font-family: 'Bodega Script', cursive;
+    opacity: 1; /* Faz o texto aparecer */
+}
+
+.caption-container {
+    font-family: 'Bodega Script', cursive;
+    position: relative;
+    height: 3em; /* Altura fixa para evitar deslocamento dos elementos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .footer {
     background-color: #674F99;
     color: #fff;
