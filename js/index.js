@@ -111,3 +111,4 @@ function changeSlideFinePrints(direction) {
     showSlideFinePrints(slideIndexFinePrints);
     slideIntervalFinePrints = setInterval(nextSlideFinePrints, 5000);
 }
+
