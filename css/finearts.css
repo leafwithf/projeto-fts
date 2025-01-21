@@ -1,0 +1,610 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Garante que não haja rolagem horizontal */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: transparent;
+    overflow-y: auto;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.photo {
+    text-align: center;
+    cursor: pointer;
+}
+
+.photo img {
+    max-width: 100%;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.photo img:hover {
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 80%;
+    height: auto;
+    margin: auto;
+    display: block;
+    animation: zoomIn 0.5s;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+h4 {
+    width: 100%;
+    height: auto;
+    text-align: left;
+    justify-content: left;
+    margin-top: 0%;
+    font-size: 45px;
+    color: #674F99;
+    margin: 10px 0;
+    margin-left: -10%;
+    line-height: 70%;
+}
+h5 {
+    width: 100%;
+    height: auto;
+    text-align: left;
+    justify-content: left;
+    margin-top: 0%;
+    font-size: 45px;
+    color: #674F99;
+    margin: 10px 0;
+    line-height: 70%;
+}
+h2 {
+    font-size: 25px;
+    color: #674F99;
+    margin: 10px 0;
+    margin-left: -63%;
+    line-height: 70%;
+}
+
+h6 {
+    font-family: Lato, sans-serif;
+    font-size:20px;
+    color: #674F99;
+    text-decoration: underline;
+    margin-left: -50%;
+    cursor: pointer;
+}
+
+.dark-mode .logo {
+    filter: none; /* Remove filtros */
+    opacity: 1;    /* Garante visibilidade */
+  }
+  
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #ffffff; /* Cor do texto para o modo escuro */
+    }
+    .user-icon{
+        color: rgb(255, 255, 255); /* Cor do ícone de usuário no modo escuro */
+    }
+
+    .logo-name  {
+        color: rgb(255, 255, 255); /* Cor do nome do logo no modo escuro */
+    }
+    .logo{
+        color: rgb(255, 255, 255); /* Cor do logo no modo escuro */
+    }
+    .footer-left{
+        color: rgb(255, 255, 255); /* Cor do texto no rodapé no modo escuro */
+    }
+    .footer-right{
+        color: rgb(255, 255, 255); /* Cor do texto no rodapé no modo escuro */
+    }
+    .footer-logo{
+        color: rgb(255, 255, 255); /* Cor do logo no rodapé no modo escuro */
+    }
+}
+
+* {
+    box-sizing: border-box; /* Evita que margens e padding ultrapassem o tamanho do elemento */
+}
+
+.elemento {
+    background-color:transparent;
+    padding: 1%;
+}
+
+.elemento1 {
+    background-color:transparent;
+    padding: 3%;
+}
+
+.elemento2 {    
+    background-color:transparent;
+    padding: 8%;
+}
+
+.sobreposição {
+    position: relative;
+    text-align: center;
+    margin-top: 20px; /* Ajuste para evitar sobreposição */
+}
+
+.sobreposição, .container, .footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.text-before {
+    font-size: 6vw;
+    font-weight: 1000;
+    color: #674F99;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    z-index: 1;
+    margin-right: 10%;
+}
+
+.text-after {
+    font-size: 4vw;
+    font-weight: 300;
+    color: #000000;
+    position: relative;
+    transform: translateY(130%);
+    right: 33%;
+    z-index: 1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    flex-direction: column 2;
+    height: 35vh;       
+    margin-top: 5%;
+    color: #674F99; /*Cor das palavras no textoPequeno*/ 
+}
+
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2% 10%;
+    background-color: #674F99;
+}
+
+.user-icon .fa-user-circle {
+    font-size: 4rem;
+    color: #f5f5f5;
+    margin-right: 20%;
+    vertical-align: middle;
+}
+
+.logo { 
+    display: flex;
+    align-items: center;
+    margin-right: 30%;
+    margin-left: 10%;
+}
+
+.logo img {
+    width:6em;
+    height: auto;
+    margin-right: 1%;
+}
+
+.logo-name {
+    color: white;
+    font-size: 5.4em;
+    font-weight: 900;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.menu-toggle {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle i {
+    font-size: 30px; /* Tamanho do ícone */
+    color: white;    /* Cor do ícone */
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle i:hover {
+    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 45px;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.menu ul li a:hover {
+    color: #B3A6CC;
+}
+
+.menu-toggle span {
+    background-color: #fff;
+    width: 30px;
+    height: 3px;
+    margin: 5px auto;
+    border-radius: 3px;
+}
+
+.footer {
+    background-color: #674F99;
+    color: #fff;
+    padding: 1% 2% 4% 2%;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-left h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .footer-left p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .footer-left a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  
+  .footer-left a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 2rem;
+  }
+  
+  .footer-right {
+    margin-top: 2%;
+    display: flex;
+    gap: 40px;
+  }
+  
+  .footer-right ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-right li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-right a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .footer-right a:hover {
+    text-decoration: underline;
+  }
+  .footer-logo {
+    width: 10%;
+    height: 10%;
+    margin-left: 43%;
+  }
+  .footer-logo img {
+    margin-top: -85%;
+    max-width: 200%;
+    height: auto;
+    width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    .footer-left h1 {
+      font-size: 1.5rem;
+    }
+  
+    .social-icons a {
+      font-size: 2rem;
+      margin: 0 5px;
+    }
+  
+       .links-column a {
+          font-size: 0.8rem;
+           }
+        .footer-logo img{
+            margin-top: 60%;
+            margin-left: -24%;
+            width: 200%; 
+            height: 100%;
+           }
+        .text-before {
+            transform: translateY(-220%);
+            font-size: 18vw; /* Ajuste maior para o mobile */
+        }
+        .text-after {
+            font-size: 12vw; /* Ajuste maior para o mobile */
+            font-weight: 300;
+            transform: translateY(-200%) translateX(13%); /* Combinação de ambas as transformações */
+        }
+        
+        .sobreposição {
+            margin-top: 2vh; /* Maior margem no mobile para evitar sobreposição */
+        }
+      
+        .container {
+            margin: 0 auto;
+            margin-top: -35%; /* Ajusta o espaçamento superior para ficar mais próximo do topo */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Alinha o conteúdo ao centro */
+            justify-content: flex-start; /* Garante que os conteúdos fiquem alinhados no topo */
+        }
+    
+        .menu ul {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 50px 0;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            z-index: 1000;
+            transform: translateY(-100%);
+            transition: transform 0.5s ease;
+        }
+    
+        .menu ul.active {
+            transform: translateY(0);
+        }
+    
+        .menu-toggle {
+            display: flex; /* Exibe o ícone de hambúrguer no mobile */
+        }
+    
+        .menu ul li a {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: block;
+            padding: 20px 0;
+        }
+    
+        .menu ul li a:hover {
+            color: #B3A6CC;
+        }
+    
+        .user-icon,.fa-user-circle{
+            margin-left: 25%;
+            margin-right: 10%;
+        }
+        .logo, .logo-name, .user-icon, .menu-toggle {
+            margin-right: 15%;
+            margin-left: -8%;
+            position: flex;
+        }
+        .logo img {
+            width: auto; /* Deixe a largura automática para que a proporção da imagem seja mantida */
+            height: 4em;
+            margin-right: 8%; /* Ajusta a altura para combinar com o tamanho do texto */
+        }
+    
+        .logo-name {
+            font-size: 3.5em; /* Mantém o tamanho do texto */
+        }
+        .footer-container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+      
+        .footer-left {
+          margin-bottom: 20px;
+        }
+      
+        .footer-links {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+      
+        .links-column {
+          align-items: center;
+        }
+}
+@media (max-width: 768px) {
+    .footer-logo img{
+        margin-top: 60%;
+        margin-left: -24%;
+        width: 200%; 
+        height: 100%;
+       }
+    .text-before {
+        transform: translateY(-220%);
+        font-size: 18vw; /* Ajuste maior para o mobile */
+    }
+    .text-after {
+        font-size: 12vw; /* Ajuste maior para o mobile */
+        font-weight: 300;
+        transform: translateY(-200%) translateX(13%); /* Combinação de ambas as transformações */
+    }
+    
+    .sobreposição {
+        margin-top: 2vh; /* Maior margem no mobile para evitar sobreposição */
+    }
+
+
+    .container {
+        margin: 0 auto;
+        margin-top: -35%; /* Ajusta o espaçamento superior para ficar mais próximo do topo */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Alinha o conteúdo ao centro */
+        justify-content: flex-start; /* Garante que os conteúdos fiquem alinhados no topo */
+    }
+
+    .menu ul {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 50px 0;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        z-index: 1000;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease;
+    }
+
+    .menu ul.active {
+        transform: translateY(0);
+    }
+
+    .menu-toggle {
+        display: flex; /* Exibe o ícone de hambúrguer no mobile */
+    }
+
+    .menu ul li a {
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        display: block;
+        padding: 20px 0;
+    }
+
+    .menu ul li a:hover {
+        color: #B3A6CC;
+    }
+
+    .user-icon,.fa-user-circle{
+        margin-left: 25%;
+        margin-right: 10%;
+    }
+    .logo, .logo-name, .user-icon, .menu-toggle {
+        margin-right: 15%;
+        margin-left: -8%;
+        position: flex;
+    }
+    .logo img {
+        width: auto; /* Deixe a largura automática para que a proporção da imagem seja mantida */
+        height: 4em;
+        margin-right: 8%; /* Ajusta a altura para combinar com o tamanho do texto */
+    }
+
+    .logo-name {
+        font-size: 3.5em; /* Mantém o tamanho do texto */
+    }
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-left {
+      margin-bottom: 20px;
+    }
+  
+    .footer-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .links-column {
+      align-items: center;
+    }
+}
