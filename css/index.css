@@ -225,17 +225,7 @@ body {
     font-size: 5.4em;
     font-weight: 900;
 }
-@media (max-width: 768px) {
-    .logo img {
-        width: auto; /* Deixe a largura automática para que a proporção da imagem seja mantida */
-        height: 4em;
-        margin-right: 8%; /* Ajusta a altura para combinar com o tamanho do texto */
-    }
 
-    .logo-name {
-        font-size: 3.5em; /* Mantém o tamanho do texto */
-    }
-}
 .menu {
     display: flex;
     align-items: center;
@@ -282,60 +272,6 @@ body {
     color: #B3A6CC;
 }
 
-@media (max-width: 768px) {
-    .menu ul {
-        display: flex;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.8);
-        padding: 50px 0;
-        text-align: center;
-        flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-        z-index: 1000;
-        transform: translateY(-100%);
-        transition: transform 0.5s ease;
-    }
-
-    .menu ul.active {
-        transform: translateY(0);
-    }
-
-    .menu-toggle {
-        display: flex; /* Exibe o ícone de hambúrguer no mobile */
-    }
-
-    .menu ul li a {
-        color: white;
-        font-size: 2rem;
-        font-weight: bold;
-        text-decoration: none;
-        text-transform: uppercase;
-        display: block;
-        padding: 20px 0;
-    }
-
-    .menu ul li a:hover {
-        color: #B3A6CC;
-    }
-
-    .user-icon,.fa-user-circle{
-        margin-left: 25%;
-        margin-right: 10%;
-    }
-    .logo, .logo-name, .user-icon, .menu-toggle {
-        margin-right: 15%;
-        margin-left: -8%;
-        position: flex;
-    }
-}
-
-
-/* Estilizando o ícone de hambúrguer */
 .menu-toggle span {
     background-color: #fff;
     width: 30px;
@@ -367,40 +303,7 @@ body {
     font-size: 2.5vh;
     line-height: 1.6; /* Melhorar a legibilidade do texto */
 }
-/* Ajustes de responsividade */
-@media (max-width: 768px) {
-    .littleTextLeft, .littleTextRight {
-        width: 90%; /* Aumenta a largura para ocupar mais espaço na tela */
-        margin-top: 0; /* Ajusta o espaçamento superior para evitar sobreposição */
-        text-align: center; /* Centraliza o texto */
-        font-size: medium;
-        line-height: 1.6; /* Melhora a legibilidade do texto */
-    }
 
-    .container {
-        margin: 0 auto;
-        margin-top: -35%; /* Ajusta o espaçamento superior para ficar mais próximo do topo */
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Alinha o conteúdo ao centro */
-        justify-content: flex-start; /* Garante que os conteúdos fiquem alinhados no topo */
-    }
-
-    .title-box1, .title-box2 {
-        width: 100%; /* Garantir que o box ocupe a largura total */
-        text-align: center; /* Alinha o texto no centro */
-        margin-top: 0; /* Ajusta o espaçamento superior para não sobrepor */
-        margin-bottom: 2%; /* Dá um pequeno espaçamento na parte inferior */
-    }
-
-    .title-box1 {
-        margin-top: 5%; /* Ajuste o espaçamento superior para o primeiro título */
-    }
-
-    .title-box2 {
-        margin-top: 5%; /* Ajuste o espaçamento superior para o segundo título */
-    }
-}
 .title-box {
     display: flex;
     margin-top: 5%; /* Espaço acima do título */
@@ -497,103 +400,6 @@ body {
     right: 0%;
     box-shadow: 0 2rem 4rem rgba(0,0,0,0.3);  
     transition: all 0.35s;
-}
-@media (max-width: 768px) {
-    .finePrints-slide {
-        width: 600%; /* Largura da polaroid */
-        height: 700% !important; /* Altura proporcional */
-        position: relative;
-        margin: 0 auto; /* Centraliza a polaroid horizontalmente */
-        padding: 30; /* Remove ou diminui o padding */
-    }
-    
-    .finePrints-slide img {
-        width: 250% !important; /* Aumenta a largura da imagem além da largura da polaroid */
-        height: 350% !important; /* Ajusta a altura proporcional à largura */
-        object-position: center; /* Centraliza a imagem */
-        margin-left: -75%;    
-        margin-top: -30% !important;
-        margin-bottom: 70% !important;
-    }
-    
-    .caption-container {
-        margin-top: 500px; /* Ajusta a distância entre a imagem e os captions */
-        text-align: center;
-    }
-
-    .caption {
-        margin-top: 5px;
-        margin-left: 20px;
-    }
-
-    .caption h4, .caption h5 {
-        font-size: 0.9rem; /* Tamanho pequeno da fonte */
-        margin-bottom: 5px;
-        margin-top: -30%;
-        text-align: center;
-    }
-
-    .caption h2 {
-        font-size: 0.8rem; /* Tamanho pequeno da fonte */
-        margin-bottom: 2px;
-    }
-
-    .caption h6 {
-        font-size: 0.7rem; /* Tamanho pequeno da fonte */
-        margin-bottom: 0px;
-        margin-top: 10%;
-    }
-
-    /* Código adicional para .item */
-    .item {
-        width: 100%; /* Ajuste a largura da polaroid */
-        display: inline-block;
-        margin-top: 2rem;
-        filter: grayscale(100%);
-        transition: transform 0.35s ease;
-        margin-bottom: 3rem;
-    }
-
-    .item .polaroid:before {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        transition: all 0.35s;
-    }
-
-    .item:nth-of-type(4n+1) {
-        transform: scale(1, 1) rotate(5deg);
-        transition: all 0.35s;
-    }
-
-    .item:nth-of-type(4n+1) .polaroid:before {
-        height: 100%;
-        width: 100%;  
-        right: 0%;
-        box-shadow: 0 2.5rem 2.5rem rgba(0,0,0,0.9);  
-    }
-
-    .item:hover {
-        filter: none;
-        transform: scale(1, 1) rotate(0deg) !important;
-        transition: all 0.35s;
-    }
-
-    .item:hover .polaroid:before {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        transform: rotate(0deg);
-        height: 100%;
-        width: 100%;
-        bottom: 0%;
-        right: 0%;
-        box-shadow: 0 2rem 4rem rgba(0,0,0,0.3);  
-        transition: all 0.35s;
-    }
-    .container-fine{
-        margin-top: 40%;
-    }
 }
 
 .centralize-text-fine {
@@ -722,8 +528,225 @@ body {
     height: auto;
     width: 100%;
   }
+
+  @media (max-width: 480px) {
+    .footer-left h1 {
+      font-size: 1.5rem;
+    }
   
+    .social-icons a {
+      font-size: 2rem;
+      margin: 0 5px;
+    }
+  
+    .links-column a {
+      font-size: 0.8rem;
+    }
+}
 @media (max-width: 768px) {
+    .footer-logo img{
+        margin-top: 60%;
+        margin-left: -24%;
+        width: 200%; 
+        height: 100%;
+       }
+    .text-before {
+        transform: translateY(-220%);
+        font-size: 18vw; /* Ajuste maior para o mobile */
+    }
+    .text-after {
+        font-size: 12vw; /* Ajuste maior para o mobile */
+        font-weight: 300;
+        transform: translateY(-200%) translateX(13%); /* Combinação de ambas as transformações */
+    }
+    
+    .sobreposição {
+        margin-top: 2vh; /* Maior margem no mobile para evitar sobreposição */
+    }
+    .finePrints-slide {
+        width: 600%; /* Largura da polaroid */
+        height: 700% !important; /* Altura proporcional */
+        position: relative;
+        margin: 0 auto; /* Centraliza a polaroid horizontalmente */
+        padding: 30; /* Remove ou diminui o padding */
+    }
+    
+    .finePrints-slide img {
+        width: 250% !important; /* Aumenta a largura da imagem além da largura da polaroid */
+        height: 350% !important; /* Ajusta a altura proporcional à largura */
+        object-position: center; /* Centraliza a imagem */
+        margin-left: -75%;    
+        margin-top: -30% !important;
+        margin-bottom: 70% !important;
+    }
+    
+    .caption-container {
+        margin-top: 500px; /* Ajusta a distância entre a imagem e os captions */
+        text-align: center;
+    }
+
+    .caption {
+        margin-top: 5px;
+        margin-left: 20px;
+    }
+
+    .caption h4, .caption h5 {
+        font-size: 0.9rem; /* Tamanho pequeno da fonte */
+        margin-bottom: 5px;
+        margin-top: -30%;
+        text-align: center;
+    }
+
+    .caption h2 {
+        font-size: 0.8rem; /* Tamanho pequeno da fonte */
+        margin-bottom: 2px;
+    }
+
+    .caption h6 {
+        font-size: 0.7rem; /* Tamanho pequeno da fonte */
+        margin-bottom: 0px;
+        margin-top: 10%;
+    }
+
+    /* Código adicional para .item */
+    .item {
+        width: 100%; /* Ajuste a largura da polaroid */
+        display: inline-block;
+        margin-top: 2rem;
+        filter: grayscale(100%);
+        transition: transform 0.35s ease;
+        margin-bottom: 3rem;
+    }
+
+    .item .polaroid:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        transition: all 0.35s;
+    }
+
+    .item:nth-of-type(4n+1) {
+        transform: scale(1, 1) rotate(5deg);
+        transition: all 0.35s;
+    }
+
+    .item:nth-of-type(4n+1) .polaroid:before {
+        height: 100%;
+        width: 100%;  
+        right: 0%;
+        box-shadow: 0 2.5rem 2.5rem rgba(0,0,0,0.9);  
+    }
+
+    .item:hover {
+        filter: none;
+        transform: scale(1, 1) rotate(0deg) !important;
+        transition: all 0.35s;
+    }
+
+    .item:hover .polaroid:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        transform: rotate(0deg);
+        height: 100%;
+        width: 100%;
+        bottom: 0%;
+        right: 0%;
+        box-shadow: 0 2rem 4rem rgba(0,0,0,0.3);  
+        transition: all 0.35s;
+    }
+    .container-fine{
+        margin-top: 40%;
+    }
+    .littleTextLeft, .littleTextRight {
+        width: 90%; /* Aumenta a largura para ocupar mais espaço na tela */
+        margin-top: 0; /* Ajusta o espaçamento superior para evitar sobreposição */
+        text-align: center; /* Centraliza o texto */
+        font-size: medium;
+        line-height: 1.6; /* Melhora a legibilidade do texto */
+    }
+
+    .container {
+        margin: 0 auto;
+        margin-top: -35%; /* Ajusta o espaçamento superior para ficar mais próximo do topo */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Alinha o conteúdo ao centro */
+        justify-content: flex-start; /* Garante que os conteúdos fiquem alinhados no topo */
+    }
+
+    .title-box1, .title-box2 {
+        width: 100%; /* Garantir que o box ocupe a largura total */
+        text-align: center; /* Alinha o texto no centro */
+        margin-top: 0; /* Ajusta o espaçamento superior para não sobrepor */
+        margin-bottom: 2%; /* Dá um pequeno espaçamento na parte inferior */
+    }
+
+    .title-box1 {
+        margin-top: 5%; /* Ajuste o espaçamento superior para o primeiro título */
+    }
+
+    .title-box2 {
+        margin-top: 5%; /* Ajuste o espaçamento superior para o segundo título */
+    }
+    .menu ul {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 50px 0;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        z-index: 1000;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease;
+    }
+
+    .menu ul.active {
+        transform: translateY(0);
+    }
+
+    .menu-toggle {
+        display: flex; /* Exibe o ícone de hambúrguer no mobile */
+    }
+
+    .menu ul li a {
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        display: block;
+        padding: 20px 0;
+    }
+
+    .menu ul li a:hover {
+        color: #B3A6CC;
+    }
+
+    .user-icon,.fa-user-circle{
+        margin-left: 25%;
+        margin-right: 10%;
+    }
+    .logo, .logo-name, .user-icon, .menu-toggle {
+        margin-right: 15%;
+        margin-left: -8%;
+        position: flex;
+    }
+    .logo img {
+        width: auto; /* Deixe a largura automática para que a proporção da imagem seja mantida */
+        height: 4em;
+        margin-right: 8%; /* Ajusta a altura para combinar com o tamanho do texto */
+    }
+
+    .logo-name {
+        font-size: 3.5em; /* Mantém o tamanho do texto */
+    }
     .footer-container {
       flex-direction: column;
       align-items: center;
@@ -742,42 +765,5 @@ body {
   
     .links-column {
       align-items: center;
-    }
-}
-@media (max-width: 768px) {
-    .footer-logo img{
-       margin-top: 60%;
-       margin-left: -24%;
-       width: 200%; 
-       height: 100%;
-      }
-    }
-  @media (max-width: 480px) {
-    .footer-left h1 {
-      font-size: 1.5rem;
-    }
-  
-    .social-icons a {
-      font-size: 2rem;
-      margin: 0 5px;
-    }
-  
-    .links-column a {
-      font-size: 0.8rem;
-    }
-}
-@media (max-width: 768px) {
-    .text-before {
-        transform: translateY(-220%);
-        font-size: 18vw; /* Ajuste maior para o mobile */
-    }
-    .text-after {
-        font-size: 12vw; /* Ajuste maior para o mobile */
-        font-weight: 300;
-        transform: translateY(-200%) translateX(13%); /* Combinação de ambas as transformações */
-    }
-    
-    .sobreposição {
-        margin-top: 2vh; /* Maior margem no mobile para evitar sobreposição */
     }
 }
