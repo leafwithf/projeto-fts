@@ -8,36 +8,41 @@ html, body {
 }
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Lato', sans-serif;
     background-color: transparent;
     overflow-y: auto;
 }
-
-.gallery {
+.grid-photos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px;
+    grid-template-columns: repeat(6, 1fr); /* 6 colunas */
+    gap: 15px; /* Espaçamento entre as imagens */
 }
 
+.gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 8 colunas */
+    grid-template-rows: repeat(10, minmax(150px, auto)); /* Linhas com altura mínima de 150px */
+    gap: 15px;
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Efeito de zoom suave ao passar o mouse */
+}
 .photo {
-    text-align: center;
-    cursor: pointer;
+    width: 100%; /* Garante que a largura da imagem ocupe toda a célula */
+    height: 200px; /* Defina uma altura fixa para todas as imagens */
 }
 
 .photo img {
-    max-width: 100%;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    transition: transform 0.3s;
+    border-radius: 10px;
+    width: 100%; /* Faz a imagem ocupar toda a largura do espaço */
+    height: 100%; /* Faz com que a altura da imagem seja igual à altura da célula */
+    object-fit: cover; /* Faz com que a imagem cubra o espaço sem distorcer */
 }
 
-.photo img:hover {
-    transform: scale(1.05);
+.photo:hover {
+    transform: scale(1.05); /* Efeito de zoom suave ao passar o mouse */
 }
 
 .modal {
@@ -53,9 +58,18 @@ body {
     justify-content: center;
     align-items: center;
 }
+.caption{
+    font-size: 200px;
+    font-weight: bold;
+    margin-bottom: 100%;
+    font-family: 'Lato', sans-serif;
+    font-size:20px;
+    color: #ffffff;
+    cursor: pointer;
 
+}
 .modal-content {
-    max-width: 80%;
+    max-width: 50%;
     height: auto;
     margin: auto;
     display: block;
@@ -84,47 +98,6 @@ body {
 .close:hover {
     color: #bbb;
 }
-
-h4 {
-    width: 100%;
-    height: auto;
-    text-align: left;
-    justify-content: left;
-    margin-top: 0%;
-    font-size: 45px;
-    color: #674F99;
-    margin: 10px 0;
-    margin-left: -10%;
-    line-height: 70%;
-}
-h5 {
-    width: 100%;
-    height: auto;
-    text-align: left;
-    justify-content: left;
-    margin-top: 0%;
-    font-size: 45px;
-    color: #674F99;
-    margin: 10px 0;
-    line-height: 70%;
-}
-h2 {
-    font-size: 25px;
-    color: #674F99;
-    margin: 10px 0;
-    margin-left: -63%;
-    line-height: 70%;
-}
-
-h6 {
-    font-family: Lato, sans-serif;
-    font-size:20px;
-    color: #674F99;
-    text-decoration: underline;
-    margin-left: -50%;
-    cursor: pointer;
-}
-
 .dark-mode .logo {
     filter: none; /* Remove filtros */
     opacity: 1;    /* Garante visibilidade */
@@ -171,6 +144,11 @@ h6 {
 
 .elemento2 {    
     background-color:transparent;
+    padding: 5%;
+}
+
+.elemento3 {    
+    background-color:transparent;
     padding: 8%;
 }
 
@@ -205,15 +183,12 @@ h6 {
     right: 33%;
     z-index: 1;
 }
-
 .container {
     display: flex;
-    justify-content: center;  
-    align-items: center;  
-    flex-direction: column 2;
-    height: 35vh;       
-    margin-top: 5%;
-    color: #674F99; /*Cor das palavras no textoPequeno*/ 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
 }
 
 
@@ -500,6 +475,12 @@ h6 {
         }
 }
 @media (max-width: 768px) {
+    
+    .gallery {
+        margin-top: 10%;
+        gap: 20px;
+        }
+
     .footer-logo img{
         margin-top: 60%;
         margin-left: -24%;
@@ -507,13 +488,13 @@ h6 {
         height: 100%;
        }
     .text-before {
-        transform: translateY(-220%);
+        transform: translateY(-20%);
         font-size: 18vw; /* Ajuste maior para o mobile */
     }
     .text-after {
         font-size: 12vw; /* Ajuste maior para o mobile */
         font-weight: 300;
-        transform: translateY(-200%) translateX(13%); /* Combinação de ambas as transformações */
+        transform: translateY(110%) translateX(13%); /* Combinação de ambas as transformações */
     }
     
     .sobreposição {
@@ -606,5 +587,8 @@ h6 {
   
     .links-column {
       align-items: center;
+    }
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas maiores */
     }
 }
