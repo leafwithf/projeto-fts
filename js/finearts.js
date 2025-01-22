@@ -3,14 +3,14 @@ function openModal(imageId) {
     const modalImg = document.getElementById("modalImage");
     const captionText = document.getElementById("caption");
 
-    // Defina a imagem e o texto do modal com base no ID da imagem clicada
+    // Encontra a imagem clicada com base no ID
     const photoElement = document.querySelector(`[onclick="openModal('${imageId}')"]`);
-    const imgElement = photoElement.querySelector("img");
-    const caption = photoElement.querySelector("p").innerText;
 
-    modal.style.display = "flex";
-    modalImg.src = imgElement.src;
-    captionText.innerText = caption;
+    if (photoElement) {
+        modal.style.display = "flex";
+        modalImg.src = photoElement.src; // Define a fonte da imagem no modal
+        captionText.innerText = photoElement.alt; // Define o texto do caption
+    }
 }
 
 function closeModal() {

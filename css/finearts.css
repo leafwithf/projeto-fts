@@ -12,69 +12,6 @@ body {
     background-color: transparent;
     overflow-y: auto;
 }
-.grid-photos {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 colunas */
-    gap: 15px; /* Espaçamento entre as imagens */
-}
-
-.gallery {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 8 colunas */
-    grid-template-rows: repeat(10, minmax(150px, auto)); /* Linhas com altura mínima de 150px */
-    gap: 15px;
-}
-
-.gallery img:hover {
-    transform: scale(1.05); /* Efeito de zoom suave ao passar o mouse */
-}
-.photo {
-    width: 100%; /* Garante que a largura da imagem ocupe toda a célula */
-    height: 200px; /* Defina uma altura fixa para todas as imagens */
-}
-
-.photo img {
-    border-radius: 10px;
-    width: 100%; /* Faz a imagem ocupar toda a largura do espaço */
-    height: 100%; /* Faz com que a altura da imagem seja igual à altura da célula */
-    object-fit: cover; /* Faz com que a imagem cubra o espaço sem distorcer */
-}
-
-.photo:hover {
-    transform: scale(1.05); /* Efeito de zoom suave ao passar o mouse */
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-}
-.caption{
-    font-size: 200px;
-    font-weight: bold;
-    margin-bottom: 100%;
-    font-family: 'Lato', sans-serif;
-    font-size:20px;
-    color: #ffffff;
-    cursor: pointer;
-
-}
-.modal-content {
-    max-width: 50%;
-    height: auto;
-    margin: auto;
-    display: block;
-    animation: zoomIn 0.5s;
-}
 
 @keyframes zoomIn {
     from {
@@ -151,25 +88,80 @@ body {
     background-color:transparent;
     padding: 8%;
 }
+.elemento4 {    
+    background-color:transparent;
+    padding: 13%;
+}
 
 .sobreposição {
     position: relative;
     text-align: center;
     margin-top: 20px; /* Ajuste para evitar sobreposição */
 }
-
-.sobreposição, .container, .footer {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+.container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Define a altura do contêiner como a altura total da tela */
+    padding: 20px;
 }
+
+.grid-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adapta a grade ao tamanho da tela */
+    gap: 15px; /* Espaçamento entre as imagens */
+    width: 70%; /* Define que a grade ocupa 70% do contêiner */
+    margin: auto; /* Garante centralização adicional */
+}
+
+.grid-photos img {
+    width: 100%; /* Faz a imagem ocupar toda a largura da célula */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    object-fit: cover; /* Faz com que a imagem cubra o espaço sem distorcer */
+    transition: transform 0.3s ease; /* Suaviza o efeito de hover */
+}
+
+.grid-photos img:hover {
+    transform: scale(1.05); /* Efeito de zoom suave ao passar o mouse */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+}
+
+.modal-content {
+    max-width: 50%;
+    height: 70%;
+    border-radius: 10px;
+    animation: zoomIn 0.5s;
+    margin-bottom: 15px; /* Espaço entre a imagem e o caption */
+}
+
+#caption {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    max-width: 80%;
+    word-wrap: break-word; /* Permite quebra de linha no texto longo */
+}
+
 .text-before {
     font-size: 6vw;
     font-weight: 1000;
     color: #674F99;
     position: absolute;
     top: 20%;
-    left: 10%;
+    left: 16%;
     z-index: 1;
     margin-right: 10%;
 }
@@ -180,17 +172,9 @@ body {
     color: #000000;
     position: relative;
     transform: translateY(130%);
-    right: 33%;
+    right: 27%;
     z-index: 1;
 }
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-}
-
 
 .header-container {
     display: flex;
@@ -355,6 +339,15 @@ body {
   }
 
   @media (max-width: 480px) {
+    .modal-content {
+        max-width: 95%; /* Quase a largura total da tela */
+    }
+
+    #caption {
+        font-size: 12px; /* Fonte ainda menor para telas pequenas */
+        padding: 0 5px; /* Reduz o espaçamento lateral */
+    }
+
     .footer-left h1 {
       font-size: 1.5rem;
     }
@@ -473,9 +466,18 @@ body {
         .links-column {
           align-items: center;
         }
-}
+    }
+
 @media (max-width: 768px) {
-    
+    .modal-content {
+        max-width: 90%; /* Quase a largura total da tela */
+    }
+
+    #caption {
+        font-size: 14px; /* Fonte menor para telas médias */
+        padding: 0 10px; /* Adiciona espaçamento lateral */
+    }
+
     .gallery {
         margin-top: 10%;
         gap: 20px;
