@@ -3,13 +3,15 @@ function openModal(imageId) {
     const modalImg = document.getElementById("modalImage");
     const captionText = document.getElementById("caption");
 
-    // Encontra a imagem clicada com base no ID
+    // Seleciona a imagem correspondente ao ID fornecido
     const photoElement = document.querySelector(`[onclick="openModal('${imageId}')"]`);
 
     if (photoElement) {
         modal.style.display = "flex";
         modalImg.src = photoElement.src; // Define a fonte da imagem no modal
-        captionText.innerText = photoElement.alt; // Define o texto do caption
+        captionText.innerText = photoElement.alt || "Imagem sem descrição"; // Insere o texto alternativo
+    } else {
+        console.error("Imagem não encontrada para o ID:", imageId);
     }
 }
 

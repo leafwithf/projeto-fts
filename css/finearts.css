@@ -379,106 +379,75 @@ body {
     height: auto;
     width: 100%;
 }
-
 @media (max-width: 480px) {
     .container {
         flex-direction: column;
-        /* Alinha os elementos verticalmente */
         height: auto;
-        /* Ajusta a altura ao conteúdo */
-        padding: 5px;
-        /* Reduz ainda mais o espaçamento */
+        padding: 8px;
         margin: 0 auto;
-        /* Centraliza o conteúdo */
     }
 
     .gallery {
         margin-top: 15px;
-        /* Espaçamento superior menor */
     }
 
     .grid-photos {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        /* Reduz o tamanho mínimo das células */
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); /* Adapta as células para telas menores */
         gap: 8px;
-        /* Reduz o espaçamento entre as imagens */
         width: 100%;
-        /* A grade ocupa 100% da largura */
     }
 
     .grid-photos img {
         border-radius: 6px;
-        /* Bordas levemente arredondadas */
         transition: transform 0.2s ease;
-        /* Mantém o efeito de hover */
     }
-
-    .modal-content {
-        max-width: 95%;
-        /* Amplia a largura da imagem no modal */
-        height: auto;
-        /* Ajusta dinamicamente a altura */
-    }
-
-    #caption {
-        font-size: 12px;
-        /* Reduz o tamanho da fonte */
-        padding: 8px;
-        /* Adiciona espaçamento menor ao redor do texto */
-        max-width: 90%;
-        /* Limita a largura do texto */
-        word-wrap: break-word;
-        /* Permite que o texto longo quebre a linha */
-    }
-
+    
     .modal {
-        padding: 8px;
-        /* Espaçamento reduzido ao redor do modal */
-        display: flex;
+        display: none; /* Modal oculto inicialmente */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
         justify-content: center;
         align-items: center;
+        z-index: 1000;
     }
-
-    .footer-left h1 {
-        font-size: 1.5rem;
+    
+    .modal-content {
+        max-width: 90%; /* Ajusta para mobile */
+        height: auto;
+        border-radius: 8px;
     }
-
-    .social-icons a {
-        font-size: 2rem;
-        margin: 0 5px;
+    
+    #caption {
+        color: white;
+        text-align: center;
+        margin-top: 12px;
+        font-size: 14px;
     }
-
-    .links-column a {
-        font-size: 0.8rem;
-    }
-
+    
     .footer-logo img {
-        margin-top: 60%;
-        margin-left: -24%;
-        width: 200%;
-        height: 100%;
+        margin-top: 50%;
+        margin-left: -20%;
+        width: 180%;
+        height: auto;
     }
 
     .text-before {
-        transform: translateY(50%);
-        margin-right: 10%;
-        font-size: 18vw;
-        /* Ajuste maior para o mobile */
+        transform: translateY(-20%) translateX(-10%);
+        font-size: 16vw; /* Ajuste maior para telas menores */
     }
 
     .text-after {
-        font-size: 12vw;
-        /* Ajuste maior para o mobile */
+        font-size: 10vw;
         font-weight: 300;
-        /* Combinação de ambas as transformações */
-        margin-left: 35%;
-        white-space: nowrap;
+        transform: translateY(110%) translateX(4%);
     }
 
     .sobreposição {
-        margin-right: 50%;
         margin-top: 2vh;
-        /* Maior margem no mobile para evitar sobreposição */
     }
 
     .menu ul {
@@ -488,15 +457,15 @@ body {
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.8);
-        padding: 50px 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 40px 0;
         text-align: center;
         flex-direction: column;
         justify-content: center;
-        gap: 20px;
+        gap: 15px;
         z-index: 1000;
         transform: translateY(-100%);
-        transition: transform 0.5s ease;
+        transition: transform 0.4s ease;
     }
 
     .menu ul.active {
@@ -505,17 +474,15 @@ body {
 
     .menu-toggle {
         display: flex;
-        /* Exibe o ícone de hambúrguer no mobile */
     }
 
     .menu ul li a {
         color: white;
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: bold;
         text-decoration: none;
         text-transform: uppercase;
-        display: block;
-        padding: 20px 0;
+        padding: 15px 0;
     }
 
     .menu ul li a:hover {
@@ -524,46 +491,34 @@ body {
 
     .user-icon,
     .fa-user-circle {
-        margin-left: 25%;
-        margin-right: 10%;
-    }
-
-    .logo,
-    .logo-name,
-    .user-icon,
-    .menu-toggle {
-        margin-right: 15%;
-        margin-left: -8%;
-        position: flex;
+        margin-left: 50%;
+        margin-right: -20%;
     }
 
     .logo img {
-        width: auto;
-        /* Deixe a largura automática para que a proporção da imagem seja mantida */
-        height: 4em;
-        margin-right: 8%;
-        /* Ajusta a altura para combinar com o tamanho do texto */
+        height: 3em; /* Ajusta a altura */
+        margin-right: 6%;
     }
 
     .logo-name {
-        font-size: 3.5em;
-        /* Mantém o tamanho do texto */
+        font-size: 3em; /* Reduz o tamanho do texto */
     }
 
     .footer-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 10px;
     }
 
     .footer-left {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .footer-links {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 15px;
     }
 
     .links-column {
