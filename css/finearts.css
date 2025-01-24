@@ -4,7 +4,6 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
     /* Garante que não haja rolagem horizontal */
 }
 
@@ -13,6 +12,11 @@ body {
     background-color: transparent;
     overflow-y: auto;
 }
+header, footer {
+    position: relative;
+    z-index: 10;
+}
+
 
 @keyframes zoomIn {
     from {
@@ -118,45 +122,36 @@ body {
     margin-top: 20px;
     /* Ajuste para evitar sobreposição */
 }
-
 .container {
     display: flex;
     justify-content: center;
-    /* Centraliza horizontalmente */
     align-items: center;
-    /* Centraliza verticalmente */
-    height: 100vh;
-    /* Define a altura do contêiner como a altura total da tela */
+    height: auto; /* Permite que o contêiner cresça conforme o conteúdo */
+    min-height: 100vh; /* Garante que tenha pelo menos a altura da tela */
     padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 10%;
 }
 
 .grid-photos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    /* Adapta a grade ao tamanho da tela */
-    gap: 15px;
-    /* Espaçamento entre as imagens */
-    width: 70%;
-    /* Define que a grade ocupa 70% do contêiner */
-    margin: auto;
-    /* Garante centralização adicional */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    width: 100%;
 }
 
 .grid-photos img {
     width: 100%;
-    /* Faz a imagem ocupar toda a largura da célula */
-    border-radius: 10px;
-    /* Adiciona bordas arredondadas */
+    border-radius: 5px;
     object-fit: cover;
-    /* Faz com que a imagem cubra o espaço sem distorcer */
     transition: transform 0.3s ease;
-    /* Suaviza o efeito de hover */
 }
 
 .grid-photos img:hover {
     transform: scale(1.05);
-    /* Efeito de zoom suave ao passar o mouse */
 }
+
 
 .modal {
     display: none;
@@ -181,6 +176,7 @@ body {
     margin-bottom: 15px;
     /* Espaço entre a imagem e o caption */
 }
+
 
 #caption {
     color: white;
@@ -308,6 +304,11 @@ body {
     background-color: #674F99;
     color: #fff;
     padding: 1% 2% 4% 2%;
+    position: relative;
+    z-index: 10;
+    min-height: 100px;
+    color: #fff;
+    text-align: center;
 }
 
 .footer-container {
@@ -392,7 +393,7 @@ body {
     }
 
     .grid-photos {
-        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); /* Adapta as células para telas menores */
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
         gap: 8px;
         width: 100%;
     }
@@ -401,22 +402,23 @@ body {
         border-radius: 6px;
         transition: transform 0.2s ease;
     }
-    
+
     .modal {
-        display: none; /* Modal oculto inicialmente */
+        display: none;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+        background-color: rgba(0, 0, 0, 0.8);
         justify-content: center;
         align-items: center;
         z-index: 1000;
+        padding: 20px;
     }
-    
+
     .modal-content {
-        max-width: 90%; /* Ajusta para mobile */
+        max-width: 90%;
         height: auto;
         border-radius: 8px;
     }
@@ -527,44 +529,23 @@ body {
 }
 
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        /* Alinha os elementos verticalmente */
-        height: auto;
-        /* Permite que o container se ajuste à altura do conteúdo */
-        padding: 10px;
-        /* Reduz o espaçamento para caber melhor na tela */
-        margin: 0 auto;
-        /* Centraliza o conteúdo */
-    }
-
-    .gallery {
-        margin-top: 20px;
-        /* Adiciona espaçamento superior */
-    }
-
-    .grid-photos {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        /* Ajusta o tamanho mínimo das células */
-        gap: 10px;
-        /* Reduz o espaçamento entre as imagens */
-        width: 100%;
-        /* Garante que a grade ocupe toda a largura disponível */
-    }
-
-    .grid-photos img {
-        border-radius: 8px;
-        /* Bordas levemente arredondadas */
-        transition: transform 0.2s ease;
-        /* Ajusta o tempo do efeito de hover */
-    }
-
-    .modal-content {
-        max-width: 90%;
-        /* Amplia a largura da imagem no modal */
-        height: auto;
-        /* Ajusta dinamicamente a altura */
-    }
+        .container {
+            flex-direction: column;
+            height: auto;
+            padding: 10px;
+            margin: 0 auto;
+        }
+    
+        .grid-photos {
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+            width: 100%;
+        }
+    
+        .grid-photos img {
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
 
     #caption {
         font-size: 14px;
