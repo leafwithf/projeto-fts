@@ -94,6 +94,103 @@ html {
     margin: 5px auto;
     border-radius: 3px;
 }
+
+.filters button {
+    margin: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background-color: #555;
+}
+/* Estilos principais do menu */
+.menu-items li {
+    list-style: none;
+}
+
+/* Configuração inicial do menu (escondido) */
+#catalogo-menu {
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Quando a classe 'open' é adicionada, expande o menu */
+#catalogo-menu.open {
+    max-height: 500px; /* Ajuste conforme necessário */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilização do conteúdo interno do menu */
+.header-nav-folder-content {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+/* Estilização dos itens do menu */
+.header-nav-folder-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.header-nav-folder-item:last-child {
+    border-bottom: none; /* Remove a borda do último item */
+}
+
+.header-nav-folder-item:hover {
+    background-color: #eaeaea;
+}
+
+.header-nav-folder-item a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.header-nav-folder-item a:hover {
+    color: #007bff;
+}
+
+/* Título do folder (Catálogo) */
+.header-nav-folder-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.header-nav-folder-title:hover {
+    background-color: #e1e1e1;
+}
+
+/* Ícone do menu (animação de clique) */
+.menu-toggle i {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-toggle i:hover {
+    transform: scale(1.1);
+}
+
 @media (max-width: 480px) {
    
 
@@ -150,7 +247,24 @@ html {
     .logo-name {
         font-size: 3em; /* Reduz o tamanho do texto */
     }
+    .filters button {
+        margin: 8px;
+        padding: 8px;
+        font-size: 14px;
+    }
 
+    .header-nav-folder-title {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    .header-nav-folder-content {
+        padding: 8px 15px;
+    }
+
+    .header-nav-folder-item a {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -222,6 +336,25 @@ html {
     .logo-name {
         font-size: 3.5em;
         /* Mantém o tamanho do texto */
+    }
+    
+    .header-nav-folder-title {
+        font-size: 17px;
+        padding: 10px 18px;
+    }
+
+    .header-nav-folder-content {
+        padding: 10px 18px;
+    }
+
+    .header-nav-folder-item a {
+        font-size: 15px;
+    }
+
+    .filters button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 15px;
     }
 
 }

@@ -33,6 +33,12 @@
                 </div>
                 <ul class="menu-items" id="menu-items">
                     <li><a href="../index.html">Home</a></li>
+                    <li>
+                        <a href="javascript:void(0);" onclick="toggleCatalogo()" role="button" aria-expanded="false"
+                            id="catalogo-toggle" aria-controls="catalogo-menu">
+                            Catálogo
+                        </a>
+                    </li>
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="problema.html">Problemas</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
@@ -45,185 +51,351 @@
             </div>
         </div>
     </header>
+
+    <!-- Menu do Catálogo (inicialmente oculto) -->
+    <div id="catalogo-menu" class="header-nav-item header-nav-item--folder" aria-hidden="true">
+        <a class="header-nav-folder-title" href="javascript:void(0);" onclick="toggleCatalogo()">SELECTED WORKS</a>
+        <div class="header-nav-folder-content">
+            <div class="header-nav-folder-item">
+                <a href="/todos">
+                    <span class="header-nav-folder-item-content">ALL</span>
+                </a>
+            </div>
+            <div class="header-nav-folder-item">
+                <a href="/natureza">
+                    <span class="header-nav-folder-item-content">NATUREZA</span>
+                </a>
+            </div>
+            <div class="header-nav-folder-item">
+                <a href="/rostos">
+                    <span class="header-nav-folder-item-content">ROSTOS</span>
+                </a>
+            </div>
+            <div class="header-nav-folder-item">
+                <a href="/flor">
+                    <span class="header-nav-folder-item-content">FLORES</span>
+                </a>
+            </div>
+            <div class="header-nav-folder-item">
+                <a href="/ceu">
+                    <span class="header-nav-folder-item-content">CÉU</span>
+                </a>
+            </div>
+            <div class="header-nav-folder-item">
+                <a href="/lua">
+                    <span class="header-nav-folder-item-content">LUA</span>
+                </a>
+            </div>    
+            <div class="header-nav-folder-item">
+                    <a href="/estrutura">
+                        <span class="header-nav-folder-item-content">Estrutura</span>
+                    </a>    
+            </div>
+        </div>
+    </div>
     <div class="sobreposição">
         <div class="text-before">LeafwithF</div>
         <div class="text-after">A ARTE</div>
     </div>
-
-    <!-- Primeira sequência de fotos -->
-    <!-- Fotos Horizontais -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="img01" class="modal-content">
+        <div id="caption" class="modal-caption"></div>
+        <div id="legenda" class="modal-legenda"></div>
+    </div>
     <div class="container">
         <div class="grid-photos">
-            <img src="../galeria/Horizontal/image001.webp" onclick="openModal('img001')"
-                alt="Vermelho vibrante, igual a paixão" loading="lazy">
-            <img src="../galeria/Horizontal/image002.webp" onclick="openModal('img002')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image003.webp" onclick="openModal('img003')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image004.webp" onclick="openModal('img004')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image005.webp" onclick="openModal('img005')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image006.webp" onclick="openModal('img006')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image007.webp" onclick="openModal('img007')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image008.webp" onclick="openModal('img008')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image009.webp" onclick="openModal('img009')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image010.webp" onclick="openModal('img010')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image011.webp" onclick="openModal('img011')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image012.webp" onclick="openModal('img012')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image013.webp" onclick="openModal('img013')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image014.webp" onclick="openModal('img014')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image015.webp" onclick="openModal('img015')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image016.webp" onclick="openModal('img016')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image017.webp" onclick="openModal('img017')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image018.webp" onclick="openModal('img018')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image019.webp" onclick="openModal('img019')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image020.webp" onclick="openModal('img020')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image021.webp" onclick="openModal('img021')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image022.webp" onclick="openModal('img022')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image023.webp" onclick="openModal('img023')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image024.webp" onclick="openModal('img024')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image025.webp" onclick="openModal('img025')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image026.webp" onclick="openModal('img026')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image027.webp" onclick="openModal('img027')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image028.webp" onclick="openModal('img028')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image029.webp" onclick="openModal('img029')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image030.webp" onclick="openModal('img030')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image031.webp" onclick="openModal('img031')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image032.webp" onclick="openModal('img032')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image033.webp" onclick="openModal('img033')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image034.webp" onclick="openModal('img034')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image035.webp" onclick="openModal('img035')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image036.webp" onclick="openModal('img036')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image037.webp" onclick="openModal('img037')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image038.webp" onclick="openModal('img038')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image039.webp" onclick="openModal('img039')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image040.webp" onclick="openModal('img040')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image041.webp" onclick="openModal('img041')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image042.webp" onclick="openModal('img042')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image043.webp" onclick="openModal('img043')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image044.webp" onclick="openModal('img044')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image045.webp" onclick="openModal('img045')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image046.webp" onclick="openModal('img046')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image047.webp" onclick="openModal('img047')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image048.webp" onclick="openModal('img048')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image049.webp" onclick="openModal('img049')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image050.webp" onclick="openModal('img050')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image051.webp" onclick="openModal('img051')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image052.webp" onclick="openModal('img052')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image053.webp" onclick="openModal('img053')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
-            <img src="../galeria/Horizontal/image054.webp" onclick="openModal('img054')"
-                alt="Afghan Women at Shoe Store" loading="lazy">
-            <img src="../galeria/Horizontal/image055.webp" onclick="openModal('img055')" alt="Kuchi Nomads at Prayer"
-                loading="lazy">
+                        <!-- Adicionar categorias de "Urbano, Arte, Estatuas, Animais, Por-do-Sol e Frases " 
+                         Arrumar o erro que esta dando no código e performar para mobile -->
 
-            <img src="../galeria/Vertical/image01.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image02.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image03.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image04.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image05.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image06.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image07.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image08.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image09.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image10.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image11.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image12.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image13.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image14.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image15.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image16.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image17.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image18.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image19.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image20.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image21.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image22.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image23.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image24.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image25.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image26.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image27.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image28.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image29.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image30.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image31.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image32.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image33.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image34.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image35.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image36.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image37.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image38.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
-            <img src="../galeria/Vertical/image39.webp" class="vertical" alt="Afghan Women at Shoe Store"
-                loading="lazy">
-            <img src="../galeria/Vertical/image40.webp" class="vertical" alt="Kuchi Nomads at Prayer" loading="lazy">
+            <!-- Exemplo de Imagens Horizontais -->
+            <img src="../galeria/Horizontal/image001.webp" class="horizontal" onclick="openModal(this)"
+                alt="Vermelho vibrante, igual a paixão" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image002.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Horizontal/image003.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image004.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image005.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="ceu" loading="lazy">
+
+            <img src="../galeria/Horizontal/image006.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Horizontal/image007.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Horizontal/image008.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="rostos" loading="lazy">
+
+            <img src="../galeria/Horizontal/image009.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image010.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image011.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image012.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Horizontal/image013.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Horizontal/image014.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image015.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="ceu" loading="lazy">
+
+            <img src="../galeria/Horizontal/image016.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="ceu" loading="lazy">
+
+            <img src="../galeria/Horizontal/image017.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="ceu" loading="lazy">
+
+            <img src="../galeria/Horizontal/image018.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="natureza" loading="lazy">
+                
+            <img src="../galeria/Horizontal/image019.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="ceu" loading="lazy">
+
+            <img src="../galeria/Horizontal/image020.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="rostos" loading="lazy">
+
+            <img src="../galeria/Horizontal/image021.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="ceu" loading="lazy">
+
+            <img src="../galeria/Horizontal/image022.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="rostos" loading="lazy">
+
+            <img src="../galeria/Horizontal/image023.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="rostos" loading="lazy">
+
+            <img src="../galeria/Horizontal/image024.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Horizontal/image025.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image026.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="rostos" loading="lazy">
+
+            <img src="../galeria/Horizontal/image027.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="natureza" loading="lazy">
+
+            <img src="../galeria/Horizontal/image028.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image029.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Horizontal/image030.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="natureza" loading="lazy">
+
+            <img src="../galeria/Horizontal/image031.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="natureza" loading="lazy">
+
+            <img src="../galeria/Horizontal/image032.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Horizontal/image033.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="natureza" loading="lazy">
+
+            <img src="../galeria/Horizontal/image034.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image035.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image036.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image037.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Horizontal/image038.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Horizontal/image039.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image040.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Horizontal/image041.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image042.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image043.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image044.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image045.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="rostos" loading="lazy">
+
+            <img src="../galeria/Horizontal/image046.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="natureza" loading="lazy">
+
+            <img src="../galeria/Horizontal/image047.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image048.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="rostos" loading="lazy">
+
+            <img src="../galeria/Horizontal/image049.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image050.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image051.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Horizontal/image052.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Horizontal/image053.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="estrutra" loading="lazy">
+
+            <img src="../galeria/Horizontal/image054.webp" class="horizontal" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Horizontal/image055.webp" class="horizontal" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+                
+            <!-- Exemplo de Imagens Verticais -->
+
+            <img src="../galeria/Vertical/image01.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Vertical/image02.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="natureza" loading="lazy">
+
+            <img src="../galeria/Vertical/image03.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="natureza" loading="lazy">
+
+            <img src="../galeria/Vertical/image04.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="natureza" loading="lazy">
+
+            <img src="../galeria/Vertical/image05.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Vertical/image06.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="estrutra" loading="lazy">
+
+            <img src="../galeria/Vertical/image07.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutra" loading="lazy">
+
+            <img src="../galeria/Vertical/image08.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Vertical/image09.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutra" loading="lazy">
+
+            <img src="../galeria/Vertical/image10.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="estrutra" loading="lazy">
+
+            <img src="../galeria/Vertical/image11.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="ceu" loading="lazy">
+
+            <img src="../galeria/Vertical/image12.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="natureza" loading="lazy">
+
+            <img src="../galeria/Vertical/image13.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Vertical/image14.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Vertical/image15.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutra" loading="lazy">
+
+            <img src="../galeria/Vertical/image16.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="estrutra" loading="lazy">
+
+            <img src="../galeria/Vertical/image17.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Vertical/image18.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Vertical/image19.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Vertical/image20.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="estrtura" loading="lazy">
+
+            <img src="../galeria/Vertical/image21.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Vertical/image22.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="natureza" loading="lazy">
+
+            <img src="../galeria/Vertical/image23.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Vertical/image24.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Vertical/image25.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Vertical/image26.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Vertical/image27.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Vertical/image28.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Vertical/image29.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Vertical/image30.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Vertical/image31.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrutura" loading="lazy">
+
+            <img src="../galeria/Vertical/image32.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="ceu" loading="lazy">
+
+            <img src="../galeria/Vertical/image33.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+            <img src="../galeria/Vertical/image34.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="natureza" loading="lazy">
+
+            <img src="../galeria/Vertical/image35.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="ceu" loading="lazy">
+
+            <img src="../galeria/Vertical/image36.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="ceu" loading="lazy">
+
+            <img src="../galeria/Vertical/image37.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="estrtura" loading="lazy">
+
+            <img src="../galeria/Vertical/image38.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="estrtura" loading="lazy">
+
+            <img src="../galeria/Vertical/image39.webp" class="vertical" onclick="openModal(this)"
+                alt="Afghan Women at Shoe Store" data-legenda="Vermeio" data-category="natureza" loading="lazy">
+
+            <img src="../galeria/Vertical/image40.webp" class="vertical" onclick="openModal(this)"
+                alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
 
         </div>
     </div>
