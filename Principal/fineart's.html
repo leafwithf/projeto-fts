@@ -92,7 +92,168 @@
                     </a>    
             </div>
         </div>
+    </div>Since there is no selected code, I will provide a general improvement to the HTML structure and organization. Here's a modified version of the code:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/finearts.css">
+    <link rel="stylesheet" type="text/css" href="../Cdgeral/footer.css">
+    <link rel="stylesheet" type="text/css" href="../Cdgeral/header.css">
+    <link rel="stylesheet" type="text/css" href="../Cdgeral/text-name.css">
+    <link rel="stylesheet" type="text/css" href="../Cdgeral/space.css">
+    <link rel="icon" href="../logo/logoic.ico" type="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/finearts.js"></script>
+    <script src="../Cdgeral/header.js"></script>
+    <title>Leaf</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="dark-mode logo">
+                <img src="../logo/logo.png" alt="logo">
+                <span class="logo-name">LFWF</span>
+            </div>
+            <nav class="menu">
+                <div class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-items">
+                    <i class="fas fa-bars"></i> <!-- Ícone de menu -->
+                </div>
+                <ul class="menu-items" id="menu-items">
+                    <li><a href="../index.html">Home</a></li>
+                    <li>
+                        <a href="javascript:void(0);" onclick="toggleCatalogo()" role="button" aria-expanded="false" id="catalogo-toggle" aria-controls="catalogo-menu">
+                            Catálogo
+                        </a>
+                    </li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="problema.html">Problemas</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+            <div class="user-icon">
+                <a href="../Conta/login.html">
+                    <i class="fas fa-user-circle user-photo"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu do Catálogo (inicialmente oculto) -->
+    <div id="catalogo-menu" class="header-nav-item header-nav-item--folder" aria-hidden="true">
+        <a class="header-nav-folder-title" href="javascript:void(0);" onclick="toggleCatalogo()">SELECTED WORKS</a>
+        <div class="header-nav-folder-content">
+            <div class="header-nav-folder-item">
+                <a href="/todos">
+                    <span class="header-nav-folder-item-content">ALL</span>
+                </a>
+            </div>
+            <div class="header-nav-folder-item">
+                <a href="/natureza">
+                    <span class="header-nav-folder-item-content">NATUREZA</span>
+                </a>
+            </div>
+            <div class="header-nav-folder-item">
+                <a href="/rostos">
+                    <span class="header-nav-folder-item-content">ROSTOS</span>
+                </a>
+            </div>
+            <div class="header-nav-folder-item">
+                <a href="/flor">
+                    <span class="header-nav-folder-item-content">FLORES</span>
+                </a>
+            </div>
+            <div class="header-nav-folder-item">
+                <a href="/ceu">
+                    <span class="header-nav-folder-item-content">CÉU</span>
+                </a>
+            </div>
+            <div class="header-nav-folder-item">
+                <a href="/lua">
+                    <span class="header-nav-folder-item-content">LUA</span>
+                </a>
+            </div>
+            <div class="header-nav-folder-item">
+                <a href="/estrutura">
+                    <span class="header-nav-folder-item-content">Estrutura</span>
+                </a>
+            </div>
+        </div>
     </div>
+
+    <main>
+        <div class="sobreposição">
+            <div class="text-before">LeafwithF</div>
+            <div class="text-after">A ARTE</div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="img01" class="modal-content">
+            <div id="caption" class="modal-caption"></div>
+            <div id="legenda" class="modal-legenda"></div>
+        </div>
+
+        <div class="container">
+            <div class="grid-photos">
+                <!-- Adicionar categorias de "Urbano, Arte, Estatuas, Animais, Por-do-Sol e Frases " 
+                 Arrumar o erro que esta dando no código e performar para mobile -->
+
+                <!-- Exemplo de Imagens Horizontais -->
+                <img src="../galeria/Horizontal/image001.webp" class="horizontal" onclick="openModal(this)" alt="Vermelho vibrante, igual a paixão" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+                <!-- ... other images ... -->
+
+                <!-- Exemplo de Imagens Verticais -->
+                <img src="../galeria/Vertical/image01.webp" class="vertical" onclick="openModal(this)" alt="Kuchi Nomads at Prayer" data-legenda="Vermeio" data-category="flor" loading="lazy">
+
+                <!-- ... other images ... -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h1>LeafwithF</h1>
+                <p>
+                    Imagens e Textos Originais<br>
+                    2025 LeafwithF<br>
+                    <a href="duvidas.html">Dúvidas </a> | <a href="problema.html">Problemas</a>
+                </p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/vagandopelacidade"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="exibições.html">Exibições</a></li>
+                </ul>
+                <ul>
+                    <li><a href="../Conta/login.html">Login</a></li>
+                    <li><a href="problema.html">Problemas</a></li>
+                    <li><a href="duvidas.html">FAQ</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-logo">
+            <img src="../logo/logo.png" alt="logo">
+        </div>
+    </footer>
+</body>
+</html>
     <div class="sobreposição">
         <div class="text-before">LeafwithF</div>
         <div class="text-after">A ARTE</div>
