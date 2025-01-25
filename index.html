@@ -27,17 +27,12 @@
                 <span class="logo-name">LFWF</span>
             </div>
             <nav class="menu">
-                <div class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-items">
-                    <i class="fas fa-bars"></i> <!-- Ícone de menu -->
+                <div class="menu-toggle" onclick="toggleMenu()" >
+                    <i class="fas fa-bars"></i>
                 </div>
                 <ul class="menu-items" id="menu-items">
-                    <li><a href="index.html">Home</a></li>
-                    <li>
-                        <a href="javascript:void(0);" onclick="toggleCatalogo()" role="button" 
-                           aria-expanded="false" id="catalogo-toggle" aria-controls="catalogo-menu">
-                            Catálogo
-                        </a>
-                    </li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="Principal/fineart's.html">Catálogo</a>
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="problema.html">Problemas</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
@@ -50,38 +45,6 @@
             </div>
         </div>
     </header>
-    
-    <!-- Menu do Catálogo (inicialmente oculto) -->
-    <div id="catalogo-menu" class="header-nav-item header-nav-item--folder" aria-hidden="true">
-        <a class="header-nav-folder-title" href="javascript:void(0);" onclick="toggleCatalogo()">SELECTED WORKS</a>
-        <div class="header-nav-folder-content">
-            <div class="header-nav-folder-item">
-                <a href="catalogo.html?categoria=natureza">
-                    <span class="header-nav-folder-item-content">NATUREZA</span>
-                </a>
-            </div>
-            <div class="header-nav-folder-item">
-                <a href="catalogo.html?categoria=rostos">
-                    <span class="header-nav-folder-item-content">ROSTOS</span>
-                </a>
-            </div>
-            <div class="header-nav-folder-item">
-                <a href="catalogo.html?categoria=flores">
-                    <span class="header-nav-folder-item-content">FLORES</span>
-                </a>
-            </div>
-            <div class="header-nav-folder-item">
-                <a href="catalogo.html?categoria=ceu">
-                    <span class="header-nav-folder-item-content">CÉU</span>
-                </a>
-            </div>
-            <div class="header-nav-folder-item">
-                <a href="catalogo.html?categoria=lua">
-                    <span class="header-nav-folder-item-content">LUA</span>
-                </a>
-            </div>
-        </div>
-    </div>
     
     <div class="carousel">
         <div class="carousel-slide fade">
@@ -215,7 +178,6 @@
         </div>
     </div>
     <div class="elemento2"></div>
-
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-left">
