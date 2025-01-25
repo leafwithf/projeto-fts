@@ -1,14 +1,14 @@
 let slideIndexCarousel = 0;
-let slideIntervalCarousel = setInterval(nextSlideCarousel, 5000); 
+let slideIntervalCarousel = setInterval(nextSlideCarousel, 5000);
 
 let slideIndexFinePrints = 0;
-let slideIntervalFinePrints = setInterval(nextSlideFinePrints, 5000); 
+let slideIntervalFinePrints = setInterval(nextSlideFinePrints, 5000);
 
 function showSlideCarousel(index) {
     const slides = document.getElementsByClassName("carousel-slide");
-    
+
     for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+        slides[i].style.display = "none";
     }
 
     slideIndexCarousel = index;
@@ -28,7 +28,7 @@ function nextSlideCarousel() {
 }
 
 function changeSlideCarousel(direction) {
-    clearInterval(slideIntervalCarousel); 
+    clearInterval(slideIntervalCarousel);
     slideIndexCarousel += direction;
     const slides = document.getElementsByClassName("carousel-slide");
     if (slideIndexCarousel < 0) slideIndexCarousel = slides.length - 1;
@@ -39,7 +39,7 @@ function changeSlideCarousel(direction) {
 }
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     showSlideCarousel(slideIndexCarousel);
     showSlideFinePrints(slideIndexFinePrints);
 });
@@ -80,9 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function showSlideFinePrints(index) {
     const slides = document.getElementsByClassName("finePrints-slide");
-    
+
     for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+        slides[i].style.display = "none";
     }
 
     slideIndexFinePrints = index;
@@ -102,7 +102,7 @@ function nextSlideFinePrints() {
 }
 
 function changeSlideFinePrints(direction) {
-    clearInterval(slideIntervalFinePrints); 
+    clearInterval(slideIntervalFinePrints);
     slideIndexFinePrints += direction;
     const slides = document.getElementsByClassName("finePrints-slide");
     if (slideIndexFinePrints < 0) slideIndexFinePrints = slides.length - 1;
