@@ -1,29 +1,32 @@
-// Função para criar o modal dinamicamente
-function createModal() {
-    // Verifica se o modal já existe, para não criar duplicado
-    if (document.getElementById("modal")) return;
+// Função para criar o modal dinamicamente com tipo específico (horizontal ou vertical)
+function createModal(type) {
+    const modalId = `modal-${type}`;
+
+    // Verifica se o modal já existe para o tipo especificado, para não criar duplicado
+    if (document.getElementById(modalId)) return;
 
     // Cria o container do modal
     const modal = document.createElement("div");
-    modal.id = "modal";
-    modal.className = "modal";
+    modal.id = modalId;
+    modal.className = `modal modal-${type}`;
     modal.style.display = "none"; // Inicialmente escondido
 
     // Cria o botão de fechar
     const closeButton = document.createElement("span");
     closeButton.className = "close";
     closeButton.innerHTML = "&times;";
-    closeButton.onclick = closeModal;
+    closeButton.onclick = () => closeModal(type);
 
     // Cria a imagem do modal
     const modalImg = document.createElement("img");
-    modalImg.id = "modalImage";
+    modalImg.id = `modalImage-${type}`;
     modalImg.className = "modal-content";
-    modalImg.alt = "Modal Image";
+    modalImg.alt = "Imagem em destaque";
 
     // Cria o caption
     const caption = document.createElement("div");
-    caption.id = "caption";
+    caption.id = `caption-${type}`;
+    caption.className = "caption";
 
     // Adiciona os elementos ao modal
     modal.appendChild(closeButton);
@@ -34,14 +37,15 @@ function createModal() {
     document.body.appendChild(modal);
 }
 
-// Função para abrir o modal
-function openModal(imageId) {
-    createModal(); // Certifica-se de que o modal existe
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modalImage");
-    const captionText = document.getElementById("caption");
+// Função para abrir o modal, diferenciando entre imagem vertical e horizontal
+function openModal(imageId, type) {
+    createModal(type); // Garante que o modal existe para o tipo certo
 
-    const photoElement = document.querySelector(`[onclick="openModal('${imageId}')"]`);
+    const modal = document.getElementById(`modal-${type}`);
+    const modalImg = document.getElementById(`modalImage-${type}`);
+    const captionText = document.getElementById(`caption-${type}`);
+
+    const photoElement = document.querySelector(`[data-id="${imageId}"][data-type="${type}"]`);
     if (photoElement) {
         modal.style.display = "flex";
         modalImg.src = photoElement.src;
@@ -50,8 +54,8 @@ function openModal(imageId) {
 }
 
 // Função para fechar o modal
-function closeModal() {
-    const modal = document.getElementById("modal");
+function closeModal(type) {
+    const modal = document.getElementById(`modal-${type}`);
     if (modal) {
         modal.style.display = "none";
     }
@@ -73,10 +77,23 @@ style.innerHTML = `
     z-index: 1000;
 }
 .modal-content {
-    max-width: 90%;
-    height: auto;
     border-radius: 8px;
+    max-width: 100%;
+    height: auto;
 }
+
+/* Estilos específicos para imagens horizontais */
+.modal-horizontal .modal-content {
+    width: 80%;
+    max-width: 900px;
+}
+
+/* Estilos específicos para imagens verticais */
+.modal-vertical .modal-content {
+    width: 40%;
+    max-width: 400px;
+}
+
 .close {
     position: absolute;
     top: 20px;
@@ -86,7 +103,8 @@ style.innerHTML = `
     font-weight: bold;
     cursor: pointer;
 }
-#caption {
+
+.caption {
     color: white;
     text-align: center;
     margin-top: 12px;
@@ -95,11 +113,25 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
+// Adiciona eventos às imagens automaticamente
+document.querySelectorAll('.horizontal, .vertical').forEach(img => {
+    const id = img.src.split('/').pop().split('.')[0]; // Obtém o nome do arquivo sem extensão
+    const type = img.classList.contains('horizontal') ? 'horizontal' : 'vertical';
+    img.setAttribute('data-id', id);
+    img.setAttribute('data-type', type);
 
-function toggleMenu() {
-    const menuItems = document.getElementById("menu-items");
-    menuItems.classList.toggle("active");
-}
-function toggleDarkMode() {
-    document.documentElement.classList.toggle('dark-mode');
-}
+    // Usando addEventListener para evitar conflitos de escopo
+    img.addEventListener('click', () => openModal(id, type));
+});
+
+document.querySelectorAll('.vertical').forEach(img => {
+    // Obtém o nome do arquivo da imagem (sem a extensão)
+    const id = img.src.split('/').pop().split('.')[0]; // Ex: 'image01', 'image02', etc.
+
+    // Atribui o ID à imagem
+    img.setAttribute('id', id);
+
+    // Atribui os dados para uso no modal
+    img.setAttribute('data-id', id);
+    img.setAttribute('data-type', 'vertical'); // Já sabemos que são imagens verticais
+});

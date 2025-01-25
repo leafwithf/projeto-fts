@@ -1,0 +1,152 @@
+
+.footer {
+    background-color: #674F99;
+    color: #fff;
+    padding: 1% 2% 4% 2%;
+    position: relative;
+    z-index: 10;
+    min-height: 100px;
+    color: #fff;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-left h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.footer-left a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-left a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 2rem;
+}
+
+.footer-right {
+    margin-top: 2%;
+    display: flex;
+    gap: 40px;
+}
+
+.footer-right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-right li {
+    margin-bottom: 10px;
+}
+
+.footer-right a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-right a:hover {
+    text-decoration: underline;
+}
+
+.footer-logo {
+    width: 10%;
+    height: 10%;
+    margin-left: 43%;
+}
+
+.footer-logo img {
+    margin-top: -85%;
+    max-width: 200%;
+    height: auto;
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    
+    .footer-logo img {
+        margin-top: 50%;
+        margin-left: -20%;
+        width: 180%;
+        height: auto;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .footer-left {
+        margin-bottom: 15px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .links-column {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .footer-logo img {
+        margin-top: 60%;
+        margin-left: -24%;
+        width: 200%;
+        height: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left {
+        margin-bottom: 20px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .links-column {
+        align-items: center;
+    }
+    
+    .logo img {
+        height: 3em; /* Ajusta a altura */
+        margin-right: 6%;
+    }
+
+    .logo-name {
+        font-size: 3em; /* Reduz o tamanho do texto */
+    }
+
+}
