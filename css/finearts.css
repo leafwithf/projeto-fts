@@ -11,6 +11,8 @@ body {
     font-family: 'Lato', sans-serif;
     background-color: transparent;
     overflow-y: auto;
+    overflow-x: hidden; /* Habilita a rolagem vertical */
+
 }
 
 header,
@@ -41,15 +43,16 @@ footer {
     padding: 20px;
     max-width: 100%;
     margin: 0 auto;
-    margin-top: 10%;
+    margin-top: -3%;
 }
 
 .grid-photos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10px;
     width: 100%;
     cursor: zoom-in;
+    margin-top: 13%;
 }
 
 .grid-photos img {
@@ -98,22 +101,6 @@ footer {
     font-style: italic;
 }
 
-.close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -135,151 +122,104 @@ footer {
 .image.hidden {
     display: none;
 }
+#legenda {
+    text-align: center;
+    display: block;
+    margin-top: 10px; /* Espaço entre a imagem e a legenda */
+    font-size: 16px;
+    font-weight: bold;
+}
+/* Submenu inicialmente escondido */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #141414;
+    border-radius: 10px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    height: 60%;
+    width: 50%;
+    transform: translateX(-10%);
+    z-index: 2;
+    max-height: 300px; /* Ajuste conforme necessário */
+    overflow-y: auto; /* Habilita a rolagem vertical */
+}
 
+/* Personaliza a barra de rolagem para navegadores modernos */
+.submenu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.submenu::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+.submenu::-webkit-scrollbar-thumb:hover {
+    background-color: #777;
+}
+
+/* Exibe o submenu quando a classe "active" é adicionada */
+.submenu-container.active .submenu {
+    display: block;
+    z-index: 2;
+}
+
+
+/* Estilo para o botão 'Catálogo' */
+#catalogo-menu {
+    background-color: transparent;
+    border: none;
+    font-weight: 700; /* Peso da fonte */
+    font-family: 'Lato', sans-serif;
+    font-size: 12px; /* Ajuste o tamanho da fonte para combinar com as letras <a> */
+    color: #fff;
+    padding: 10px 15px; /* Ajuste o padding para algo mais próximo dos links */
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    z-index: 2; /* Garantir que o botão fique acima do submenu */
+}
+
+
+/* Media Query para telas de até 480px */
 @media (max-width: 480px) {
-    .container {
-        flex-direction: column;
-        height: auto;
-        padding: 8px;
-        margin: 0 auto;
-    }
-
     .grid-photos {
-        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-        gap: 8px;
-        width: 100%;
+        grid-template-columns: 1fr; /* Exibe uma única coluna */
+        gap: 5px; /* Menor espaçamento entre as imagens */
     }
 
-    .grid-photos img {
-        border-radius: 6px;
-        transition: transform 0.2s ease;
-    }
-
-    .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        padding: 20px;
-    }
-
-    .modal-content {
-        max-width: 90%;
-        height: auto;
-        border-radius: 8px;
-    }
-
-    .modal-caption,
-    .modal-legenda {
-        color: #ccc;
-        font-size: 14px;
-        padding: 8px 0;
-    }
-
-    .modal-legenda {
-        color: #fff;
-        font-size: 12px;
-        font-style: italic;
-    }
-
-    .close {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        color: white;
-        font-size: 30px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 8px;
-    }
-
-    .image img {
-        border-radius: 6px;
+    .container {
+        padding: 10px; /* Menor espaço nas laterais */
+        margin-top: 5%;
     }
 
    
 }
 
+/* Media Query para telas de até 768px */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        height: auto;
-        margin: 0 auto;
-        padding: 10px;
-        margin-top: 5%;
-    }
-
     .grid-photos {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 10px;
-        width: 100%;
+        grid-template-columns: repeat(2, 1fr); /* Exibe duas colunas */
+        gap: 8px; /* Espaçamento ajustado */
     }
 
-    .grid-photos img {
-        border-radius: 8px;
-        transition: transform 0.2s ease;
+    .container {
+        padding: 15px; /* Padding um pouco maior */
     }
 
-    .modal {
-        padding: 10px;
-        /* Adiciona espaçamento ao redor do modal */
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    #catalogo-menu {
+        font-size: 15px; /* Tamanho de fonte ajustado */
+        padding: 9px 18px; /* Padding do botão ajustado */
     }
 
-    .modal-content {
-        max-width: 80%;
-        height: auto;
-        border-radius: 8px;
+    /* Ajuste no submenu */
+    .submenu {
+        left: 50%; /* Centraliza o submenu */
+        transform: translateX(-50%);
+        width: 100%; /* Largura do submenu ajustada */
     }
 
-    .modal-caption,
-    .modal-legenda {
-        color: #ccc;
-        font-size: 14px;
-        padding: 10px 0;
+    .submenu-container.active .submenu {
+        width: 100%; /* Garante que o submenu ocupe toda a largura disponível */
     }
-
-    .modal-legenda {
-        color: #fff;
-        font-size: 12px;
-        font-style: italic;
-    }
-
-    .close {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        color: white;
-        font-size: 35px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    #caption {
-        color: white;
-        text-align: center;
-        margin-top: 12px;
-        font-size: 14px;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
 }

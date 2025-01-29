@@ -30,6 +30,7 @@
         "duplicate-id-active": "off"
       }
     ],
-    "meta-charset-utf-8": "off"
+    "meta-charset-utf-8": "off",
+    "button-type": "off"
   }
 }

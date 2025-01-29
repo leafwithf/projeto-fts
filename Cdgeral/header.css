@@ -1,7 +1,7 @@
 html {
     scroll-behavior: smooth;
-  }
-  
+}
+
 
 .header-container {
     display: flex;
@@ -107,25 +107,7 @@ html {
 .filters button:hover {
     background-color: #555;
 }
-/* Estilos principais do menu */
-.menu-items li {
-    list-style: none;
-}
 
-/* Configuração inicial do menu (escondido) */
-#catalogo-menu {
-    max-height: 0; 
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* Quando a classe 'open' é adicionada, expande o menu */
-#catalogo-menu.open {
-    max-height: 500px; /* Ajuste conforme necessário */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilização do conteúdo interno do menu */
 .header-nav-folder-content {
     background-color: #f8f8f8;
     border: 1px solid #ddd;
@@ -141,7 +123,8 @@ html {
 }
 
 .header-nav-folder-item:last-child {
-    border-bottom: none; /* Remove a borda do último item */
+    border-bottom: none;
+    /* Remove a borda do último item */
 }
 
 .header-nav-folder-item:hover {
@@ -191,8 +174,20 @@ html {
     transform: scale(1.1);
 }
 
+#close-btn {
+    display: none;
+}
+
 @media (max-width: 480px) {
-   
+
+    #close-btn {
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+    }
 
     .menu ul {
         display: flex;
@@ -240,13 +235,16 @@ html {
     }
 
     .logo img {
-        height: 3em; /* Ajusta a altura */
+        height: 3em;
+        /* Ajusta a altura */
         margin-right: 6%;
     }
 
     .logo-name {
-        font-size: 3em; /* Reduz o tamanho do texto */
+        font-size: 3em;
+        /* Reduz o tamanho do texto */
     }
+
     .filters button {
         margin: 8px;
         padding: 8px;
@@ -265,10 +263,11 @@ html {
     .header-nav-folder-item a {
         font-size: 14px;
     }
+
 }
 
 @media (max-width: 768px) {
- 
+
     .menu ul {
         display: flex;
         position: fixed;
@@ -337,7 +336,7 @@ html {
         font-size: 3.5em;
         /* Mantém o tamanho do texto */
     }
-    
+
     .header-nav-folder-title {
         font-size: 17px;
         padding: 10px 18px;
@@ -355,6 +354,15 @@ html {
         margin: 10px;
         padding: 10px;
         font-size: 15px;
+    }
+
+    #close-btn {
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
     }
 
 }

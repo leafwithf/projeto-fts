@@ -1,63 +1,3 @@
-@font-face {
-    font-family: 'Tangerine';
-    src: url('fonts/Tangerine-Regular.woff2') format('woff2'),
-        url('fonts/Tangerine-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.caption,
-.caption-container {
-    font-family: 'Tangerine', cursive, sans-serif;
-    font-size: 50% !important;
-    /* Forçar aumento do tamanho */
-    font-weight: bolder;
-    font-display: swap;
-}
-
-h4 {
-    width: 100%;
-    height: auto;
-    text-align: left;
-    justify-content: left;
-    margin-top: 0%;
-    font-size: 45px;
-    color: #674F99;
-    margin: 10px 0;
-    margin-left: -10%;
-    line-height: 70%;
-}
-
-h5 {
-    width: 100%;
-    height: auto;
-    text-align: left;
-    justify-content: left;
-    margin-top: 0%;
-    font-size: 45px;
-    color: #674F99;
-    margin: 10px 0;
-    line-height: 70%;
-}
-
-h2 {
-    font-size: 25px;
-    color: #674F99;
-    margin: 10px 0;
-    margin-left: -63%;
-    line-height: 70%;
-}
-
-h6 {
-    font-family: Lato, sans-serif;
-    font-size: 20px;
-    color: #674F99;
-    text-decoration: underline;
-    margin-left: -50%;
-    cursor: pointer;
-}
-
-
 html,
 body {
     margin: 0;
@@ -77,28 +17,14 @@ body {
     /* Certifique-se de que a rolagem vertical seja permitida */
 }
 
-
-.carousel {
-    position: relative;
-    max-width: 100%;
-    overflow: hidden;
-    margin: auto;
-    height: 40vh;
-    z-index: 1;
-}
-
 .carousel-slide img {
     width: 100%;
-    height: 50%;
+    height: auto;
+    /* Manter a proporção da imagem */
     object-fit: cover;
-}
-
-.carousel,
-.finePrints {
-    max-width: 100%;
-    height: 60%;
-    /* Ajusta para que o carrossel e a imagem se ajustem à altura da tela */
-    overflow: hidden;
+    /* Ajusta a imagem para cobrir o espaço do contêiner */
+    max-height: 500px;
+    /* Define uma altura máxima */
 }
 
 .fade {
@@ -122,6 +48,13 @@ body {
     margin: 0;
     padding: 0;
 }
+.carousel-slide {
+    display: none;  /* Esconde todos os slides */
+}
+
+.carousel-slide.active {
+    display: block; /* Exibe apenas o slide ativo */
+}
 
 
 .container {
@@ -134,7 +67,6 @@ body {
     color: #674F99;
     /*Cor das palavras no textoPequeno*/
 }
-
 
 .centralize-text {
     display: flex;
@@ -162,292 +94,75 @@ body {
     /* Melhorar a legibilidade do texto */
 }
 
-.title-box {
-    display: flex;
+.container-fineprints {
+    width: 100%;
+    /* Ocupa toda a largura */
+    max-width: 700px;
+    /* Largura máxima */
+    height: 450px;
+    /* Define altura fixa para o retângulo */
+    position: relative;
+    margin: 0 auto;
+    /* Centraliza */
+    margin-bottom: 15%;
     margin-top: 5%;
-    /* Espaço acima do título */
-    margin-bottom: 3%;
-    /* Espaço abaixo do título */
-    color: #674F99;
-    /* Cor do texto */
-}
-
-.text-box-fine {
-    margin-bottom: 2%;
-}
-
-.finePrints {
-    position: relative;
-    max-width: 80%;
-    align-items: center;
-    height: auto;
-    /* Ajusta a altura dinamicamente */
-    margin-bottom: 5%;
-    /* Espaço abaixo do carrossel */
-}
-
-.container-fine {
-    margin-top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: auto;
-    width: 100%;
-    padding: 0 2rem;
     text-align: center;
+    /* Centraliza o conteúdo */
 }
 
-.polaroid {
-    background: #ffffff;
-    /* Cor branca para o quadrado ao redor */
-    padding: 4rem;
-    /* Aumentei o padding para dar mais espaço ao redor da imagem */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-    /* Sombra mais forte */
-    position: relative;
-    overflow: hidden;
-    width: 50%;
-    /* Aumentei o tamanho fixo do quadrado */
-    height: 50%;
-    /* Ajustei a altura para ser igual à largura, mantendo o formato quadrado */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem auto;
+.container-fineprints img {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    /* Ajusta a sombra no canto inferior direito */
 }
 
-.polaroid>img {
-    width: 50%;
-    /* Faz a imagem ocupar toda a largura do quadrado */
-    height: 50%;
-    /* Faz a imagem ocupar toda a altura do quadrado */
-    object-fit: hidden;
-    /* A imagem preenche o espaço do quadrado sem distorcer */
-
-}
-
-.item {
-    width: 55%;
-    /* Largura ajustada para exibição */
-    display: inline-block;
-    margin-top: 2rem;
-    filter: grayscale(100%);
-    transition: transform 0.35s ease;
-    margin-bottom: 3rem;
-}
-
-.item .polaroid:before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    transition: all 0.35s;
-}
-
-.item:nth-of-type(4n+1) {
-    transform: scale(1, 1) rotate(5deg);
-    transition: all 0.35s;
-}
-
-.item:nth-of-type(4n+1) .polaroid:before {
-    height: 100%;
-    width: 100%;
-    right: 0%;
-    box-shadow: 0 2.5rem 2.5rem rgba(0, 0, 0, 0.9);
-}
-
-.item:hover {
-    filter: none;
-    transform: scale(1, 1) rotate(0deg) !important;
-    transition: all 0.35s;
-}
-
-.item:hover .polaroid:before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    transform: rotate(0deg);
-    height: 100%;
-    width: 100%;
-    bottom: 0%;
-    right: 0%;
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
-    transition: all 0.35s;
-}
-
-.centralize-text-fine {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 0% auto;
-}
-
-.finePrints-slide {
-    width: 70%;
-    /* Tamanho fixo da polaroid, ajustável conforme a necessidade */
-    height: 70%;
-    /* Ajustei para ser um quadrado também */
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 2% 5% rgba(0, 0, 0, 0.3);
-    /* Sombra em todos os lados da polaroid */
-    margin-top: 5%;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 1;
-}
-
-.finePrints-slide img {
-    width: 100%;
-    height: 10%;
-    margin-top: 1%;
-    margin-bottom: 40%;
-    object-fit: cover;
-    display: block;
-}
-
-.caption {
-    position: absolute;
-    /* Permite sobrepor na mesma posição */
-    margin-top: -40%;
-    /* Alinha na parte inferior, ajuste conforme necessário */
-    left: 50%;
-    /* Centraliza horizontalmente */
-    transform: translateX(-50%);
-    /* Centraliza em relação ao meio */
+.name-fineprint {
+    font-weight: bold;
+    /* Deixa o texto mais grosso */
     color: #674F99;
+    /* Altera a cor do texto - escolha a cor desejada */
+    margin-bottom: 20px;
+    /* Espaçamento abaixo do texto */
+    font-size: 32px;
+    /* Tamanho do texto */
+}
+
+
+.fineart {
+    width: 100%;
+    height: 100%;
+    position: absolute;
     opacity: 0;
-    /* Inicialmente invisível */
-    z-index: 1;
-    transition: opacity 1s ease;
-    /* Transição mais longa e suave */
+    /* Inicialmente todas as imagens ficam invisíveis */
+    transition: opacity 1s ease-in-out;
+    /* Suaviza a transição */
 }
 
-.caption.visible {
+.fineart img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Garante que a imagem cubra o espaço sem distorcer */
+    border-radius: 10px;
+    /* Borda arredondada para um design moderno */
+}
+
+/* Ativa a imagem visível */
+.fineart.active {
     opacity: 1;
-    /* Faz o texto aparecer */
 }
 
-.caption-container {
-    position: relative;
-    height: 3em;
-    /* Altura fixa para evitar deslocamento dos elementos */
-    display: flex;
-    margin-top: 10%;
-    margin-left: -30%;
-    justify-content: center;
-    align-items: center;
-}
 
 @media (max-width: 480px) {
 
-    .finePrints-slide {
-        width: 600%;
-        /* Largura da polaroid */
-        height: 700% !important;
-        /* Altura proporcional */
-        position: relative;
-        margin: 0 auto;
-        /* Centraliza a polaroid horizontalmente */
-        padding: 30;
-        /* Remove ou diminui o padding */
+    .container-fineprints {
+        max-width: 320px;
+        height: 250px;
+        margin-bottom: 50%;
     }
 
-    .finePrints-slide img {
-        width: 250% !important;
-        /* Aumenta a largura da imagem além da largura da polaroid */
-        height: 350% !important;
-        /* Ajusta a altura proporcional à largura */
-        object-position: center;
-        /* Centraliza a imagem */
-        margin-left: -75%;
-        margin-top: -30% !important;
-        margin-bottom: 70% !important;
-    }
-
-    .caption-container {
-        margin-top: 500px;
-        /* Ajusta a distância entre a imagem e os captions */
-        text-align: center;
-    }
-    .caption {
-        margin-top: 5px;
-        margin-left: 20px;
-    }
-
-    .caption h4,
-    .caption h5 {
-        font-size: 0.9rem;
-        /* Tamanho pequeno da fonte */
-        margin-bottom: 5px;
-        margin-top: -30%;
-        text-align: center;
-    }
-
-    .caption h2 {
-        font-size: 0.8rem;
-        /* Tamanho pequeno da fonte */
-        margin-bottom: 2px;
-    }
-
-    .caption h6 {
-        font-size: 0.7rem;
-        /* Tamanho pequeno da fonte */
-        margin-bottom: 0px;
-        margin-top: 10%;
-    }
-
-    .item {
-        width: 100%;
-        /* Ajuste a largura da polaroid */
-        display: inline-block;
-        margin-top: 2rem;
-        filter: grayscale(100%);
-        transition: transform 0.35s ease;
-        margin-bottom: 3rem;
-    }
-
-    .item .polaroid:before {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        transition: all 0.35s;
-    }
-
-    .item:nth-of-type(4n+1) {
-        transform: scale(1, 1) rotate(5deg);
-        transition: all 0.35s;
-    }
-
-    .item:nth-of-type(4n+1) .polaroid:before {
-        height: 100%;
-        width: 100%;
-        right: 0%;
-        box-shadow: 0 2.5rem 2.5rem rgba(0, 0, 0, 0.9);
-    }
-
-    .item:hover {
-        filter: none;
-        transform: scale(1, 1) rotate(0deg) !important;
-        transition: all 0.35s;
-    }
-
-    .item:hover .polaroid:before {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        transform: rotate(0deg);
-        height: 100%;
-        width: 100%;
-        bottom: 0%;
-        right: 0%;
-        box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
-        transition: all 0.35s;
-    }
-
-    .container-fine {
-        margin-top: 40%;
+    .container-fineprints img {
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        /* Ajusta a sombra no canto inferior direito */
     }
 
     .littleTextLeft,
@@ -497,120 +212,30 @@ body {
         /* Ajuste o espaçamento superior para o segundo título */
     }
 
-
+    .carousel-slide img {
+        width: 100%;
+        height: auto;
+        /* Manter a proporção da imagem */
+        object-fit: cover;
+        /* Ajusta a imagem para cobrir o espaço do contêiner */
+        max-height: 500px;
+        /* Define uma altura máxima */
+    }
 }
 
 @media (max-width: 768px) {
 
-
-    .finePrints-slide {
-        width: 600%;
-        /* Largura da polaroid */
-        height: 700% !important;
-        /* Altura proporcional */
-        position: relative;
-        margin: 0 auto;
-        /* Centraliza a polaroid horizontalmente */
-        padding: 30;
-        /* Remove ou diminui o padding */
+    .container-fineprints {
+        max-width: 320px;
+        height: 250px;
+        margin-bottom: 50%;
     }
 
-    .finePrints-slide img {
-        width: 250% !important;
-        /* Aumenta a largura da imagem além da largura da polaroid */
-        height: 350% !important;
-        /* Ajusta a altura proporcional à largura */
-        object-position: center;
-        /* Centraliza a imagem */
-        margin-left: -75%;
-        margin-top: -30% !important;
-        margin-bottom: 70% !important;
+    .container-fineprints img {
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        /* Ajusta a sombra no canto inferior direito */
     }
 
-    .caption-container {
-        margin-top: 500px;
-        /* Ajusta a distância entre a imagem e os captions */
-        text-align: center;
-    }
-
-    .caption {
-        margin-top: 5px;
-        margin-left: 20px;
-    }
-
-    .caption h4,
-    .caption h5 {
-        font-size: 0.9rem;
-        /* Tamanho pequeno da fonte */
-        margin-bottom: 5px;
-        margin-top: -30%;
-        text-align: center;
-    }
-
-    .caption h2 {
-        font-size: 0.8rem;
-        /* Tamanho pequeno da fonte */
-        margin-bottom: 2px;
-    }
-
-    .caption h6 {
-        font-size: 0.7rem;
-        /* Tamanho pequeno da fonte */
-        margin-bottom: 0px;
-        margin-top: 10%;
-    }
-
-    .item {
-        width: 100%;
-        /* Ajuste a largura da polaroid */
-        display: inline-block;
-        margin-top: 2rem;
-        filter: grayscale(100%);
-        transition: transform 0.35s ease;
-        margin-bottom: 3rem;
-    }
-
-    .item .polaroid:before {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        transition: all 0.35s;
-    }
-
-    .item:nth-of-type(4n+1) {
-        transform: scale(1, 1) rotate(5deg);
-        transition: all 0.35s;
-    }
-
-    .item:nth-of-type(4n+1) .polaroid:before {
-        height: 100%;
-        width: 100%;
-        right: 0%;
-        box-shadow: 0 2.5rem 2.5rem rgba(0, 0, 0, 0.9);
-    }
-
-    .item:hover {
-        filter: none;
-        transform: scale(1, 1) rotate(0deg) !important;
-        transition: all 0.35s;
-    }
-
-    .item:hover .polaroid:before {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        transform: rotate(0deg);
-        height: 100%;
-        width: 100%;
-        bottom: 0%;
-        right: 0%;
-        box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
-        transition: all 0.35s;
-    }
-
-    .container-fine {
-        margin-top: 40%;
-    }
 
     .littleTextLeft,
     .littleTextRight {
@@ -627,7 +252,8 @@ body {
 
     .container {
         margin: 0 auto;
-        margin-top: -35%;
+        margin-top: 35%;
+        margin-bottom: 50%;
         /* Ajusta o espaçamento superior para ficar mais próximo do topo */
         display: flex;
         flex-direction: column;
@@ -658,5 +284,6 @@ body {
         margin-top: 5%;
         /* Ajuste o espaçamento superior para o segundo título */
     }
+
 
 }

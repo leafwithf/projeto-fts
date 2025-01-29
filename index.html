@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="Cdgeral/footer.css">
-    <link rel="stylesheet" type="text/css" href="Cdgeral/header.css">
-    <link rel="stylesheet" type="text/css" href="Cdgeral/text-name.css">
-    <link rel="stylesheet" type="text/css" href="Cdgeral/space.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="Cdgeral/footer.css">
+    <link rel="stylesheet" href="Cdgeral/header.css">
+    <link rel="stylesheet" href="Cdgeral/text-name2.css">
+    <link rel="stylesheet" href="Cdgeral/space.css">
     <link rel="icon" href="logo/logoic.ico" type="icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
@@ -27,15 +27,16 @@
                 <span class="logo-name">LFWF</span>
             </div>
             <nav class="menu">
-                <div class="menu-toggle" onclick="toggleMenu()" >
+                <div class="menu-toggle" onclick="toggleMenu()">
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul class="menu-items" id="menu-items">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="Principal/fineart's.html">Catálogo</a>
+                    <li><a href="Principal/fineart's.html">Artes</a>
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="problema.html">Problemas</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
+                    <li class="close" id="close-btn" onclick="closeMenu()">X</li>
                 </ul>
             </nav>
             <div class="user-icon">
@@ -45,7 +46,7 @@
             </div>
         </div>
     </header>
-    
+
     <div class="carousel">
         <div class="carousel-slide fade">
             <img src="Carrousel/image020.webp" alt="Olho Masculino">
@@ -75,8 +76,6 @@
             <img src="Carrousel/image003.webp" alt="Flores Roxas">
         </div>
     </div>
-
-    <div class="elemento1"></div>
     <div class="sobreposição">
         <div class="text-before">LeafwithF</div>
         <div class="text-after">A ARTE</div>
@@ -97,87 +96,54 @@
                 "A verdadeira arte transcende o entendimento racional e apela diretamente aos sentimentos."
         </div>
     </div>
-
-    <div class="container-fine">
-        <div class="text-box-fine centralize-text-fine">
-            <h1 class="title-box">Fine Arts</h1>
-            <div class="finePrints item">
-                <div class="finePrints-slide polaroid fade">
-                    <img src="Polaroid/image014.webp" alt="Por do Sol">
-                </div>
-                <div class="finePrints-slide polaroid fade">
-                    <img src="Polaroid/image006.webp" alt="Estrutura">
-                </div>
-                <div class="finePrints-slide polaroid fade">
-                    <img src="Polaroid/image020.webp" alt="Olhos Masculinos">
-                </div>
-                <div class="finePrints-slide polaroid fade">
-                    <img src="Polaroid/image018.webp" alt="Pipoca">
-                </div>
-                <div class="finePrints-slide polaroid fade">
-                    <img src="Polaroid/image008.webp" alt="Olhos Femininos">
-                </div>
-                <div class="finePrints-slide polaroid fade">
-                    <img src="Polaroid/image033.webp" alt="Outono">
-                </div>
-                <div class="finePrints-slide polaroid fade">
-                    <img src="Polaroid/image001.webp" alt="Flor Vermelha Vibrante">
-                </div>
-                <div class="caption-container">
-                    <div class="caption">
-                        <h4>Beleza ao Entardecer</h4>
-                        <div class="elemento"></div>
-                        <h2>Dezembro 2, 2020</h2>
-                        <h2>Rio Preto, Brasil</h2>
-                        <h6 onclick="window.location.href='Principal/fineart\'s.html'">Mais Informações</h6>
-                    </div>
-                    <div class="caption">
-                        <h5>História em Cada Detalhe</h5>
-                        <div class="elemento"></div>
-                        <h2>Dezembro 2, 2020</h2>
-                        <h2>Rio Preto, Brasil</h2>
-                        <h6 onclick="window.location.href='Principal/fineart\'s.html'">Mais Informações</h6>
-                    </div>
-                    <div class="caption">
-                        <h5>Olhares que falam</h5>
-                        <div class="elemento"></div>
-                        <h2>Dezembro 2, 2020</h2>
-                        <h2>Rio Preto, Brasil</h2>
-                        <h6 onclick="window.location.href='Principal/fineart\'s.html'">Mais Informações</h6>
-                    </div>
-                    <div class="caption">
-                        <h4>Os gatos enigmáticos</h4>
-                        <div class="elemento"></div>
-                        <h2>Dezembro 2, 2020</h2>
-                        <h2>Rio Preto, Brasil</h2>
-                        <h6 onclick="window.location.href='Principal/fineart\'s.html'">Mais Informações</h6>
-                    </div>
-                    <div class="caption">
-                        <h4>A janela da alma</h4>
-                        <div class="elemento"></div>
-                        <h2>Dezembro 2, 2020</h2>
-                        <h2>Rio Preto, Brasil</h2>
-                        <h6 onclick="window.location.href='Principal/fineart\'s.html'">Mais Informações</h6>
-                    </div>
-                    <div class="caption">
-                        <h4>A brisa do Outono</h4>
-                        <div class="elemento"></div>
-                        <h2>Dezembro 2, 2020</h2>
-                        <h2>Rio Preto, Brasil</h2>
-                        <h6 onclick="window.location.href='Principal/fineart\'s.html'">Mais Informações</h6>
-                    </div>
-                    <div class="caption">
-                        <h4>Vibrante igual ao coração</h4>
-                        <div class="elemento"></div>
-                        <h2>Dezembro 2, 2020</h2>
-                        <h2>Rio Preto, Brasil</h2>
-                        <h6 onclick="window.location.href='Principal/fineart\'s.html'">Mais Informações</h6>
-                    </div>
-                </div>
-            </div>
+    <div class="container-fineprints">
+        <div class="name-fineprint">Pequenas Histórias</div>
+        <div class="fineart">
+            <a href="Principal/fineart's.html">
+                <img src="Carrousel/image020.webp" alt="Olho Masculino">
+            </a>
+        </div>
+        <div class="fineart">
+            <a href="Principal/fineart's.html">
+                <img src="Carrousel/image050.webp" alt="Flores Rosas">
+            </a>
+        </div>
+        <div class="fineart">
+            <a href="Principal/fineart's.html">
+                <img src="Carrousel/image018.webp" alt="Pipoca">
+            </a>
+        </div>
+        <div class="fineart">
+            <a href="Principal/fineart's.html">
+                <img src="Carrousel/image033.webp" alt="Outono">
+            </a>
+        </div>
+        <div class="fineart">
+            <a href="Principal/fineart's.html">
+                <img src="Carrousel/image004.webp" alt="Flor Branca">
+            </a>
+        </div>
+        <div class="fineart">
+            <a href="Principal/fineart's.html">
+                <img src="Carrousel/image014.webp" alt="Por do Sol">
+            </a>
+        </div>
+        <div class="fineart">
+            <a href="Principal/fineart's.html">
+                <img src="Carrousel/image006.webp" alt="Estrutura">
+            </a>
+        </div>
+        <div class="fineart">
+            <a href="Principal/fineart's.html">
+                <img src="Carrousel/image008.webp" alt="Olho Feminino">
+            </a>
+        </div>
+        <div class="fineart">
+            <a href="Principal/fineart's.html">
+                <img src="Carrousel/image003.webp" alt="Flores Roxas">
+            </a>
         </div>
     </div>
-    <div class="elemento2"></div>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-left">
@@ -199,7 +165,6 @@
                     <li><a href="Principal/shop.html">Shop</a></li>
                     <li><a href="Principal/fineart's.html">Fine Art's</a></li>
                     <li><a href="Principal/exibiçoes.html">Exibições</a></li>
-
                 </ul>
                 <ul>
                     <li><a href="Principal/login.html">Login</a></li>
