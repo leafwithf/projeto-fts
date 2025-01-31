@@ -48,12 +48,15 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .carousel-slide {
-    display: none;  /* Esconde todos os slides */
+    display: none;
+    /* Esconde todos os slides */
 }
 
 .carousel-slide.active {
-    display: block; /* Exibe apenas o slide ativo */
+    display: block;
+    /* Exibe apenas o slide ativo */
 }
 
 
@@ -125,7 +128,7 @@ body {
     /* Espaçamento abaixo do texto */
     font-size: 32px;
     /* Tamanho do texto */
-}   
+}
 
 .fineart {
     width: 100%;

@@ -51,7 +51,7 @@ html {
 .menu-toggle i {
     font-size: 30px;
     /* Tamanho do ícone */
-    color: #ffffff ;
+    color: #ffffff;
     /* Cor do ícone */
     transition: transform 0.3s ease;
 }
@@ -73,7 +73,7 @@ html {
 }
 
 .menu ul li a:hover {
-    color: #ffffff ;
+    color: #ffffff;
 }
 
 .menu-toggle span {
@@ -307,7 +307,7 @@ html {
         height: 4em;
         margin-right: 8%;
         /* Ajusta a altura para combinar com o tamanho do texto */
-    }   
+    }
 
     .header-nav-folder-title {
         font-size: 17px;
