@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', serif;
     transition: all 0.3s ease-in-out;
 }
 
@@ -39,7 +39,8 @@
 
 h1 {
     font-size: 50px;
-    font-weight: bold;
+    font-weight: 700;
+    font-family: 'Poppins', serif;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -50,6 +51,8 @@ h1:hover {
 p {
     font-size: 15px;
     letter-spacing: 4px;
+    font-weight: 100;
+    font-family: 'Montserrat', serif;
 }
 
 p:hover {
@@ -63,6 +66,8 @@ p:hover {
 }
 
 .menu a {
+    font-weight: 200;
+    font-family: 'Montserrat', serif;
     color: rgb(255, 255, 255);
     text-decoration: none;
     margin-left: 20px;
@@ -100,6 +105,8 @@ footer {
 }
 
 footer a {
+    font-weight: 300;
+    font-family: 'Montserrat', serif;
     color: white;
     text-decoration: none;
     margin-right: 15px;
