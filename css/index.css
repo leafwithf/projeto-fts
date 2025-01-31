@@ -79,11 +79,11 @@ p:hover {
 .logo{
     position: absolute;
     bottom: 50%;
-    left: 0%;
+    left: 3%;
 }
 
 .logo img {
-    width: 10%;
+    width: 6%;
     transition: transform 0.3s ease-in-out;
 }
 

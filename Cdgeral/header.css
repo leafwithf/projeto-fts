@@ -9,12 +9,12 @@ html {
     align-items: center;
     padding: 1.2% 10%;
     margin-left: -3%;
-    background-color: #674F99;
+    background-color: #0D0C0B;
 }
 
 .user-icon .fa-user-circle {
     font-size: 4rem;
-    color: #f5f5f5;
+    color: #ffffff;
     margin-right: 35%;
     vertical-align: middle;
 }
@@ -30,12 +30,6 @@ html {
     width: 6em;
     height: auto;
     margin-right: 1%;
-}
-
-.logo-name {
-    color: white;
-    font-size: 5.4em;
-    font-weight: 900;
 }
 
 .menu {
@@ -57,14 +51,9 @@ html {
 .menu-toggle i {
     font-size: 30px;
     /* Tamanho do ícone */
-    color: white;
+    color: #ffffff ;
     /* Cor do ícone */
     transition: transform 0.3s ease;
-}
-
-.menu-toggle i:hover {
-    transform: scale(1.2);
-    /* Aumenta o ícone ao passar o mouse */
 }
 
 .menu ul {
@@ -76,7 +65,7 @@ html {
 }
 
 .menu ul li a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
@@ -84,11 +73,11 @@ html {
 }
 
 .menu ul li a:hover {
-    color: #B3A6CC;
+    color: #ffffff ;
 }
 
 .menu-toggle span {
-    background-color: #fff;
+    background-color: #ffffff;
     width: 30px;
     height: 3px;
     margin: 5px auto;
@@ -99,7 +88,6 @@ html {
     margin: 10px;
     padding: 10px;
     background-color: #333;
-    color: white;
     border: none;
     cursor: pointer;
 }
@@ -109,7 +97,6 @@ html {
 }
 
 .header-nav-folder-content {
-    background-color: #f8f8f8;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px 20px;
@@ -118,7 +105,6 @@ html {
 /* Estilização dos itens do menu */
 .header-nav-folder-item {
     padding: 10px 0;
-    border-bottom: 1px solid #ddd;
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -132,26 +118,22 @@ html {
 }
 
 .header-nav-folder-item a {
-    color: #333;
+    color: #D9D48F;
     text-decoration: none;
     font-size: 16px;
     display: block;
     transition: color 0.3s ease;
 }
 
-.header-nav-folder-item a:hover {
-    color: #007bff;
-}
 
 /* Título do folder (Catálogo) */
 .header-nav-folder-title {
     font-weight: bold;
     font-size: 18px;
-    color: #333;
+    color: #D9D48F;
     padding: 10px 20px;
     cursor: pointer;
     display: block;
-    background-color: #f1f1f1;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 5px;
@@ -165,7 +147,7 @@ html {
 /* Ícone do menu (animação de clique) */
 .menu-toggle i {
     font-size: 24px;
-    color: #333;
+    color: #ffffff;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }
@@ -225,7 +207,7 @@ html {
     }
 
     .menu ul li a:hover {
-        color: #B3A6CC;
+        color: #D9D48F;
     }
 
     .user-icon,
@@ -240,10 +222,6 @@ html {
         margin-right: 6%;
     }
 
-    .logo-name {
-        font-size: 3em;
-        /* Reduz o tamanho do texto */
-    }
 
     .filters button {
         margin: 8px;
@@ -306,7 +284,7 @@ html {
     }
 
     .menu ul li a:hover {
-        color: #B3A6CC;
+        color: #D9D48F;
     }
 
     .user-icon,
@@ -316,7 +294,6 @@ html {
     }
 
     .logo,
-    .logo-name,
     .user-icon,
     .menu-toggle {
         margin-right: 5%;
@@ -330,12 +307,7 @@ html {
         height: 4em;
         margin-right: 8%;
         /* Ajusta a altura para combinar com o tamanho do texto */
-    }
-
-    .logo-name {
-        font-size: 3.5em;
-        /* Mantém o tamanho do texto */
-    }
+    }   
 
     .header-nav-folder-title {
         font-size: 17px;
@@ -383,11 +355,6 @@ html {
     .user-icon {
         color: rgb(255, 255, 255);
         /* Cor do ícone de usuário no modo escuro */
-    }
-
-    .logo-name {
-        color: rgb(255, 255, 255);
-        /* Cor do nome do logo no modo escuro */
     }
 
     .logo {

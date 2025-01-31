@@ -1,7 +1,7 @@
 .text-before {
     font-size: 6vw;
     font-weight: 1000;
-    color: #674F99;
+    color: #ffffff;
     position: absolute;
     top: 20%;
     left: 16%;
@@ -11,7 +11,7 @@
 .text-after {
     font-size: 4vw;
     font-weight: 300;
-    color: #000000;
+    color: #74605d;
     position: relative;
     transform: translateY(130%);
     right: 27%;

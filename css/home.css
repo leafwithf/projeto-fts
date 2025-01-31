@@ -12,7 +12,7 @@ body {
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: transparent;
+    background-color: #0D0C0B;
     overflow-y: auto;
     /* Certifique-se de que a rolagem vertical seja permitida */
 }
@@ -64,7 +64,7 @@ body {
     flex-direction: column 2;
     height: 35vh;
     margin-top: 5%;
-    color: #674F99;
+    color: #ffffff;
     /*Cor das palavras no textoPequeno*/
 }
 
@@ -82,6 +82,7 @@ body {
 
 .littleTextLeft,
 .littleTextRight {
+    color: #74605d;
     text-align: justify;
     width: 80%;
     margin-top: 5%;
@@ -118,14 +119,13 @@ body {
 .name-fineprint {
     font-weight: bold;
     /* Deixa o texto mais grosso */
-    color: #674F99;
+    color: #ffffff;
     /* Altera a cor do texto - escolha a cor desejada */
     margin-bottom: 20px;
     /* Espaçamento abaixo do texto */
     font-size: 32px;
     /* Tamanho do texto */
-}
-
+}   
 
 .fineart {
     width: 100%;

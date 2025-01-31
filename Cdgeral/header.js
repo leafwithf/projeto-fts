@@ -57,7 +57,7 @@ const closeBtn = document.getElementById('close-btn');
 if (closeBtn) {
     closeBtn.addEventListener('click', closeMenu);
 } else {
-    console.error("Botão de fechar não encontrado!");
+    console.error("...");
 }
 
 // Função para alternar o modo escuro
