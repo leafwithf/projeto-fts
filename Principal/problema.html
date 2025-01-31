@@ -4,30 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/problema.css">
-    <script src="js/problema.js" defer></script>
-    <script src="js/cadastro.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    <title>M. I. A.</title>
+    <link rel="stylesheet" type="text/css" href="../css/problema.css">
+    <link rel="stylesheet" type="text/css" href="../Cdgeral/footer.css">
+    <link rel="stylesheet" type="text/css" href="../Cdgeral/header.css">
+    <link rel="stylesheet" type="text/css" href="../Cdgeral/text-name5.css">
+    <link rel="stylesheet" type="text/css" href="../Cdgeral/space.css">
+    <link rel="icon" href="../logo/logoic.ico" type="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../Cdgeral/header.js"></script>
+    <script src="../js/problema.js"></script>
+    <title>Leaf</title>
 </head>
+
 
 <body>
     <header>
         <div class="header-container">
-            <div class="logo">
-                <img src="VideosFts/Logo1.png" alt="Logo da MIA, empresa de segurança inteligente">
-                <span class="logo-name">M. I. A.</span>
+            <div class="dark-mode logo">
+                <img src="../logo/logo.png" alt="logo">
             </div>
             <nav class="menu">
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="index.html#quem-somos">Sobre Nós</a></li>
-                    <li><a href="index.html#outras-areas">Serviços</a></li>
-                    <li><a href="cliente.html">Pagina do Cliente</a></li>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="menu-items" id="menu-items">
+                    <li><a href="home.html">Home</a>
+                    <li><a href="fineart's.html">Artes</a>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="exibiçoes.html">Exibições</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li class="close" id="close-btn" onclick="closeMenu()">X</li>
                 </ul>
             </nav>
+            <div class="user-icon">
+                <a href="../Conta/login.html">
+                    <i class="fas fa-user-circle user-photo"></i>
+                </a>
+            </div>
         </div>
     </header>
+    <div class="sobreposição">
+        <div class="text-before">LeafwithF</div>
+        <div class="text-after">Estamos aqui para ajudar</div>
+    </div>
 
     <canvas id="backgroundCanvas"></canvas>
 
@@ -37,7 +60,7 @@
                 <label for="name">Nome *</label>
                 <input type="text" id="name" name="name" required>
 
-                <label for="email">Email corporativo *</label>
+                <label for="email">Email *</label>
                 <input type="email" id="email" name="email" required>
 
                 <label for="estado">Estado *</label>
@@ -45,12 +68,6 @@
 
                 <label for="cidades">Cidade *</label>
                 <select id="cidades" name="cidades" required></select>
-
-                <label for="company">Bairro e Rua *</label>
-                <input type="text" id="company" name="company" required>
-
-                <label for="units">Número da Residência *</label>
-                <input type="text" id="units" name="units" required>
 
                 <label for="tipoProblema">Tipo de Problema *</label>
                 <select id="tipoProblema" name="tipoProblema" required>
@@ -66,7 +83,7 @@
                     <option value="Outro">Outro</option>
                 </select>
 
-                <label for="problemDescription">Descrição do Problema:</label>
+                <label for="problemDescription">Dêem-nos mais detalhes sobre:</label>
                 <textarea id="problemDescription" name="problemDescription" required></textarea>
 
                 <label for="consent">
@@ -78,11 +95,42 @@
             </form>
 
             <div id="floatingMessage" class="floating-message" style="display: none;">
-                Relatório entregue! O problema será resolvido dentro de 48h. Caso não seja resolvido, solicitamos um
-                técnico no local.
+                Relatório entregue! O problema será resolvido dentro de 48h. Caso não seja resolvido, solicitamos que entre em contato conosco.
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h1>LeafwithF</h1>
+                <p>
+                    Imagens e Textos Originais<br>
+                    © 2025 LeafwithF<br>
+                    <a href="duvidas.html">Dúvidas </a> | <a href="problema.html">Problemas</a>
+                </p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/vagandopelacidade"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <ul>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="fineart's.html">Fine Art's</a></li>
+                    <li><a href="exibiçoes.html">Exibições</a></li>
+                </ul>
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="problema.html">Problemas</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-logo">
+            <img src="../logo/logo.png" alt="logo">
+        </div>
+    </footer>
 </body>
 
 </html>

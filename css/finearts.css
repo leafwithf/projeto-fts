@@ -8,7 +8,6 @@ body {
 }
 
 body {
-    font-family: 'Lato', sans-serif;
     background-color: #0D0C0B;
     overflow-y: auto;
     overflow-x: hidden;
@@ -151,7 +150,7 @@ footer {
     display: block;
     /* Garante que cada item ocupe uma linha */
     padding: 10px 15px;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-size: 14px;
     transition: background-color 0.3s ease;
@@ -188,12 +187,12 @@ footer {
     background-color: transparent;
     border: none;
     margin-top: -10%;
-    font-weight: 900;
+    font-weight: 400;
     /* Aumenta um pouco o peso da fonte */
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', serif;
     font-size: 20px;
     /* Aumenta o tamanho da fonte */
-    color: #ddd;
+    color: #cecdcd;
     padding: 12px 20px;
     /* Aumenta o padding para torná-lo maior */
     cursor: pointer;
