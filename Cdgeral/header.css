@@ -38,6 +38,9 @@ html {
     justify-content: space-between;
     padding: 10px 20px;
     position: relative;
+    font-weight: 100;
+    font-size: smaller;
+    font-family: 'Montserrat', serif;
 }
 
 .menu-toggle {
@@ -67,7 +70,7 @@ html {
 .menu ul li a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 100;
     font-size: 20px;
     white-space: nowrap;
 }
@@ -121,15 +124,16 @@ html {
     color: #D9D48F;
     text-decoration: none;
     font-size: 16px;
+    font-weight: 100;
     display: block;
     transition: color 0.3s ease;
 }
 
-
 /* Título do folder (Catálogo) */
 .header-nav-folder-title {
-    font-weight: bold;
+    font-weight: 100;
     font-size: 18px;
+    font-family: 'Montserrat', serif;
     color: #D9D48F;
     padding: 10px 20px;
     cursor: pointer;

@@ -1,7 +1,0 @@
-# Para imagens na pasta /assets/
-  /assets/*
-    Header set Cache-Control "max-age=31536000, public"
-
-# Para imagens na pasta /galeria/
-  /galeria/*
-    Header set Cache-Control "max-age=31536000, public"

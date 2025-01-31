@@ -9,7 +9,7 @@ body {
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', serif;
     margin: 0;
     padding: 0;
     background-color: #0D0C0B;
@@ -85,6 +85,8 @@ body {
 
 .littleTextLeft,
 .littleTextRight {
+    font-family: 'Montserrat', serif;
+    font-weight: 300;
     color: #74605d;
     text-align: justify;
     width: 80%;
@@ -96,6 +98,10 @@ body {
     font-size: 2.5vh;
     line-height: 1.6;
     /* Melhorar a legibilidade do texto */
+}
+h3{
+    font-family: 'Montserrat', serif;
+    font-weight: 300;
 }
 
 .container-fineprints {

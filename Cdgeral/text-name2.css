@@ -1,22 +1,24 @@
 .text-before {
     font-size: 6vw;
-    font-weight: 1000;
+    font-weight: 700;
     color: #ffffff;
     position: absolute;
     top: 2%;
     left: 16%;
     margin-right: 10%;
     z-index: 2;
+    font-family: 'Poppins', serif;
 }
 
 .text-after {
     font-size: 4vw;
-    font-weight: 300;
+    font-weight: 100;
     color: #74605d;
     position: relative;
-    transform: translateY(110%);
+    transform: translateY(120%);
     right: 27%;
     z-index: 2;
+    font-family: 'Montserrat', serif;
 }
 
 .sobreposição {
