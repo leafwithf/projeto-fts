@@ -36,8 +36,8 @@
     .text-after {
         font-size: 50px;
         font-weight: 100;
-        margin-left: 30%;   
-        transform: translateY(110%) translateX(-190%);
+        margin-left: 19%;   
+        margin-bottom: 20%;    
     }
 
     .sobreposição {
@@ -58,7 +58,8 @@
         font-size: 12vw;
         /* Ajuste maior para o mobile */
         font-weight: 300;
-        transform: translateY(110%) translateX(19%);
+        transform: translateY(90%) translateX(25%);
+       margin-bottom: 15%;
         /* Combinação de ambas as transformações */
     }
 

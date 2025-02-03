@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -14,84 +13,76 @@ body {
 
 .container {
     display: flex;
-    top: 50%;
-    justify-content: center; /* Centraliza o conteúdo principal horizontalmente */
-    align-items: center;     /* Centraliza o conteúdo principal verticalmente */
-    height: 60vh;       
+    justify-content: center;
+    align-items: center;
 }
 
 /* Alinhamento específico dos textos */
 .centralize-text {
-    text-align: center;        /* Centraliza o texto dentro do contêiner */
-    margin: 0 auto;            /* Mantém o contêiner centralizado */
+    text-align: center;
+    /* Centraliza o texto dentro do contêiner */
+    margin: 0 auto;
+    /* Mantém o contêiner centralizado */
 }
 
 .text-box {
-    margin-bottom: 10%;       /* Espaçamento entre os blocos de texto */
+    margin-bottom: 10%;
+    /* Espaçamento entre os blocos de texto */
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10px; /* Ajusta o espaçamento interno */
-    position: relative; /* Garante controle do posicionamento */
-}
-
-.elemento {
-    background-color:transparent;
-    padding: 10px;
-}
-
-/* Centralização do Formulário */
 .form-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute; /* Permite posicionamento em relação à página */
-    top: 80%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    bottom: 40%;
-    transform: translate(-50%, -50%); /* Ajusta o ponto de ancoragem */
-    width: 100%; /* Garante responsividade */
-    height: 100%; /* Alinha com o canvas */
+    width: 100%;
     padding: 20px;
-    z-index: 2;
+    z-index: 1;
+    position: static;
+    /* Deixe ele se comportar naturalmente */
 }
 
+
 form {
-    background-color: transparent;
-    border-radius: 20px; /* Bordas arredondadas */
+    background-color: #0D0C0B;
+    border-radius: 20px;
     padding: 30px 40px;
-    top: 90px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    max-width: 400px; /* Largura fixa, com limite */
-    width: 90%; /* Responsivo */
-    text-align: center; /* Centralização do texto */
+    box-shadow: 0 10px 20px #38322b54;
+    max-width: 90%;
+    width: 400px;
+    text-align: center;
+    font-family: 'Montserrat', serif;
+
 }
 
 form label {
     display: block;
     text-align: left;
-    margin-bottom: 5px;
+    margin-bottom: 9px;
     font-size: 0.9rem;
     color: #ffffff;
     font-weight: 300;
     font-family: 'Montserrat', serif;
 }
 
-form input, form select, form textarea {
+form input,
+form select,
+form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 2px solid #ffffff; /* Bordas na cor vermelha */
-    border-radius: 10px; /* Bordas arredondadas */
+    border: 2px solid #ffffff;
+    /* Bordas na cor vermelha */
+    border-radius: 10px;
+    /* Bordas arredondadas */
     font-size: 1rem;
     color: #74605d;
-    background-color: transparent; /* Fundo claro */
+    background-color: transparent;
+    /* Fundo claro */
 }
 
-form input:focus, form select:focus, form textarea:focus {
+form input:focus,
+form select:focus,
+form textarea:focus {
     border-color: #74605d;
     outline: none;
 }
@@ -99,54 +90,137 @@ form input:focus, form select:focus, form textarea:focus {
 form button {
     width: 100%;
     padding: 12px 0;
-    background-color: #74605d; /* Vermelho do tema */
+    background-color: #74605d;
+    /* Vermelho do tema */
     color: #fff;
     font-size: 1rem;
     border: none;
     border-radius: 10px;
+    margin-top: 15px;
     cursor: pointer;
     font-weight: bold;
+    font-family: 'Poppins', serif;
     text-transform: uppercase;
     transition: background-color 0.3s;
 }
 
 form button:hover {
-    background-color: #74605d; /* Cor mais escura no hover */
+    background-color: #74605d;
+    /* Cor mais escura no hover */
 }
 
 form textarea {
-    resize: vertical; /* Permite redimensionar apenas verticalmente */
+    resize: vertical;
+    /* Permite redimensionar apenas verticalmente */
 }
 
 /* Estilo para aumentar o tamanho do texto e do checkbox */
 form label[for="consent"] {
     display: flex;
     align-items: center;
-    font-size: 1.0rem; /* Aumenta o tamanho do texto */
-    font-weight: normal; /* Deixa o texto em negrito (opcional) */
-    color: #ffffff; /* Cor mais visível para o texto */
-    margin: 0; /* Remove margens extras */
-    gap: 10px; /* Espaçamento consistente entre o checkbox e o texto */
+    font-size: 1.0rem;
+    /* Aumenta o tamanho do texto */
+    font-weight: normal;
+    /* Deixa o texto em negrito (opcional) */
+    color: #ffffff;
+    /* Cor mais visível para o texto */
+    margin: 0;
+    /* Remove margens extras */
+    gap: 10px;
+    /* Espaçamento consistente entre o checkbox e o texto */
 }
-/* Estilo para o checkbox */
+
+/* Estilo base para o checkbox */
 form label input[type="checkbox"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin: 0;
-    border: 2px solid #74605d;
-    border-radius: 3px;
-    background-color: white;
+    border-radius: 50%;
+    background-color: #0D0C0B;
+    /* Cor de fundo quando não marcado */
     cursor: pointer;
     position: relative;
     display: inline-block;
-    vertical-align: middle;
+    transition: all 0.3s ease-in-out;
+    /* Transição suave */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    /* Sombra leve para destacar */
 }
+
+/* Quando o checkbox está marcado */
+form label input[type="checkbox"]:checked {
+    background-color: #ffffff;
+    /* Cor de fundo quando marcado (verde vibrante) */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    /* Sombra mais forte e verde */
+}
+
+/* Estilo do "checkmark" com animação */
+form label input[type="checkbox"]:checked::after {
+    content: '\2713';
+    /* Símbolo de "check" */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centraliza o símbolo */
+    font-size: 18px;
+    font-weight: 900;
+    color: #0D0C0B;
+    /* Cor do símbolo */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    /* Transição suave para o símbolo */
+}
+
+form label input[type="checkbox"]:checked::after {
+    opacity: 1;
+}
+
+form label input[type="checkbox"]:hover {
+    background-color: #ffffff;
+    /* Cor de fundo mais clara quando hover */
+    border-radius: 50%;
+    /* Garante que o checkbox tenha bordas arredondadas */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    /* Efeito de luz mais forte */
+}
+
+
 form label[for="tipoProblema"] {
     margin-top: 10px;
 }
+
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ffffff;
+    /* Cor da borda */
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #ffffff;
+    /* Cor do texto */
+    background-color: #0D0C0B;
+    /* Cor do fundo */
+
+    appearance: none;
+    /* Remove o estilo padrão do navegador */
+}
+
+/* Para mudar a cor das opções dentro do select */
+form select option {
+    background-color: #0D0C0B;
+    /* Cor de fundo das opções */
+    color: #ffffff;
+    /* Cor do texto das opções */
+    font-family: 'Montserrat', serif;
+    font-size: small;
+}
+
 
 /* Estilos para a mensagem flutuante */
 .floating-message {
@@ -160,13 +234,51 @@ form label[for="tipoProblema"] {
     border-radius: 10px;
     font-size: 1.2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    z-index: 999;
+    z-index: 1;
     display: none;
 }
 
-@media (max-width: 480px) {
-    form {
-        width: 100%;
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
         padding: 20px;
+    }
+
+    .form-wrapper {
+        position: static;
+        /* Permite que o formulário se ajuste naturalmente */
+        width: 100%;
+        padding: 10px;
+        margin-top: 20%;
+    }
+
+    form {
+        width: 90%;
+        max-width: 400px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+
+    .container {
+        height: auto;
+        padding: 20px;
+    }
+
+    .form-wrapper {
+        position: static;
+        /* Evita que o formulário seja empurrado para fora */
+        width: 100%;
+        padding: 5px;
+        margin-top: 20%;
+    }
+
+    form {
+        width: 95%;
+        max-width: 350px;
+        padding: 15px;
     }
 }

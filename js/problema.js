@@ -64,15 +64,29 @@ document.addEventListener('DOMContentLoaded', function () {
     // Garante que o select de cidades esteja atualizado ao carregar a página
     estadoSelect.dispatchEvent(new Event('change'));
 });
-document.getElementById('problemaForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Impede o envio do formulário
+document.addEventListener('DOMContentLoaded', function () {
+    const consentCheckbox = document.getElementById('consent');
+    const submitButton = document.getElementById('submitBtn');
 
-    // Exibe a mensagem flutuante
-    const floatingMessage = document.getElementById('floatingMessage');
-    floatingMessage.style.display = 'block';
+    // Atualiza o estado do botão de envio baseado no checkbox
+    consentCheckbox.addEventListener('change', function () {
+        if (consentCheckbox.checked) {
+            submitButton.disabled = false; // Habilita o botão se o checkbox estiver marcado
+        } else {
+            submitButton.disabled = true; // Desabilita o botão se o checkbox não estiver marcado
+        }
+    });
 
-    // Esconde a mensagem flutuante após 10 segundos
-    setTimeout(function() {
-        floatingMessage.style.display = 'none';
-    }, 15000); 
+    document.getElementById('problemaForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Impede o envio do formulário
+
+        // Exibe a mensagem flutuante
+        const floatingMessage = document.getElementById('floatingMessage');
+        floatingMessage.style.display = 'block';
+
+        // Esconde a mensagem flutuante após 10 segundos
+        setTimeout(function () {
+            floatingMessage.style.display = 'none';
+        }, 15000);
+    });
 });
