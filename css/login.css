@@ -1,216 +1,326 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+:root {
+  --text-light: hsl(242, 18%, 64%);
+  --primary-lighter: #d0d0e7;
+  --primary-gradient: linear-gradient(to right, #74605d, #0D0C0B );
+}
 
-* {
+/* Reset e configurações globais */
+*, *::before, *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body, html {
+a, button {
+  all: unset;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
   height: 100%;
-  font-family: 'Lato', sans-serif;
+  display: block;
+}
+
+body {
+  font-family: 'Poppins', serif;
+  min-height: 100vh;
+  background-color: #0D0C0B;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: transparent;
 }
 
-.elemento {
-  background-color:transparent;
-  padding: 10px;
-}
-
-#backgroundCanvas {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Container principal */
+.container {
+  color: #ffffff;
+  max-width: 1070px;
   width: 100%;
-  height: 100vh;
-  z-index: -1; /* Mantém o canvas atrás do conteúdo */
+  display: flex;
+  margin-inline: 1rem;
 }
 
-.login-container {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 400px;
-  height: auto;
+/* Seção de imagem */
+.image-section {
+  width: 50%;
   position: relative;
-  z-index: 1; /* Garante que o conteúdo fique acima das bolhas */
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.profile-picture {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #ddd;
-  margin: 10px auto 20px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  color: #494747;
-}
-
-.logo {
-  width: 80px; 
-  height: auto;
-  margin-right: 10px; 
-}
-
-.login-container h2 {
-  font-weight: 600;
-  color: #333;
-  margin: 0;
-}
-
-.buttons{
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #CC0733; /* Cor do fundo nas letras */
-  padding: 15px 35px; /* Aumenta o tamanho dos botões */
-  border: none;
-  border-radius: 15px; /* Cantos arredondados */
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.image-wrapper {
   width: 100%;
-  max-width: 150px;
-  margin: 0 auto; /* Centraliza o botão */
+  height: 100%;
 }
 
-.buttons .btn i {
-  margin-right: 10px; /* Espaço entre o ícone e o texto */
-  color: #CC0733; /* Cor do fundo nas letras */
+.image-wrapper img {
+  object-fit: cover;
 }
 
-.login-container .input-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px; 
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: 5px;
-  padding: 10px;
-}
-
-.login-container .input-container i {
-  margin-right: 10px;
-  color: #CC0733;
-}
-
-.login-container input {
+/* Botões */
+.login-btn, .google-signin {
   width: 100%;
-  border: none;
-  outline: none;
-  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
 }
 
-.login-container button {
-  background-color: #CC0733;
+.login-btn {
   color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  background: var(--primary-gradient);
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+.google-signin {
+  border: 2px solid var(--primary-lighter);
+}
+
+.google-signin object {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Divisor "ou" */
+.or-divider {
+  font-weight: 600;
+  color: #fff;
+  margin-block: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.or-divider::before, .or-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  width: 45%;
+  background-color: #fff;
+}
+
+.or-divider::before {
+  left: 0;
+}
+
+.or-divider::after {
+  right: 0;
+}
+
+/* Formulário */
+.form-section {
+  width: 50%;
+  background-color: #0D0C0B ;
+  padding: 2.5rem 1.2rem;
+  display: flex;
+  align-items: center;
+}
+.logo-container {
+  width: 30%;
+  height: 70%;
+  margin-left: 30%;
+  margin-bottom: 5%;
+}
+.form-wrapper {
+  width: 75%;
+  margin: 0 auto;
+}
+h2 {
+  font-family: 'Montserrat', serif;
+  font-size: large;
+  font-weight: 700;
+
+}
+.input-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-group {
+  position: relative; /* Permite o posicionamento absoluto do ícone dentro do campo */
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #ffffff;
+  display: block; /* Faz o label ocupar a linha inteira, ficando acima do input */
+  margin-bottom: 0.5rem; /* Espaço entre o label e o input */
+}
+
+.form-group input {
+  width: 100%;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #0D0C0B;
+  padding: 0.5rem;
+  border: 2px solid #ffffff;
+  border-radius: 0.3rem;
+}
+
+#eye-icon {
+  color: #0D0C0B;
+  position: absolute;
+  left: 95%; /* Coloca o ícone no lado direito do campo */
+  top: 75%;
+  transform: translateY(-50%); /* Centraliza o ícone verticalmente */
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
 }
 
-.login-container button:hover {
-  background-color: #CC0733;
+.form-group input:focus {
+  border: 2px solid #74605d;
 }
 
-@media (max-width: 768px) {
-  .login-container {
-      width: 90%;
+/* Lembre-se e Esqueceu Senha */
+.remember-forgot {
+  font-family: 'Montserrat', serif;
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input {
+  margin-right: 0.5rem;
+  border: 1px solid white;
+  border-radius: 2px;
+}
+
+/* Estilo base para o checkbox */
+.remember-me [type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 25px;
+  margin: 0;
+  border-radius: 50%;
+  background-color: #0D0C0B;
+  /* Cor de fundo quando não marcado */
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  /* Transição suave */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  /* Sombra leve para destacar */
+}
+
+/* Quando o checkbox está marcado */
+.remember-me [type="checkbox"]:checked {
+  background-color: #ffffff;
+  /* Cor de fundo quando marcado (verde vibrante) */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  /* Sombra mais forte e verde */
+}
+
+/* Estilo do "checkmark" com animação */
+.remember-me [type="checkbox"]:checked::after {
+  content: '\2713';
+  /* Símbolo de "check" */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Centraliza o símbolo */
+  font-size: 18px;
+  font-weight: 900;
+  color: #0D0C0B;
+  /* Cor do símbolo */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  /* Transição suave para o símbolo */
+}
+
+.remember-me [type="checkbox"]:checked::after {
+  opacity: 1;
+}
+
+.remember-me [type="checkbox"]:hover {
+  background-color: #ffffff;
+  /* Cor de fundo mais clara quando hover */
+  border-radius: 50%;
+  /* Garante que o checkbox tenha bordas arredondadas */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  /* Efeito de luz mais forte */
+}
+
+.remember-me label {
+  margin-left: 5%;
+
+  color: #ffffff;
+  -webkit-user-select: none; /* Para Safari */
+  user-select: none; /* Para os demais navegadores */
+}
+
+.remember-forgot a {
+  color: #ffffff;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media screen and (max-width: 60rem) {
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+
+  .content-container {
+    width: 100%;
   }
 }
 
-.form-box {
-  max-width: 300px;
-  background: rgba(255, 255, 255, 0.9);
-  overflow: hidden;
-  border-radius: 16px;
-  color: #010101;
+@media screen and (max-width: 50rem) {
+  .container {
+    max-width: 100%;
+    flex-direction: column;
+    margin-inline: 0;
+  }
+  img{
+    height: 100%;
+  }
+  .image-section, .form-section {
+    width: 100%;
+  }
+
+  .image-section {
+    height: 25vh;
+  }
+
+  .content-container {
+    inset: 0;
+    transform: translate(0, 0);
+    padding: 1rem 1.6rem;
+  }
 }
 
-.form {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 32px 24px 24px;
-  gap: 16px;
-  text-align: center;
-}
-
-.title {
-  font-weight: bold;
-  font-size: 2rem;
-}
-
-.subtitle {
-  font-weight: bold;
-  font-size: 1rem;
-  color: #242222;
-}
-
-.form-container {
-  overflow: hidden;
-  border-radius: 8px;
-  background-color: #fff;
-  margin: 1rem 0 .5rem;
-  width: 100%;
-}
-
-.empresa {
-  font-weight: bold;
-  font-size: 4rem;
-  height: 80px;
-  width: 100%; 
-  justify-content: center;
-  align-items: center;
-  margin-left: 1rem;
-}
-
-.input {
-  background: none;
-  border: 0;
-  outline: 0;
-  height: 40px;
-  width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
-  font-size: .9rem;
-  padding: 0 1.25rem;
-}
-
-.input::placeholder {
-  color: #aca7a7;
-}
-
-.form-section {
-  padding: 16px;
-  font-size: .8rem;
-  background-color: #fafafa;
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  color: #666;
-  text-align: center;
-}
-
-.form-section a {
-  font-weight: bold;
-  color: #CC0733;
-  text-decoration: none;
-  margin-left: 0.25rem;
+@media screen and (max-width: 36rem) {
+  .container {
+    max-width: 100%;
+  }
+  img{
+    width: 103%;
+  }
+  .logo-container{
+    margin-left: 37%;
+    margin-bottom: 10%;
+  }
+  .form-wrapper {
+    width: 70%;
+    margin-left: 9%;
+  }
 }

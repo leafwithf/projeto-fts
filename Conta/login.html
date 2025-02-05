@@ -1,50 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.I.A.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="icon" href="../logo/logoic.ico" type="icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="VIdeosFts/Logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="../js/login.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <title>Leaf</title>
 </head>
+
 <body>
-    <canvas id="backgroundCanvas"></canvas>
 
-    <div class="login-container">
-        <div class="header">
-            <img src="VideosFts/Logo2.png" alt="Logo" class="logo">
-            <span class="title">Login</span>
+    <section class="container">
+        <div class="image-section">
+            <div class="image-wrapper">
+                <img src="../galeria/Vertical/image22.webp" alt="">
+            </div>
         </div>
-        <div class="profile-picture">
-            <i class="fas fa-user"></i>
-        </div>
+        <div class=" form-section">
+            <div class="form-wrapper">
+                <div class="logo-container">
+                    <a href="../Principal/home.html" class="logo-container">
+                        <img src="../logo/logo.png" alt="Logo">
+                    </a>
+                </div>
 
-        <form action="cliente.html" method="GET">
+                <h2>Bem-Vindo!</h2>
+                <p>Preencha com os seguintes dados</p><br>
 
-<div class="form-box">
-<form class="form">
+                <div class="input-container">
+                    <div class="form-group">
+                        <label for="email"> E-mail </label>
+                        <input type="email" id="email" autocomplete="off">
+                    </div>
 
-    <br>
-    <h2>Entre na sua conta<h2>
-        <div class="empresa">M.I.A.</div>
-    <br>
-    
-    <div class="form-container">
-         <input type="email" class="input" placeholder="Email">
-         <div class="elemento"></div>
-         <input type="password" class="input" placeholder="Senha">
-    </div>
-    <div class="elemento"></div>
-    <div class="elemento"></div>
-    <button class="buttons">Entrar</button>
-</form>
-<div class="elemento"></div>
-<div class="form-section">
-  <p>Não possui conta? <a href="termo.html">Cadastre-se aqui</a> </p>
-</div>
-</div>
-    <script src="js/login.js"></script>
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password">
+                        <i onclick="togglePassword()" id="eye-icon" class="fa fa-eye-slash"></i>
+                    </div>
+                </div>
+
+                <div class="remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" value="remember-me" id="remember-me">
+                        <label for="remember-me"> Me Lembre </label>
+                    </div>
+
+                    <a href="restart.html"> Esqueceu a senha?</a>
+                </div>
+
+                <button class="login-btn">Log In </button>
+                <div class="or-divider"> or </div>
+                <button class="google-signin">
+                    <object data="../logo/google.svg"></object>
+                    <span> Entrar com o Google</span>
+                </button>
+                <div>
+                <div>
+    </section>
 </body>
+
 </html>
