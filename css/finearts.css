@@ -118,6 +118,7 @@ footer {
 }
 
 #legenda {
+    font-family: 'Montserrat', serif;
     text-align: center;
     display: block;
     margin-top: 10px;
@@ -187,9 +188,9 @@ footer {
     background-color: transparent;
     border: none;
     margin-top: -10%;
-    font-weight: 400;
+    font-weight: 100;
     /* Aumenta um pouco o peso da fonte */
-    font-family: 'Poppins', serif;
+    font-family: 'Montserrat', serif;
     font-size: 20px;
     /* Aumenta o tamanho da fonte */
     color: #cecdcd;
@@ -220,11 +221,13 @@ footer {
 
 
     #catalogo-menu {
-        font-size: 60px;
+        font-family: 'Montserrat', serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 32px !important;
         /* Ajusta o tamanho da fonte para telas menores */
-        padding: 15px 30px;
-        /* Ajusta o padding */
-        margin-top: 0;
+       padding: 20px 0px;
+        margin-top: 0%;
         /* Ajusta a margem superior, se necessário */
     }
 
@@ -246,10 +249,14 @@ footer {
     }
 
     #catalogo-menu {
-        font-size: 15px;
-        /* Tamanho de fonte ajustado */
-        padding: 9px 18px;
-        /* Padding do botão ajustado */
+        font-family: 'Montserrat', serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 32px !important;
+        /* Ajusta o tamanho da fonte para telas menores */
+       padding: 20px 0px;
+        margin-top: 0%;
+        /* Ajusta a margem superior, se necessário */
     }
 
     /* Ajuste no submenu */

@@ -1,10 +1,8 @@
 :root {
-  --text-light: hsl(242, 18%, 64%);
   --primary-lighter: #d0d0e7;
   --primary-gradient: linear-gradient(to right, #74605d, #0D0C0B );
 }
 
-/* Reset e configurações globais */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
