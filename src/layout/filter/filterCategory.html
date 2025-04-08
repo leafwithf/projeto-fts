@@ -1,0 +1,30 @@
+ <header>
+        <div class="header-container">
+            <div class="dark-mode logo">
+                <img src="../../../public/assets/images/logo/logo.png" alt="logo">
+            </div>
+            <nav class="menu">
+                <div class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu" aria-expanded="false"
+                    aria-controls="menu-items">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="menu-items" id="menu-items">
+                    <li><a href="../../../public/index.html">Home</a></li>
+                    <li class="submenu-container">
+                        <button id="catalogo-menu" onclick="toggleCatalogo(event)">Filtros</button>
+                        <div class="submenu">
+                            <a href="#" onclick="filterCategory('flor')">Flor</a>
+                            <a href="#" onclick="filterCategory('rostos')">Rostos</a>
+                            <a href="#" onclick="filterCategory('urbano')">Urbano</a>
+                            <a href="#" onclick="filterCategory('arte')">Arte</a>
+                            <a href="#" onclick="filterCategory('animais')">Animais</a>
+                            <a href="#" onclick="filterCategory('natureza')">Natureza</a>
+                            <a href="#" onclick="filterCategory('por-do-sol')">Por-do-Sol</a>
+                        </div>
+                    </li>
+                    <li><a href="../../../src/pages/shop.html">Shop</a></li>
+                    <li><a href="../../../src/pages/bio.html">Bio</a></li>
+                    <li class="close" id="close-btn" onclick="closeMenu()">X</li>
+                </ul>
+            </nav>
+    </header>

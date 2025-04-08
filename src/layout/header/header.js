@@ -1,19 +1,14 @@
-// Função para alternar a visibilidade do menu principal
 function toggleMenu() {
     const menuItems = document.getElementById("menu-items");
-    menuItems.classList.toggle("active"); // Exibe/oculta o menu principal
+    menuItems.classList.toggle("active"); 
 }
-// Função para alternar a visibilidade do submenu do catálogo
 function toggleCatalogo(event) {
-    event.preventDefault(); // Previne o comportamento padrão do link
+    event.preventDefault(); 
     const submenuContainer = document.querySelector('.submenu-container');
     
-    // Alterna a visibilidade do submenu
-    submenuContainer.classList.toggle('active');  // Adiciona ou remove a classe "active"
+    submenuContainer.classList.toggle('active');  
 }
 
-
-// Função para filtrar categorias de imagens
 function filterCategory(category) {
     const images = document.querySelectorAll('.grid-photos img');
     images.forEach(image => {
@@ -24,35 +19,31 @@ function filterCategory(category) {
         }
     });
 
-    // Fecha o menu principal e o submenu após a seleção
     const menuItems = document.getElementById("menu-items");
-    menuItems.classList.remove("active"); // Fecha o menu principal
+    menuItems.classList.remove("active");
 
     const submenu = document.querySelector('.submenu-container');
-    submenu.classList.remove("active"); // Fecha o submenu
+    submenu.classList.remove("active");
 }
-// Função para fechar o menu
 function closeMenu() {
     const menu = document.getElementById("menu-items");
-    menu.classList.remove("active");  // Fecha o menu principal
+    menu.classList.remove("active");  
 }
 
-// Função para alternar a visibilidade do menu principal
 function toggleMenu() {
     const menuItems = document.getElementById("menu-items");
-    menuItems.classList.toggle("active"); // Exibe/oculta o menu principal
+    menuItems.classList.toggle("active"); 
 }
 
-// Função para alternar a visibilidade do submenu do catálogo
 function toggleCatalogo(event) {
-    event.preventDefault(); // Previne o comportamento padrão do link
+    event.preventDefault(); 
     const submenuContainer = document.querySelector('.submenu-container');
     
     // Alterna a visibilidade do submenu
-    submenuContainer.classList.toggle('active');  // Adiciona ou remove a classe "active"
+    submenuContainer.classList.toggle('active'); 
 }
 
-// Adiciona evento de clique no botão de fechar
+// botão de fechar
 const closeBtn = document.getElementById('close-btn');
 if (closeBtn) {
     closeBtn.addEventListener('click', closeMenu);
@@ -64,3 +55,10 @@ if (closeBtn) {
 function toggleDarkMode() {
     document.documentElement.classList.toggle('dark-mode');
 }
+
+// Incluir o Header no html
+fetch('../../src/layout/header/header.html')
+.then(res => res.text())
+.then(data => {
+    document.getElementById("header").innerHTML = data;
+});
