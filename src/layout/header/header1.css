@@ -12,12 +12,13 @@ html {
     background-color: #0D0C0B;
 }
 
+/* 
 .user-icon .fa-user-circle {
     font-size: 4rem;
     color: #ffffff;
     margin-right: 35%;
     vertical-align: middle;
-}
+} */
 
 .logo {
     display: flex;
@@ -53,9 +54,7 @@ html {
 
 .menu-toggle i {
     font-size: 30px;
-    /* Tamanho do ícone */
     color: #ffffff;
-    /* Cor do ícone */
     transition: transform 0.3s ease;
 }
 
@@ -105,7 +104,6 @@ html {
     padding: 10px 20px;
 }
 
-/* Estilização dos itens do menu */
 .header-nav-folder-item {
     padding: 10px 0;
     transition: background-color 0.3s ease-in-out;
@@ -113,7 +111,6 @@ html {
 
 .header-nav-folder-item:last-child {
     border-bottom: none;
-    /* Remove a borda do último item */
 }
 
 .header-nav-folder-item:hover {
@@ -129,7 +126,6 @@ html {
     transition: color 0.3s ease;
 }
 
-/* Título do folder (Catálogo) */
 .header-nav-folder-title {
     font-weight: 100;
     font-size: 18px;
@@ -148,7 +144,6 @@ html {
     background-color: #e1e1e1;
 }
 
-/* Ícone do menu (animação de clique) */
 .menu-toggle i {
     font-size: 24px;
     color: #ffffff;
@@ -341,48 +336,4 @@ html {
         padding: 10px;
     }
 
-}
-
-.dark-mode .logo {
-    filter: none;
-    /* Remove filtros */
-    opacity: 1;
-    /* Garante visibilidade */
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        color: #ffffff;
-        /* Cor do texto para o modo escuro */
-    }
-
-    .user-icon {
-        color: rgb(255, 255, 255);
-        /* Cor do ícone de usuário no modo escuro */
-    }
-
-    .logo {
-        color: rgb(255, 255, 255);
-        /* Cor do logo no modo escuro */
-    }
-
-    .footer-left {
-        color: rgb(255, 255, 255);
-        /* Cor do texto no rodapé no modo escuro */
-    }
-
-    .footer-right {
-        color: rgb(255, 255, 255);
-        /* Cor do texto no rodapé no modo escuro */
-    }
-
-    .footer-logo {
-        color: rgb(255, 255, 255);
-        /* Cor do logo no rodapé no modo escuro */
-    }
-}
-
-* {
-    box-sizing: border-box;
-    /* Evita que margens e padding ultrapassem o tamanho do elemento */
 }

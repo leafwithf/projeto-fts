@@ -1,68 +1,34 @@
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    /* Garante que não haja rolagem horizontal */
-}
-
-body {
-    background-color: #0D0C0B;
-    overflow-y: auto;
-    overflow-x: hidden;
-    /* Habilita a rolagem vertical */
-}
-
-header,
-footer {
-    position: relative;
-    z-index: 10;
-}
-
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0.5);
-    }
-
-    to {
-        transform: scale(1);
-    }
-}
+@import url('../../styles/base/global.css');
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: auto;
-    /* Permite que o contêiner cresça conforme o conteúdo */
     min-height: 100%;
-    /* Garante que tenha pelo menos a altura da tela */
-    padding: 20px;
     max-width: 100%;
     margin: 0 auto;
     margin-top: -3%;
 }
 
 .grid-photos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
-    width: 100%;
-    cursor: zoom-in;
-    margin-top: 13%;
+    margin-top: 10%;
+    column-count: 3;
+    column-gap: 1rem;
+    padding: 10rem;
 }
 
 .grid-photos img {
     width: 100%;
-    border-radius: 5px;
-    object-fit: cover;
+    margin-bottom: 1rem;
+    break-inside: avoid;
     transition: transform 0.3s ease;
+    cursor: pointer;
+    padding: 0.3em;
 }
 
 .grid-photos img:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .modal {
@@ -83,193 +49,20 @@ footer {
     display: block;
     max-width: 80%;
     max-height: 80%;
-    border-radius: 20px;
 }
 
-.modal-caption,
-.modal-legenda {
-    text-align: center;
-    color: #74605d;
-    font-size: 16px;
-    padding: 10px 0;
-}
-
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-}
-
-.image {
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Esconde imagens */
-.image.hidden {
-    display: none;
-}
-
-#legenda {
-    font-family: 'Montserrat', serif;
-    text-align: center;
-    display: block;
-    margin-top: 10px;
-    /* Espaço entre a imagem e a legenda */
-    font-size: 16px;
-    font-weight: bold;
-}
-
-/* Submenu inicialmente escondido */
-.submenu {
-    display: none;
+.close {
     position: absolute;
-    background-color: #0D0C0B;
-    border-radius: 10px;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-    height: auto;
-    /* Ajuste a altura automaticamente conforme o conteúdo */
-    margin: 10px 0;
-    width: 100%;
-    transform: translateX(0%) translateY(5%);
-    z-index: 2;
-    max-height: 1000px;
-    /* Ajuste conforme necessário */
-    overflow-y: auto;
-    /* Habilita a rolagem vertical */
-}
-
-/* Estilo dos itens do submenu */
-.submenu a {
-    display: block;
-    /* Garante que cada item ocupe uma linha */
-    padding: 10px 15px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-
-.submenu a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    /* Destaca o item ao passar o mouse */
-}
-
-
-/* Personaliza a barra de rolagem para navegadores modernos */
-.submenu::-webkit-scrollbar {
-    width: 8px;
-}
-
-.submenu::-webkit-scrollbar-thumb {
-    background-color: #555;
-    border-radius: 4px;
-}
-
-.submenu::-webkit-scrollbar-thumb:hover {
-    background-color: #777;
-}
-
-/* Exibe o submenu quando a classe "active" é adicionada */
-.submenu-container.active .submenu {
-    display: block;
-    z-index: 2;
-}
-
-/* Estilo para o botão 'Catálogo' */
-#catalogo-menu {
-    background-color: transparent;
-    border: none;
-    margin-top: -10%;
-    font-weight: 100;
-    /* Aumenta um pouco o peso da fonte */
-    font-family: 'Montserrat', serif;
-    font-size: 20px;
-    /* Aumenta o tamanho da fonte */
-    color: #cecdcd;
-    padding: 12px 20px;
-    /* Aumenta o padding para torná-lo maior */
+    top: 30px;
+    right: 40px;
+    color: rgb(155, 45, 45);
+    font-size: 40px;
+    font-weight: bold;
     cursor: pointer;
-    text-align: center;
-    display: inline-block;
-    z-index: 2;
-    /* Garantir que o botão fique acima do submenu */
-    transition: transform 0.2s ease-in-out;
+    z-index: 1001;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Media Query para telas de até 480px */
-@media (max-width: 480px) {
-    .grid-photos {
-        grid-template-columns: 1fr;
-        /* Exibe uma única coluna */
-        gap: 5px;
-        /* Menor espaçamento entre as imagens */
-    }
-
-    .container {
-        padding: 10px;
-        /* Menor espaço nas laterais */
-        margin-top: 5%;
-    }
-
-
-    #catalogo-menu {
-        font-family: 'Montserrat', serif;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 32px !important;
-        /* Ajusta o tamanho da fonte para telas menores */
-       padding: 20px 0px;
-        margin-top: 0%;
-        /* Ajusta a margem superior, se necessário */
-    }
-
-}
-
-/* Media Query para telas de até 768px */
-@media (max-width: 768px) {
-    .grid-photos {
-        grid-template-columns: repeat(2, 1fr);
-        /* Exibe duas colunas */
-        gap: 8px;
-        /* Espaçamento ajustado */
-    }
-
-    .container {
-        margin-top: 10%;
-        padding: 15px;
-        /* Padding um pouco maior */
-    }
-
-    #catalogo-menu {
-        font-family: 'Montserrat', serif;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 32px !important;
-        /* Ajusta o tamanho da fonte para telas menores */
-       padding: 20px 0px;
-        margin-top: 0%;
-        /* Ajusta a margem superior, se necessário */
-    }
-
-    /* Ajuste no submenu */
-    .submenu {
-        left: 50%;
-        /* Centraliza o submenu */
-        transform: translateX(-50%);
-        width: 100%;
-        /* Largura do submenu ajustada */
-    }
-
-    .submenu-container.active .submenu {
-        width: 100%;
-        /* Garante que o submenu ocupe toda a largura disponível */
-    }
+.close:hover {
+    transform: scale(1.3);
 }

@@ -1,6 +1,13 @@
 
 <!-- Salvando  -->
 
+ <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> --> 
+<!-- <script>
+    AOS.init();
+</script> --> -->
+
+
 <!-- document.addEventListener("DOMContentLoaded", function () {
     // Carousel 1 (com classe "carousel-slide")
     let slideIndexCarousel = 0;

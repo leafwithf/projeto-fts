@@ -1,36 +1,19 @@
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    /* Garante que não haja rolagem horizontal */
-}
+@import url('../../styles/base/global.css');
 
-body {
-    background-color: #0D0C0B;
-    overflow-y: auto;
-    overflow-x: hidden;
-    /* Habilita a rolagem vertical */
-}
-
-header,
-footer {
-    position: relative;
-    z-index: 10;
-}
 .text1 {
     margin-left: 35%;
     font-size: 2.5rem;
-    font-weight: 500; /* Corrigido, pois 'font-size' estava sendo usado erroneamente */
+    font-weight: 500; 
     font-family: 'Poppins', serif;
+    color: white;
 }
 
 .text2 {
     font-size: 1.5rem;
-    font-weight: 300; /* Corrigido */
+    font-weight: 300; 
+    color: white;
     font-family: 'Montserrat', serif;
-    text-align: center; /* Melhor para responsividade */
+    text-align: center; 
 }
 
 .container {
@@ -40,38 +23,4 @@ footer {
     height: auto;
     min-height: 100%;
     max-width: 100%;
-}
-
-/* Ajustes para telas menores (até 768px) */
-@media (max-width: 768px) {
-    .text1 {
-        font-size: 2rem;
-        margin-left: 40%;
-    }
-
-    .text2 {
-        font-size: 1.3rem;
-    }
-
-    .container {
-        padding: 15px;
-    }
-}
-
-/* Ajustes para telas ainda menores (até 480px) */
-@media (max-width: 480px) {
-    .text1 {
-        font-size: 1.8rem;
-        margin-left: 1%;
-        text-align: center;
-    }
-
-    .text2 {
-        font-size: 1rem;
-    }
-
-    .container {
-        flex-direction: column; /* Empilhar elementos verticalmente */
-        text-align: center;
-    }
 }

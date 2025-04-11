@@ -51,52 +51,44 @@
         <div class="text-before">LeafwithF</div>
         <div class="text-after">Estamos aqui para ajudar</div>
     </div>
-    <div class="elemento2"></div>
-    <div class="container">
-        <div class="form-wrapper">
-            <form id="problemaForm">
-                <label for="nome">Nome *</label>
-                <input type="text" id="nome" name="nome">
 
-                <label for="email">E-mail *</label>
-                <input type="email" id="email" name="email">
-
-                <label for="telefone">Telefone *</label>
-                <input type="tel" id="telefone" name="telefone">
-
-                <label for="estado">Estado *</label>
-                <select id="estado" name="estado" required></select>
-
-                <label for="cidades">Cidade *</label>
-                <select id="cidades" name="cidades" required></select>
-
-                <label for="tipoProblema">Tipo de Problema *</label>
-                <select id="tipoProblema" name="tipoProblema" required>
-                    <option value="" disabled selected>Selecione o tipo de problema</option>
-                    <option value="Problemas de Conectividade">Problemas Técnicos e de Acesso</option>
-                    <option value="Problemas de Gravação e Armazenamento">Problemas de Conta e Login</option>
-                    <option value="Problemas com o Hardware">Problemas de Compra e Pagamento</option>
-                    <option value="Problemas com Infraestrutura e Instalação">Problemas com Suporte e Atendimento
-                    </option>
-                    <option value="Monitoramento">Erro no rastreamento da entrega</option>
-                    <option value="Outro">Outro</option>
-                </select>
-
-                <label for="problemDescription">Dêem-nos mais detalhes sobre:</label>
-                <textarea id="problemDescription" name="problemDescription" required></textarea>
-
-                <form id="problemaForm">
-                    <label for="consent">
-                        <input type="checkbox" id="consent" name="consent"> Eu concordo com os termos.
-                    </label>
-
-                    <button type="submit" id="submitBtn" disabled>Enviar</button>
-                </form>
-
-                <div id="floatingMessage" class="floating-message">Mensagem enviada com sucesso!</div>
-
+    <section id="contact" class="contato">
+        <div class="container-contato" data-aos="fade-right">
+            <div class="headline-contato">
+            </div>
+            <div class="conteudo-contato"  data-aos-delay="400">
+                <div class="formulario-contato">
+                    <h2 data-translate="speaktome">Fale comigo</h2>
+                    <p data-translate="description-contact">Entre em contato para colaborações, projetos ou apenas
+                        para trocar ideias! Estou sempre aberto a novas oportunidades e desafios na área de
+                        tecnologia.</p>
+                    <form class="form">
+                        <div class="input-box" data-aos="fade-right">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Name">
+                        </div>
+                        <div class="input-box" data-aos="fade-right">
+                            <i class="fas fa-phone"></i>
+                            <input type="phone" placeholder="(55) 22222-2222">
+                        </div>
+                        <div class="input-box" data-aos="fade-right">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" placeholder="E-mail">
+                        </div>
+                        <div class="input-box" data-aos="fade-right">
+                            <i class="fas fa-comment"></i>
+                            <textarea name="mensagem" id="mensagem"></textarea>
+                        </div>
+                        <button >
+                            <span class="box" data-translate="send">
+                                Enviar
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
     <div id="footer"></div>
 

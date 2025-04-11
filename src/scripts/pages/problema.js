@@ -1,92 +1,65 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Estados com SP em primeiro lugar
-    const estados = ["SP", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SE", "TO"];
+document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("yMyAcoSCYnlGNxm5j"); // Use a chave pública que você forneceu
+});
 
-    // Cidades ajustadas com São José do Rio Preto em primeiro lugar para SP
-    const cidades = {
-        "SP": ["São José do Rio Preto", "São Paulo", "Campinas", "Santos", "Ribeirão Preto", "Sorocaba", "São Bernardo do Campo", "Osasco", "Guarulhos", "Jundiaí", "Piracicaba"],
-        "AC": ["Rio Branco", "Cruzeiro do Sul", "Sena Madureira", "Tarauacá"],
-        "AL": ["Maceió", "Arapiraca", "Rio Largo", "Palmeira dos Índios"],
-        "AP": ["Macapá", "Santana", "Laranjal do Jari"],
-        "AM": ["Manaus", "Parintins", "Itacoatiara"],
-        "BA": ["Salvador", "Feira de Santana", "Vitória da Conquista"],
-        "CE": ["Fortaleza", "Caucaia", "Juazeiro do Norte"],
-        "DF": ["Brasília", "Taguatinga", "Ceilândia"],
-        "ES": ["Vitória", "Vila Velha", "Serra"],
-        "GO": ["Goiânia", "Aparecida de Goiânia", "Anápolis"],
-        "MA": ["São Luís", "Imperatriz", "Timon"],
-        "MT": ["Cuiabá", "Várzea Grande", "Rondonópolis"],
-        "MS": ["Campo Grande", "Dourados", "Três Lagoas"],
-        "MG": ["Belo Horizonte", "Uberlândia", "Contagem"],
-        "PA": ["Belém", "Ananindeua", "Santarém"],
-        "PB": ["João Pessoa", "Campina Grande", "Santa Rita"],
-        "PR": ["Curitiba", "Londrina", "Maringá"],
-        "PE": ["Recife", "Jaboatão dos Guararapes", "Olinda"],
-        "PI": ["Teresina", "Parnaíba", "Picos"],
-        "RJ": ["Rio de Janeiro", "Niterói", "Petrópolis"],
-        "RN": ["Natal", "Mossoró", "Parnamirim"],
-        "RS": ["Porto Alegre", "Caxias do Sul", "Pelotas"],
-        "RO": ["Porto Velho", "Ji-Paraná", "Ariquemes"],
-        "RR": ["Boa Vista", "Rorainópolis", "Caracaraí"],
-        "SC": ["Florianópolis", "Joinville", "Blumenau"],
-        "SE": ["Aracaju", "Nossa Senhora do Socorro", "Lagarto"],
-        "TO": ["Palmas", "Araguaína", "Gurupi"]
+
+document.querySelector(".form").addEventListener("submit", function(event) {
+    event.preventDefault(); 
+
+    const name = document.querySelector("input[type='text']").value;
+    const phone = document.querySelector("input[type='phone']").value;
+    const email = document.querySelector("input[type='email']").value;
+    const message = document.querySelector("textarea[name='mensagem']").value;
+
+    let valid = true;
+    let errorMessage = "";
+
+    if (name.trim() === "") {
+        valid = false;
+        errorMessage += "Nome é obrigatório.\n";
+    }
+
+    const phoneRegex = /^[\d\s\(\)-]+$/;
+    if (!phone.match(phoneRegex)) {
+        valid = false;
+        errorMessage += "Telefone inválido.\n";
+    }
+
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!email.match(emailRegex)) {
+        valid = false;
+        errorMessage += "E-mail inválido.\n";
+    }
+
+    if (message.trim() === "") {
+        valid = false;
+        errorMessage += "Mensagem é obrigatória.\n";
+    }
+
+    if (!valid) {
+        alert(errorMessage); 
+    } else {
+        submitForm(name, phone, email, message);
+    }
+});
+function submitForm(name, phone, email, message) {
+    const currentTime = new Date().toLocaleString(); 
+
+    const formData = {
+        name: name,
+        phone: phone,
+        email: email,
+        message: message,
+        time: currentTime 
     };
 
-    const estadoSelect = document.getElementById('estado');
-    const cidadeSelect = document.getElementById('cidades');
-
-    // Preenche as opções do select de estados
-    estados.forEach(estado => {
-        const option = document.createElement('option');
-        option.value = estado;
-        option.textContent = estado;
-        estadoSelect.appendChild(option);
+    emailjs.send("service_hvwnd6t", "template_johnytn", formData)
+    .then(function(response) {
+        console.log("Success:", response);
+        alert("Formulário enviado com sucesso!");
+        document.querySelector(".form").reset(); 
+    }, function(error) {
+        console.error("Erro:", error);
+        alert("Houve um erro ao enviar o formulário. Tente novamente.");
     });
-
-    // Atualiza as opções do select de cidades com base no estado selecionado
-    estadoSelect.addEventListener('change', function () {
-        const selectedEstado = estadoSelect.value;
-        const cidadesDoEstado = cidades[selectedEstado] || [];
-
-        // Limpa as opções anteriores
-        cidadeSelect.innerHTML = '';
-
-        // Adiciona novas opções de cidades
-        cidadesDoEstado.forEach(cidade => {
-            const option = document.createElement('option');
-            option.value = cidade;
-            option.textContent = cidade;
-            cidadeSelect.appendChild(option);
-        });
-    });
-
-    // Garante que o select de cidades esteja atualizado ao carregar a página
-    estadoSelect.dispatchEvent(new Event('change'));
-});
-document.addEventListener('DOMContentLoaded', function () {
-    const consentCheckbox = document.getElementById('consent');
-    const submitButton = document.getElementById('submitBtn');
-
-    // Atualiza o estado do botão de envio baseado no checkbox
-    consentCheckbox.addEventListener('change', function () {
-        if (consentCheckbox.checked) {
-            submitButton.disabled = false; // Habilita o botão se o checkbox estiver marcado
-        } else {
-            submitButton.disabled = true; // Desabilita o botão se o checkbox não estiver marcado
-        }
-    });
-
-    document.getElementById('problemaForm').addEventListener('submit', function (event) {
-        event.preventDefault(); // Impede o envio do formulário
-
-        // Exibe a mensagem flutuante
-        const floatingMessage = document.getElementById('floatingMessage');
-        floatingMessage.style.display = 'block';
-
-        // Esconde a mensagem flutuante após 10 segundos
-        setTimeout(function () {
-            floatingMessage.style.display = 'none';
-        }, 15000);
-    });
-});
+}

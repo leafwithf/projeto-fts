@@ -1,33 +1,243 @@
-* {
+@import url('../../styles/base/global.css');
+
+
+/* CONTATO  */
+.contato {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    padding: 2rem 0rem 3rem 0rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+}
+
+.container-contato {
+    width: 100%;
+    height: 100vh;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.headline-contato {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-contato {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.titulo-contato h1 {
+    color: var(--color-black);
+    width: 50%;
+    font-size: 8vw;
+    font-weight: lighter;
+    font-family: var(--font-grande);
+}
+
+.descricao-contato {
+    width: 50%;
+    text-align: right;
+}
+
+.descricao-contato a {
+    text-decoration: none;
+    color: var(--color-black);
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+.conteudo-contato {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.formulario-contato {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 0rem 2rem 0rem;
+}
+
+.formulario-contato h2 {
+    font-size: 2rem;
+}
+
+.formulario-contato p {
+    font-size: 1.5rem;
+    color: var(--color-gray1);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.form input {
+    font-family: var(--font-pequena);
+    width: 100%;
+    height: 30px;
+    border-radius: 30px;
+    outline: none;
+    border: 2px solid rgba(128, 128, 128, 0.5);
+    padding: 1.5rem 1rem;
+    font-size: 1.2rem;
+}
+
+.form textarea {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    outline: none;
+    border: 2px solid rgba(128, 128, 128, 0.5);
+    font-family: var(--font-pequena);
+    font-size: 1.2rem;
+    padding: 1.5rem 1rem;
+}
+
+
+.form .input-box {
+    position: relative;
+    width: 100%;
+}
+
+.form .input-box input,
+.form .input-box textarea {
+    width: 100%;
+    padding: 1.5rem 1rem 1.5rem 3rem; /* Espaço à esquerda para o ícone */
+    border-radius: 30px;
+    outline: none;
+    border: 2px solid rgba(128, 128, 128, 0.5);
+    font-size: 1.2rem;
+    font-family: var(--font-pequena);
+}
+
+.form .input-box i {
+    position: absolute;
+    left: 10px; /* Ajuste para manter o ícone dentro do input */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--color-gray1);
+}
+
+.logo-contato {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.logo-contato img {
+    width: 80%;
+    border-radius: 36px;
+}
+.box {
+    width: 140px;
+    height: auto;
+    float: left;
+    transition: .5s linear;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    margin: 0 5px;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  
+  .box:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
     box-sizing: border-box;
-}
+    transform: translateX(100%);
+  }
+  
+  .box:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+  }
+  
+  .box:hover:before {
+    border-color: var(--gradient4);
+    height: 100%;
+    transform: translateX(0);
+    transition: .3s transform linear, .3s height linear .3s;
+  }
+  
+  .box:hover:after {
+    border-color: var(--gradient4);
+    height: 100%;
+    transform: translateX(0);
+    transition: .3s transform linear, .3s height linear .5s;
+  }
+  
+  button {
+    color: var(--gradient4);
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+  }
+  
 
-body {
-    font-family: 'Poppins', serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0D0C0B;
-    overflow-y: auto;
-    /* Certifique-se de que a rolagem vertical seja permitida */
-}
 
-.container {
+/* .container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Alinhamento específico dos textos */
 .centralize-text {
     text-align: center;
-    /* Centraliza o texto dentro do contêiner */
     margin: 0 auto;
-    /* Mantém o contêiner centralizado */
 }
 
 .text-box {
     margin-bottom: 10%;
-    /* Espaçamento entre os blocos de texto */
 }
 
 .form-wrapper {
@@ -38,7 +248,6 @@ body {
     padding: 20px;
     z-index: 1;
     position: static;
-    /* Deixe ele se comportar naturalmente */
 }
 
 
@@ -71,13 +280,10 @@ form textarea {
     padding: 10px;
     margin-bottom: 15px;
     border: 2px solid #ffffff;
-    /* Bordas na cor vermelha */
     border-radius: 10px;
-    /* Bordas arredondadas */
     font-size: 1rem;
     color: #74605d;
     background-color: transparent;
-    /* Fundo claro */
 }
 
 form input:focus,
@@ -91,7 +297,6 @@ form button {
     width: 100%;
     padding: 12px 0;
     background-color: #74605d;
-    /* Vermelho do tema */
     color: #fff;
     font-size: 1rem;
     border: none;
@@ -106,31 +311,22 @@ form button {
 
 form button:hover {
     background-color: #74605d;
-    /* Cor mais escura no hover */
 }
 
 form textarea {
     resize: vertical;
-    /* Permite redimensionar apenas verticalmente */
 }
 
-/* Estilo para aumentar o tamanho do texto e do checkbox */
 form label[for="consent"] {
     display: flex;
     align-items: center;
     font-size: 1.0rem;
-    /* Aumenta o tamanho do texto */
     font-weight: normal;
-    /* Deixa o texto em negrito (opcional) */
     color: #ffffff;
-    /* Cor mais visível para o texto */
     margin: 0;
-    /* Remove margens extras */
     gap: 10px;
-    /* Espaçamento consistente entre o checkbox e o texto */
 }
 
-/* Estilo base para o checkbox */
 form label input[type="checkbox"] {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -140,40 +336,29 @@ form label input[type="checkbox"] {
     margin: 0;
     border-radius: 50%;
     background-color: #0D0C0B;
-    /* Cor de fundo quando não marcado */
     cursor: pointer;
     position: relative;
     display: inline-block;
     transition: all 0.3s ease-in-out;
-    /* Transição suave */
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-    /* Sombra leve para destacar */
 }
 
-/* Quando o checkbox está marcado */
 form label input[type="checkbox"]:checked {
     background-color: #ffffff;
-    /* Cor de fundo quando marcado (verde vibrante) */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-    /* Sombra mais forte e verde */
 }
 
-/* Estilo do "checkmark" com animação */
 form label input[type="checkbox"]:checked::after {
     content: '\2713';
-    /* Símbolo de "check" */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Centraliza o símbolo */
     font-size: 18px;
     font-weight: 900;
     color: #0D0C0B;
-    /* Cor do símbolo */
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    /* Transição suave para o símbolo */
 }
 
 form label input[type="checkbox"]:checked::after {
@@ -182,11 +367,8 @@ form label input[type="checkbox"]:checked::after {
 
 form label input[type="checkbox"]:hover {
     background-color: #ffffff;
-    /* Cor de fundo mais clara quando hover */
     border-radius: 50%;
-    /* Garante que o checkbox tenha bordas arredondadas */
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    /* Efeito de luz mais forte */
 }
 
 
@@ -199,27 +381,20 @@ form select {
     padding: 10px;
     margin-bottom: 15px;
     border: 2px solid #ffffff;
-    /* Cor da borda */
     border-radius: 10px;
     font-size: 1rem;
     color: #ffffff;
-    /* Cor do texto */
     background-color: #0D0C0B;
-    /* Cor do fundo */
 
     appearance: none;
-    /* Remove o estilo padrão do navegador */
 }
 
-/* Para mudar a cor das opções dentro do select */
 form select option {
     background-color: #0D0C0B;
-    /* Cor de fundo das opções */
     color: #ffffff;
-    /* Cor do texto das opções */
     font-family: 'Montserrat', serif;
     font-size: small;
-}
+} */
 
 
 /* Estilos para a mensagem flutuante */
@@ -236,49 +411,4 @@ form select option {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     z-index: 1;
     display: none;
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
-    }
-
-    .form-wrapper {
-        position: static;
-        /* Permite que o formulário se ajuste naturalmente */
-        width: 100%;
-        padding: 10px;
-        margin-top: 20%;
-    }
-
-    form {
-        width: 90%;
-        max-width: 400px;
-        padding: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-
-
-    .container {
-        height: auto;
-        padding: 20px;
-    }
-
-    .form-wrapper {
-        position: static;
-        /* Evita que o formulário seja empurrado para fora */
-        width: 100%;
-        padding: 5px;
-        margin-top: 20%;
-    }
-
-    form {
-        width: 95%;
-        max-width: 350px;
-        padding: 15px;
-    }
 }
