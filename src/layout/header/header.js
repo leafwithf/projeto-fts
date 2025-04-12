@@ -1,12 +1,12 @@
 function toggleMenu() {
     const menuItems = document.getElementById("menu-items");
-    menuItems.classList.toggle("active"); 
+    menuItems.classList.toggle("active");
 }
 function toggleCatalogo(event) {
-    event.preventDefault(); 
+    event.preventDefault();
     const submenuContainer = document.querySelector('.submenu-container');
-    
-    submenuContainer.classList.toggle('active');  
+
+    submenuContainer.classList.toggle('active');
 }
 
 function filterCategory(category) {
@@ -27,38 +27,29 @@ function filterCategory(category) {
 }
 function closeMenu() {
     const menu = document.getElementById("menu-items");
-    menu.classList.remove("active");  
+    menu.classList.remove("active");
 }
 
 function toggleMenu() {
     const menuItems = document.getElementById("menu-items");
-    menuItems.classList.toggle("active"); 
+    menuItems.classList.toggle("active");
 }
 
 function toggleCatalogo(event) {
-    event.preventDefault(); 
+    event.preventDefault();
     const submenuContainer = document.querySelector('.submenu-container');
-    
-    // Alterna a visibilidade do submenu
-    submenuContainer.classList.toggle('active'); 
+
+    submenuContainer.classList.toggle('active');
 }
 
-// botão de fechar
 const closeBtn = document.getElementById('close-btn');
 if (closeBtn) {
     closeBtn.addEventListener('click', closeMenu);
 } else {
-    console.error("...");
 }
 
-// Função para alternar o modo escuro
-function toggleDarkMode() {
-    document.documentElement.classList.toggle('dark-mode');
-}
-
-// Incluir o Header no html
 fetch('../../src/layout/header/header.html')
-.then(res => res.text())
-.then(data => {
-    document.getElementById("header").innerHTML = data;
-});
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("header").innerHTML = data;
+    });

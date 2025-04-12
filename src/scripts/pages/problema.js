@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("yMyAcoSCYnlGNxm5j"); // Use a chave pública que você forneceu
+    emailjs.init("ADICIONAR");
 });
 
-
-document.querySelector(".form").addEventListener("submit", function(event) {
-    event.preventDefault(); 
+document.querySelector(".form").addEventListener("submit", function (event) {
+    event.preventDefault();
 
     const name = document.querySelector("input[type='text']").value;
     const phone = document.querySelector("input[type='phone']").value;
@@ -37,29 +36,29 @@ document.querySelector(".form").addEventListener("submit", function(event) {
     }
 
     if (!valid) {
-        alert(errorMessage); 
+        alert(errorMessage);
     } else {
         submitForm(name, phone, email, message);
     }
 });
 function submitForm(name, phone, email, message) {
-    const currentTime = new Date().toLocaleString(); 
+    const currentTime = new Date().toLocaleString();
 
     const formData = {
         name: name,
         phone: phone,
         email: email,
         message: message,
-        time: currentTime 
+        time: currentTime
     };
 
     emailjs.send("service_hvwnd6t", "template_johnytn", formData)
-    .then(function(response) {
-        console.log("Success:", response);
-        alert("Formulário enviado com sucesso!");
-        document.querySelector(".form").reset(); 
-    }, function(error) {
-        console.error("Erro:", error);
-        alert("Houve um erro ao enviar o formulário. Tente novamente.");
-    });
+        .then(function (response) {
+            console.log("Success:", response);
+            alert("Formulário enviado com sucesso!");
+            document.querySelector(".form").reset();
+        }, function (error) {
+            console.error("Erro:", error);
+            alert("Houve um erro ao enviar o formulário. Tente novamente.");
+        });
 }

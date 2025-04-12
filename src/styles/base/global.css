@@ -1,14 +1,18 @@
 :root {
-  --bg-color: #121212;
-  --text-color: #ffffff;
-  --accent-color: #8a2be2;
   --font-base: 'Inter', sans-serif;
-  --max-width: 0px;
+  --font-primary: 'Poppins', serif;
+  --font-second: 'Montserrat', serif;
+  --color-black: #121212;
+  --color-gray: #3d3d3d;
+  --color-white: #ffffff;
+  --color-brownLight: #74605d;
+  --background-footer: #261C1A;
+  --background: #0D0C0B;
+  --accent-color: #8a2be2;
 }
 
 body {
-  background-color: #0D0C0B;
-
+  background-color: var(--background);
 }
 
 html, body {
@@ -33,6 +37,13 @@ input, button, textarea, select {
   background: none;
 }
 
-p, h1, h2, h3, h4, img {
+p, h1, h2, h3, h4, img, a, .box {
   user-select: none;
+}
+
+.sobreposição{
+  user-select: none;
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
 }
