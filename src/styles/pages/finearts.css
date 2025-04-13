@@ -1,4 +1,5 @@
 @import url('../../styles/base/global.css');
+@import url('../../styles/base/responsive.css');
 
 .container {
     display: flex;
