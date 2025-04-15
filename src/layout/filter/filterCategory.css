@@ -174,31 +174,42 @@
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
     height: auto;
     margin: 10px 0;
-    width: 85%;
+    width: 45%;
     transform: translateX(0%) translateY(5%);
     z-index: 2;
     max-height: 450px;
     overflow-y: hidden;
     overflow-x: hidden;
 }
-
 .submenu a {
+    all: unset;
     display: block;
     padding: 10px 15px;
-    text-decoration: none;
     font-size: 13px;
+    font-family: var(--font-primary);
+    color: var(--color-white);
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .submenu a:hover {
-    transition: none !important;
+    background-color: var(--color-gray);
 }
 
-.submenu a,
-.submenu a::after,
-.submenu a:hover {
-    transition: none !important;
+.submenu a:hover,
+.submenu a:focus,
+.submenu a:active {
+    background-color: var(--color-gray) !important;
     text-decoration: none !important;
-    background: none !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.submenu a::after,
+.submenu a::before {
+    content: none !important;
+    display: none !important;
 }
 
 .submenu-container.active .submenu {
