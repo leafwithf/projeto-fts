@@ -129,3 +129,55 @@
     z-index: 2;
     font-family: var(--font-second);
 }
+
+/* TERMOS */
+.terms-before {
+    font-size: 6vw;
+    font-weight: 700;
+    color: #ffffff;
+    position: absolute;
+    top: 2%;
+    left: 16%;
+    margin-right: 10%;
+    z-index: 2;
+    font-family: var(--font-primary);
+    letter-spacing: -10px;
+
+}
+
+.terms-after {
+    font-size: 4vw;
+    font-weight: 100;
+    color: #74605d;
+    position: relative;
+    transform: translateY(120%) translateX(3%);
+    right: 25%;
+    z-index: 2;
+    font-family: var(--font-second);
+}
+
+/* COOKIES */
+.cookies-before {
+    font-size: 6vw;
+    font-weight: 700;
+    color: #ffffff;
+    position: absolute;
+    top: 2%;
+    left: 16%;
+    margin-right: 10%;
+    z-index: 2;
+    font-family: var(--font-primary);
+    letter-spacing: -10px;
+
+}
+
+.cookies-after {
+    font-size: 4vw;
+    font-weight: 100;
+    color: #74605d;
+    position: relative;
+    transform: translateY(120%) translateX(3%);
+    right: 25%;
+    z-index: 2;
+    font-family: var(--font-second);
+}

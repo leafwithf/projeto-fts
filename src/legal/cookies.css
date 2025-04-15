@@ -7,11 +7,13 @@ footer {
     position: relative;
     z-index: 10;
 }
+
 .text1 {
     margin-left: 35%;
     font-size: 2.5rem;
     font-weight: 500; 
     font-family: 'Poppins', serif;
+    color: var(--color-white);
 }
 
 .text2 {
@@ -19,6 +21,7 @@ footer {
     font-weight: 300; 
     font-family: 'Montserrat', serif;
     text-align: center;
+    color: var(--color-brownLight);
 }
 
 .container {
