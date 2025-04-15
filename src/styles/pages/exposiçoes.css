@@ -1,18 +1,21 @@
-@import url('../../styles/base/global.css');
-@import url('../../styles/base/responsive.css');
+@import url(../../../src/styles/base/global.css);
+@import url(../../../src/styles/base/reset.css);
+@import url(../../../src/styles/base/responsive.css);
 
 .text1 {
     margin-left: 35%;
     font-size: 2.5rem;
-    font-weight: 500; /* Corrigido, pois 'font-size' estava sendo usado erroneamente */
-    font-family: 'Poppins', serif;
+    font-weight: 500; 
+    font-family: var(--font-primary);
+    color: var(--color-white);
 }
 
 .text2 {
     font-size: 1.5rem;
-    font-weight: 300; /* Corrigido */
-    font-family: 'Montserrat', serif;
-    text-align: center; /* Melhor para responsividade */
+    font-weight: 300; 
+    color: var(--color-brownLight);
+    font-family: var(--font-primary);
+    text-align: center; 
 }
 
 .container {

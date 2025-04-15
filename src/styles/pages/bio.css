@@ -1,5 +1,6 @@
-@import url('../../styles/base/global.css');
-@import url('../../styles/base/responsive.css');
+@import url(../../../src/styles/base/global.css);
+@import url(../../../src/styles/base/reset.css);
+@import url(../../../src/styles/base/responsive.css);
 
 .containerBio {
     display: flex;

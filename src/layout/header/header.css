@@ -1,12 +1,6 @@
-@import url('../../styles/base/global.css');
-
-/* 
-.user-icon .fa-user-circle {
-    font-size: 4rem;
-    color:  var(--color-white);
-    margin-right: 35%;
-    vertical-align: middle;
-} */
+@import url(../../../src/styles/base/global.css);
+@import url(../../../src/styles/base/reset.css);
+@import url(../../../src/styles/base/responsive.css);
 
 .header-container {
     display: flex;
@@ -17,21 +11,21 @@
     background-color: var(--font-primary);
 }
 
-.logo {
+.header-logo {
     display: flex;
     align-items: center;
     margin-right: 30%;
     margin-left: 10%;
 }
 
-.logo img {
+.header-logo img {
     width: 6em;
     height: auto;
     margin-right: 1%;
     transition: transform 0.3s ease-in-out;
 }
 
-.logo img:hover {
+.header-logo img:hover {
     transform: scale(1.1);
 }
 
@@ -50,7 +44,6 @@
     display: none;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     z-index: 1;
 }
 
@@ -69,15 +62,35 @@
 }
 
 .menu ul li a {
-    color:  var(--color-white);
+    position: relative;
+    color: var(--color-white);
     text-decoration: none;
-    font-weight: 100;
+    font-family: var(--font-second);
+    font-weight: 400;
     font-size: 20px;
     white-space: nowrap;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 150%;
+    height: 2px;
+    background-color: var(--color-white);
+    transition: transform 0.3s ease-in-out;
 }
 
 .menu ul li a:hover {
-    color:  var(--color-white);
+    color: var(--color-white);
+}
+
+.menu ul li a:hover::after {
+    transform: translateX(-50%) scaleX(1);
 }
 
 .menu-toggle span {
@@ -93,7 +106,6 @@
     padding: 10px;
     background-color: #333;
     border: none;
-    cursor: pointer;
 }
 
 .filters button:hover {
@@ -134,7 +146,6 @@
     font-family:  var(--font-second);
     color: #D9D48F;
     padding: 10px 20px;
-    cursor: pointer;
     display: block;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -149,7 +160,6 @@
 .menu-toggle i {
     font-size: 24px;
     color:  var(--color-white);
-    cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }
 

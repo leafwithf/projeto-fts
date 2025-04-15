@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById("myModal");
     const modalImg = document.getElementById("img01");
-    const closeBtn = document.getElementById("closeBtn");
+    const closeModalIcon = document.getElementById("closeModalIcon"); 
     const images = document.querySelectorAll('.grid-photos img');
 
     modal.style.display = "none";
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    closeBtn.onclick = function () {
+    closeModalIcon.onclick = function () {
         modal.style.display = "none";
     }
 

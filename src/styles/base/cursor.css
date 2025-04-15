@@ -1,0 +1,19 @@
+@import url('./global.css');
+@import url('./reset.css');
+
+
+#inkCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    #inkCanvas {
+        display: none;
+    }
+}

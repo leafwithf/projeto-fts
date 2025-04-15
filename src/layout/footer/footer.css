@@ -1,5 +1,6 @@
-@import url('../../styles/base/global.css');
-
+@import url(../../../src/styles/base/global.css);
+@import url(../../../src/styles/base/reset.css);
+@import url(../../../src/styles/base/responsive.css);
 
 .footer {
     background-color: var(--background-footer) ;
@@ -18,16 +19,17 @@
     flex-wrap: wrap;
 }
 
-.footer-left h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    font-family: var(--font-primary);
-}
 .footer-left p,.footer-left a, .social-icons a, .footer-right, .footer-right ul, .footer-right li, .footer-right a {
     font-family: var(--font-second);
     color: var(--color-white);
     text-decoration: none;
     font-size: 0.9rem;
+}
+
+.footer-left h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-family: var(--font-primary);
 }
 
 .footer-left p {
@@ -36,15 +38,58 @@
 
 .footer-left a {
     margin: 0 5px;
+    position: relative; 
+    text-decoration: none;
+    transition: color 0.3s ease-in-out; 
 }
 
 .footer-left a:hover {
-    text-decoration: underline;
+    color: var(--color-white); 
+}
+
+.footer-left a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-white);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-left a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.footer-left h1 {
+    font-size: 50px;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    letter-spacing: -4px;
+}
+.social-icons i {
+    margin-right: 10px;
+    margin-top: 10px;
+    font-size: 2rem;
+    transition: transform 0.3s ease-in-out;
+    color: var(--color-white);
+}
+
+.social-icons i:hover {
+    transform: scale(1.2);
 }
 
 .social-icons a {
-    margin-right: 10px;
-    font-size: 2rem;
+    text-decoration: none;
+    position: static !important;
+}
+
+.social-icons a::after {
+    display: none !important;
+    content: none !important;
 }
 
 .footer-right {
@@ -62,8 +107,31 @@
     margin-bottom: 10px;
 }
 
+.footer-right a {
+    position: relative; 
+    text-decoration: none;
+    transition: color 0.3s ease-in-out; 
+}
+
 .footer-right a:hover {
-    text-decoration: underline;
+    color: var(--color-white); 
+}
+
+.footer-right a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-white);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-right a:hover::after {
+    transform: translateX(-50%) scaleX(1);
 }
 
 .footer-logo {

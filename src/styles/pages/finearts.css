@@ -1,5 +1,6 @@
-@import url('../../styles/base/global.css');
-@import url('../../styles/base/responsive.css');
+@import url(../../../src/styles/base/global.css);
+@import url(../../../src/styles/base/reset.css);
+@import url(../../../src/styles/base/responsive.css);
 
 .container {
     display: flex;
@@ -24,7 +25,6 @@
     margin-bottom: 1rem;
     break-inside: avoid;
     transition: transform 0.3s ease;
-    cursor: pointer;
     padding: 0.3em;
 }
 
@@ -52,18 +52,17 @@
     max-height: 80%;
 }
 
-.close {
+.closeModalIcon {
     position: absolute;
     top: 30px;
     right: 40px;
     color: rgb(155, 45, 45);
     font-size: 40px;
     font-weight: bold;
-    cursor: pointer;
     z-index: 1001;
     transition: transform 0.3s ease-in-out;
 }
 
-.close:hover {
+.closeModalIcon:hover {
     transform: scale(1.3);
 }

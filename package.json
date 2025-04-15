@@ -1,14 +1,15 @@
-    {
-        "name": "projeto-fts",
-        "version": "1.0.0",
-        "description": "",
-        "main": "main.js",
-        "scripts": {
-            "start": "echo \"Nada ainda para iniciar\""
-        },
-        "author": "",
-        "license": "ISC",
-        "dependencies": {
-            "aos": "^2.3.4"
-        }
-    }
+{
+  "name": "projeto-fts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aos": "^2.3.4"
+  }
+}

@@ -2,12 +2,23 @@
   --font-base: 'Inter', sans-serif;
   --font-primary: 'Poppins', serif;
   --font-second: 'Montserrat', serif;
+
   --color-black: #121212;
   --color-gray: #3d3d3d;
   --color-white: #ffffff;
   --color-brownLight: #74605d;
-  --background-footer: #261C1A;
+
+  --background: #ffffff;
+  --background-footer: #f5f5f5;
+  --accent-color: #8a2be2;
+}
+
+[data-theme="dark"] {
   --background: #0D0C0B;
+  --background-footer: #261C1A;
+  --color-white: #ffffff;
+  --color-black: #121212;
+  --color-gray: #3d3d3d;
   --accent-color: #8a2be2;
 }
 
@@ -23,6 +34,12 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  overflow: auto; /* Permite rolar */
 }
 
 img, picture, video, canvas, svg {
@@ -47,3 +64,11 @@ p, h1, h2, h3, h4, img, a, .box {
   text-align: center;
   margin-top: 20px;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  cursor: none;
+  
+}
+
