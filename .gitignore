@@ -1,2 +1,10 @@
-# Local Netlify folder
-.netlify
+# Netlify
+.netlify/functions/dist/
+.netlify/cache/
+
+# Dependências
+node_modules/
+
+# Variáveis de ambiente
+.env
+*.env

@@ -1,0 +1,8 @@
+[build]
+  functions = "netlify/functions"
+  publish = "dist" # ou a pasta onde seu build é gerado
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
