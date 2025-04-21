@@ -16,6 +16,8 @@
     color: var(--color-brownLight);
     font-family: var(--font-primary);
     text-align: center; 
+    user-select: none;
+
 }
 
 .container {
@@ -25,6 +27,8 @@
     height: auto;
     min-height: 100%;
     max-width: 100%;
+    user-select: none;
+
 }
 
 /* TEXT EXPOSIÇOES - 768px */

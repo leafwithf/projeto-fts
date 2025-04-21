@@ -8,6 +8,7 @@
     font-weight: 500; 
     font-family: 'Poppins', serif;
     color: white;
+    user-select: none;
 }
 
 .text2 {
@@ -16,6 +17,8 @@
     color: white;
     font-family: 'Montserrat', serif;
     text-align: center; 
+    user-select: none;
+
 }
 
 .container {

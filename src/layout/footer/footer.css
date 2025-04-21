@@ -196,7 +196,7 @@
     .footer-logo img {
         margin-top: 50%;
         margin-left: -20%;
-        width: 180%;
+        width: 200%;
         height: auto;
     }
 
@@ -205,6 +205,8 @@
         align-items: center;
         text-align: center;
         padding: 10px;
+        overflow-x: hidden;
+
     }
 
     .footer-left {

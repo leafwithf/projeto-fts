@@ -27,7 +27,7 @@ exports.handler = async function(event, context) {
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
-        'Cache-Control': 'public, max-age=31536000, immutable'  // 1 ano em segundos
+        'Cache-Control': 'public, max-age=31536000, immutable' 
       }
     };
   } catch (error) {
