@@ -1,7 +1,6 @@
 const cloudinary = require('cloudinary').v2;
 
 exports.handler = async function(event, context) {
-  // Configura o Cloudinary com variáveis de ambiente
   cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,
@@ -9,11 +8,10 @@ exports.handler = async function(event, context) {
   });
 
   try {
-    // Busca imagens apenas da pasta 'finearts'
     const result = await cloudinary.api.resources({
       type: 'upload',
-      prefix: 'finearts/', // Filtra por esta pasta
-      max_results: 100     // Limite de imagens retornadas
+      prefix: 'finearts/', 
+      max_results: 100     
     });
 
     return {
@@ -28,7 +26,8 @@ exports.handler = async function(event, context) {
       }),
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*' // Importante para CORS
+        'Access-Control-Allow-Origin': '*',
+        'Cache-Control': 'public, max-age=31536000, immutable'  // 1 ano em segundos
       }
     };
   } catch (error) {

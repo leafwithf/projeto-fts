@@ -9,8 +9,8 @@
     margin-top: 20px;
 }
 
-/* PROBLEMAS */
-.problem-before {
+/* CONTATO */
+.contact-before {
     font-size: 6vw;
     font-weight: 700;
     color: #ffffff;
@@ -22,7 +22,7 @@
     letter-spacing: -10px;
 }
 
-.problem-after {
+.contact-after {
     font-size: 4vw;
     font-weight: 100;
     color: #74605d;
@@ -81,7 +81,7 @@
 }
 
 /* DÚVIDAS */
-.doubts-before {
+.faq-before {
     font-size: 6vw;
     font-weight: 700;
     color: #ffffff;
@@ -94,12 +94,12 @@
 
 }
 
-.doubts-after {
+.faq-after {
     font-size: 4vw;
     font-weight: 100;
     color: #74605d;
     position: relative;
-    transform: translateY(140%) translateX(2%);
+    transform: translateY(140%) translateX(-3%);
     right: 27%;
     font-family: var(--font-second);
 }
@@ -180,4 +180,106 @@
     right: 25%;
     z-index: 2;
     font-family: var(--font-second);
+}
+
+@media (max-width: 768px) {
+
+    .contact-before,
+    .arts-before,
+    .exhibitions-before,
+    .bio-before,
+    .faq-before,
+    .terms-before,
+    .cookies-before {
+        font-size: 1200vw;
+        letter-spacing: 100px;
+        top: 10%;
+        left: 8%;
+    }
+
+    .contact-after,
+    .terms-after,
+    .cookies-after {
+        font-size: 120vw;
+        transform: translateY(110%) translateX(0%);
+        right: 5%;
+        text-align: left;
+    }
+
+    .arts-after{
+        font-size: 120vw;
+        transform: translateY(110%) translateX(0%);
+        left: 5%;
+        text-align: left;
+    }
+
+    .faq-after {
+        font-size: 120vw;
+        transform: translateY(110%) translateX(0%);
+        left: 5%;
+        text-align: left;
+    }
+
+    .bio-after{
+        font-size: 120vw;
+        transform: translateY(110%) translateX(0%);
+        left: 5%;
+        text-align: left;
+    }
+
+    .exhibitions-after{
+        font-size: 120vw;
+        transform: translateY(110%) translateX(0%);
+        left: 5%;
+        text-align: left;
+    }
+
+    .contact-after{
+        font-size: 100vw;
+        transform: translateY(150%) translateX(0%);
+        left: 5%;
+        text-align: left;
+    }
+
+}
+
+/* TEXTNAME - 480px*/
+@media (max-width: 480px) {
+
+    .contact-before,
+    .arts-before,
+    .exhibitions-before,
+    .bio-before,
+    .faq-before,
+    .terms-before,
+    .cookies-before {
+        font-size: 12vw;
+        letter-spacing: -5px;
+        top: 8%;
+        left: 5%;
+        text-align: left;
+    }
+
+    .contact-after,
+    .arts-after,
+    .exhibitions-after,
+    .bio-after,
+    .terms-after,
+    .cookies-after {
+        font-size: 10vw;
+        transform: translateY(100%) translateX(0%);
+        right: 5%;
+        text-align: left;
+    }
+
+    .faq-after {
+        font-size: 10vw;
+        transform: translateY(100%) translateX(0%);
+        left: 5%;
+        text-align: left;
+    }
+
+    .sobreposição {
+        margin-bottom: 20%;
+    }
 }

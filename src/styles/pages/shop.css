@@ -26,3 +26,43 @@
     min-height: 100%;
     max-width: 100%;
 }
+
+@media (max-width: 768px) {
+    .text1 {
+        margin-left: 20%;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .text2 {
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 0 10%;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+}
+
+/* TEXT EXPOSIÇOES - 480px */
+@media (max-width: 480px) {
+    .text1 {
+        margin-left: 0;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .text2 {
+        font-size: 1rem;
+        text-align: center;
+        padding: 0 5%;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 1.5rem 1rem;
+    }
+}
+

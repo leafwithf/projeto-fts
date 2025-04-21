@@ -42,3 +42,52 @@ h4{
 .containerLeft, h4{
     width: 60%;
 }
+
+/* TEXTOS BIO - 768px */
+@media (max-width: 768px) {
+    .containerBio {
+        flex-direction: column;
+        height: auto;
+        margin-top: 10%;
+        padding: 0 5%;
+    }
+
+    .centralize-text {
+        margin-right: 0;
+        margin-bottom: 5%;
+    }
+
+    h4 {
+        font-size: 2.2vh;
+        text-align: justify;
+    }
+
+    .containerRight, .containerLeft {
+        width: 100%;
+    }
+}
+
+/* TEXTOS BIO - 480px */
+@media (max-width: 480px) {
+    .containerBio {
+        flex-direction: column;
+        height: auto;
+        margin-top: 15%;
+        padding: 10%;
+    }
+
+    .centralize-text {
+        margin-right: 0;
+        margin-bottom: 5%;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 2vh;
+        text-align: center;
+    }
+
+    .containerRight, .containerLeft {
+        width: 100%;
+    }
+}

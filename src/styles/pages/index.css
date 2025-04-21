@@ -121,3 +121,149 @@ footer a:hover {
     color: lightgray;
     transform: scale(1.2);
 }
+
+/* INDEX - 768px*/
+@media (max-width: 768px) {
+    
+    .container {
+      height: 100svh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+  
+    .background {
+      width: 120%;
+      height: 120%;
+      background-size: cover;
+    }
+  
+    .background img {
+      right: 30% !important;
+    }
+  
+    .content {
+      top: 35%;
+      left: 8%;
+      text-align: center;
+      width: 85%;
+    }
+  
+    h1 {
+      font-size: 36px;
+      letter-spacing: -3px;
+      margin-top: 20px;
+    }
+  
+    p {
+      font-size: 13px;
+      letter-spacing: 8px;
+      margin-top: 10px;
+    }
+  
+    .menu {
+      flex-direction: row;
+      top: 2%;
+      transform: translateX(-40%) translateY(10%);
+    }
+  
+    .menu a {
+      margin: 0 10px;
+      font-size: 14px;
+    }
+  
+    .logo {
+      bottom: 55%;
+      left: 5%;
+      transform: translateY(10%);
+    }
+  
+    .logo img {
+      width: 12%;
+    }
+  
+    footer {
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+  
+    footer a {
+      margin-right: 10px;
+    }
+  }
+  
+/* INDEX - 480px*/
+@media (max-width: 480px) {
+
+    .body {
+        height: 100svh;
+        overflow: hidden;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100svh;
+        margin-top: -1%;
+        padding: 0 5%;
+    }
+
+    .content {
+        text-align: center;
+        width: 100svh;
+    }
+
+    .background {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: url('../../../public/assets/images/galeria/image020.webp') no-repeat center center/cover;
+    }
+
+    h1 {
+        margin-top: 10%;
+        margin-left: -57%;
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 14px;
+        margin-left: -56%;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        right: 0;
+        left: 0;
+        margin-left: 45%;
+    }
+
+    .menu a {
+        margin: 2% 0;
+        font-size: 15px;
+        margin-left: 0%;
+    }
+
+    .logo {
+        top: auto;
+        width: 200%;
+        transform: translateX(16%) translateY(-20%);
+    }
+
+    footer {
+        bottom: 4%;
+        margin-left: 0;
+        transform: translateX(-50%);
+        text-align: center;
+        white-space: nowrap;
+    }
+}

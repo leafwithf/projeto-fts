@@ -44,7 +44,7 @@
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 99;
 }
 
 .menu-toggle i {
@@ -101,17 +101,6 @@
     border-radius: 3px;
 }
 
-.filters button {
-    margin: 10px;
-    padding: 10px;
-    background-color: #333;
-    border: none;
-}
-
-.filters button:hover {
-    background-color: #555;
-}
-
 .header-nav-folder-content {
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -132,7 +121,6 @@
 }
 
 .header-nav-folder-item a {
-    color: #D9D48F;
     text-decoration: none;
     font-size: 16px;
     font-weight: 100;
@@ -144,7 +132,6 @@
     font-weight: 100;
     font-size: 18px;
     font-family:  var(--font-second);
-    color: #D9D48F;
     padding: 10px 20px;
     display: block;
     border: 1px solid #ddd;
@@ -169,4 +156,174 @@
 
 #close-btn {
     display: none;
+}
+
+/* MENU - 768px*/
+@media (max-width: 768px) {
+
+    .menu ul {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--color-black);
+        padding: 50px 0;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        z-index: 99;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease;
+    }
+
+    .menu ul.active {
+        transform: translateY(0);
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu ul li a {
+        color: var(--color-white);
+        font-size: 2rem;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        display: block;
+        padding: 20px 0;
+    }
+
+    .menu ul li a:hover {
+        color: var(--color-brownLight);
+    }
+
+    .logo,
+    .menu-toggle {
+        margin-right: 5%;
+        margin-left: -5%;
+        position: flex;
+    }
+
+    .logo img {
+        width:  1.5em;
+        height: 1.5em;
+        margin-right: 8%;
+    }
+
+    .header-nav-folder-title {
+        font-size: 17px;
+        padding: 10px 18px;
+    }
+
+    .header-nav-folder-content {
+        padding: 10px 18px;
+    }
+
+    .header-nav-folder-item a {
+        font-size: 15px;
+    }
+
+    .filters button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    #close-btn {
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        color:var(--color-white);
+        padding: 10px;
+    }
+
+    .menu ul li a::after {
+        display: none;
+      }
+
+}
+
+/* MENU - 480Xpx */
+@media (max-width: 480px) {
+
+    #close-btn {
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        color: var(--color-white);
+        padding: 10px;
+    }
+
+    .menu ul {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 40px 0;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        z-index: 99;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease;
+    }
+
+    .menu ul.active {
+        transform: translateY(0);
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu ul li a {
+        color: var(--color-white);
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 15px 0;
+    }
+
+    .menu ul li a:hover {
+        color: var(--color-brownLight);
+    }
+
+    .logo img {
+        width: 1.5em;
+        height: 1.5em;
+        margin-right: 6%;
+    }
+
+    .filters button {
+        margin: 8px;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .header-nav-folder-title {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    .header-nav-folder-content {
+        padding: 8px 15px;
+    }
+
+    .header-nav-folder-item a {
+        font-size: 14px;
+    }
+
+    .menu ul li a::after {
+        display: none;
+      }
+
 }

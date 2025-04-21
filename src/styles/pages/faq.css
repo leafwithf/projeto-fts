@@ -1,0 +1,119 @@
+@import url(../../../src/styles/base/global.css);
+@import url(../../../src/styles/base/reset.css);
+@import url(../../../src/styles/base/responsive.css);
+
+
+.faq-container {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-family: var(--font-primary);
+
+}
+
+.faq-item {
+    background: transparent;
+    border: 1px solid var(--color-white);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    user-select: none;
+    background-color: var(--color-white);
+}
+
+.faq-toggle {
+    font-size: 1.6rem;
+    transition: transform 0.3s ease;
+    user-select: none;
+}
+
+.faq-toggle svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 1.2rem;
+    font-size: 1rem;
+    color: var(--color-white);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 1rem 1.2rem;
+}
+
+.faq-item.active .faq-toggle svg {
+    transform: rotate(45deg);
+}
+
+  /* FAQ - 768px */
+@media (max-width: 768px) {
+    .faq-container {
+      margin-top: 15%;
+      margin-bottom: 15%;
+      padding: 0 1rem;
+    }
+  
+    .faq-question {
+      font-size: 1rem;
+      padding: 1rem;
+    }
+  
+    .faq-toggle {
+      font-size: 1.4rem;
+    }
+  
+    .faq-answer {
+      font-size: 0.95rem;
+      padding: 0 1rem;
+    }
+  
+    .faq-item.active .faq-answer {
+      padding: 1rem;
+    }
+  }
+
+  /* FAQ - 480px */
+  @media (max-width: 480px) {
+    .faq-container {
+      margin-top: 20%;
+      margin-bottom: 20%;
+      padding: 0 1rem;
+    }
+  
+    .faq-question {
+      font-size: 0.95rem;
+      padding: 0.9rem;
+    }
+  
+    .faq-toggle {
+      font-size: 1.2rem;
+    }
+  
+    .faq-answer {
+      font-size: 0.9rem;
+      padding: 0 0.9rem;
+    }
+  
+    .faq-item.active .faq-answer {
+      padding: 0.9rem;
+    }
+  }
+  

@@ -21,36 +21,425 @@
     <meta name="language" content="pt-BR" />
     <meta name="geo.region" content="BR-SP" />
     <meta name="geo.placename" content="São José do Rio Preto" />
-    <link rel="stylesheet" href="./src/styles/pages/404.css">
-    <link rel="stylesheet" href="./src/styles/base/cursor.css">
-    <link rel="stylesheet" href="./src/styles/base/reset.css">
-    <link rel="stylesheet" href="./src/styles/base/global.css">
-    <link rel="stylesheet" href="./src/layout/header/header.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="./public/assets/images/logo/logoic-white.ico" type="icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="./src/scripts/pages/darkmode.js"></script>
-    <script src="./src/layout/header/header.js"></script>
-    <script src="./src/scripts/cursor.js"></script>
+    <link rel="stylesheet" href="./src/styles/base/global.css">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <title>Leaf With F</title>
+        html,
+        body {
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            padding: 0.5em 0.8em;
+            position: fixed;
+            z-index: 1;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        p {
+            color: #ffffff;
+            font-size: calc(1em + 3vmin);
+            font-family: 'Poppins', serif;
+            position: fixed;
+            bottom: 1rem;
+            right: 1.5rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-align: right;
+        }
+
+        @media screen and (min-width: 340px) {
+            p {
+                width: 70%;
+            }
+        }
+
+        @media screen and (min-width: 560px) {
+            p {
+                width: 50%;
+            }
+        }
+
+        @media screen and (min-width: 940px) {
+            p {
+                width: 30%;
+            }
+        }
+
+        @media screen and (min-width: 1300px) {
+            p {
+                width: 25%;
+            }
+        }
+
+        .background-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .background-wrapper h1 {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-10deg);
+            color: #ffffff;
+            font-family: 'Poppins', serif;
+            font-size: 40vmax;
+            font-weight: bold;
+            max-width: 100vw;
+            max-height: 100vh;
+            overflow: hidden;
+            letter-spacing: 0.025em;
+            margin: 0;
+            line-height: 1;
+        }
+
+        /* CURSOR */
+        #inkCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            #inkCanvas {
+                display: none;
+            }
+        }
+
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: none;
+        }
+
+        /* MENU */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2% 10%;
+            margin-left: -3%;
+            background-color: 'Poppins', serif;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            margin-right: 30%;
+            margin-left: 10%;
+        }
+
+        .header-logo img {
+            width: 6em;
+            height: auto;
+            margin-right: 1%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .header-logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            position: relative;
+            font-weight: 100;
+            font-size: smaller;
+            font-family: 'Montserrat', serif;
+        }
+
+        .menu-toggle {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .menu-toggle i {
+            font-size: 30px;
+            color: #ffffff;
+            transition: transform 0.3s ease;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            gap: 45px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li a {
+            position: relative;
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Montserrat', serif;
+            font-weight: 400;
+            font-size: 20px;
+            white-space: nowrap;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .menu ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            transform-origin: center;
+            width: 150%;
+            height: 2px;
+            background-color: #ffffff;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu ul li a:hover {
+            color: #ffffff;
+        }
+
+        .menu ul li a:hover::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .menu-toggle span {
+            background-color: #ffffff;
+            width: 30px;
+            height: 3px;
+            margin: 5px auto;
+            border-radius: 3px;
+        }
+
+        #close-btn {
+            display: none;
+        }
+
+        .filters button {
+            margin: 10px;
+            padding: 10px;
+            background-color: #121212;
+            border: none;
+        }
+
+        .filters button:hover {
+            background-color: #3d3d3d;
+        }
+
+        .header-nav-folder-content {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px 20px;
+        }
+
+        .header-nav-folder-item {
+            padding: 10px 0;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .header-nav-folder-item:last-child {
+            border-bottom: none;
+        }
+
+        .header-nav-folder-item:hover {
+            background-color: #eaeaea;
+        }
+
+        .header-nav-folder-item a {
+            color: #D9D48F;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 100;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .header-nav-folder-title {
+            font-weight: 100;
+            font-size: 18px;
+            font-family: 'Montserrat', serif;
+            color: #D9D48F;
+            padding: 10px 20px;
+            display: block;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .header-nav-folder-title:hover {
+            background-color: #e1e1e1;
+        }
+
+        .menu-toggle i {
+            font-size: 24px;
+            color: #ffffff;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-toggle i:hover {
+            transform: scale(1.1);
+        }
+
+        #close-btn {
+            display: none;
+        }
+    </style>
+    <script>
+        function updateLogosForTheme(theme) {
+            const logoClasses = ['.footer-logo img', '.header-logo img'];
+
+            logoClasses.forEach(selector => {
+                const logos = document.querySelectorAll(selector);
+                logos.forEach(logo => {
+                    logo.src = theme === 'dark'
+                        ? './public/assets/images/logo/logo-white.png'
+                        : './public/assets/images/logo/logo-black.png';
+                });
+            });
+
+            const favicon = document.querySelector("link[rel~='icon']");
+            if (favicon) {
+                favicon.href = theme === 'dark'
+                    ? './public/assets/images/logo/logoic-white.ico'
+                    : './public/assets/images/logo/logoic-black.ico';
+            }
+        }
+
+        function applySystemThemePreference() {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = prefersDark ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+            updateLogosForTheme(theme);
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            const newTheme = e.matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            updateLogosForTheme(newTheme);
+        });
+
+        document.addEventListener('DOMContentLoaded', applySystemThemePreference);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const canvas = document.getElementById("inkCanvas");
+            const ctx = canvas.getContext("2d");
+
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+
+            const trail = [];
+            const TRAIL_LENGTH = 30;
+
+            const cursor = { x: width / 2, y: height / 2 };
+            const target = { x: width / 2, y: height / 2 };
+
+            window.addEventListener("resize", () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            document.addEventListener("mousemove", (e) => {
+                target.x = e.clientX;
+                target.y = e.clientY;
+            });
+
+            for (let i = 0; i < TRAIL_LENGTH; i++) {
+                trail.push({ x: cursor.x, y: cursor.y });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, width, height);
+
+                cursor.x += (target.x - cursor.x) * 0.2;
+                cursor.y += (target.y - cursor.y) * 0.2;
+
+                trail.push({ x: cursor.x, y: cursor.y });
+                if (trail.length > TRAIL_LENGTH) trail.shift();
+
+                for (let i = 0; i < trail.length; i++) {
+                    const p = trail[i];
+                    const progress = i / trail.length;
+                    const radius = 2 + 8 * progress;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+                    ctx.fillStyle = "rgba(50, 50, 50, 1)";
+                    ctx.fill();
+                }
+
+                requestAnimationFrame(draw);
+            }
+
+            draw();
+        });
+
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
 </head>
 
+<title>Leaf With F</title>
+
 <body>
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <a href="../../.././index.html">
+                    <img src="./public/assets/images/logo/logo-white.png" alt="logo">
+                </a>
+            </div>
+
+            <nav class="menu">
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="menu-items" id="menu-items">
+                    <li><a href="./src/pages/fineart's.html">Artes</a></li>
+                    <li><a href="./src/pages/shop.html">Shop</a></li>
+                    <li><a href="./src/pages/bio.html">Bio</a></li>
+                    <li class="close" id="close-btn" onclick="closeMenu()">X</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <canvas id="inkCanvas"></canvas>
-
-    <div id="header"></div>
 
     <div class="background-wrapper">
         <h1 id="visual">404</h1>
     </div>
-    <p>Você chegou, mas este lugar não existe.</p>
+    <p>você chegou, mas este lugar não existe.</p>
+
 </body>
 
 </html>
