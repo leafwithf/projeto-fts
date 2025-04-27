@@ -1,6 +1,8 @@
 @import url('../base/global.css');
 @import url('../base/reset.css');
 @import url('../base/responsive.css');
+@import url(../../styles/pages/loader.css);
+
 
 .container {
     position: relative;

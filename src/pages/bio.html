@@ -23,6 +23,7 @@
     <meta name="geo.placename" content="São José do Rio Preto" />
 
     <link rel="stylesheet" href="../../src/styles/pages/bio.css">
+    <link rel="stylesheet" href="../../src/styles/pages/loader.css">
     <link rel="stylesheet" href="../../src/styles/base/cursor.css">
     <link rel="stylesheet" href="../styles/base/reset.css">
     <link rel="stylesheet" href="../styles/base/global.css">
@@ -38,43 +39,52 @@
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../../src/scripts/pages/darkmode.js"></script>
+    <script src="../../src/scripts/pages/loader.js"></script>
     <script src="../../src/layout/header/header.js"></script>
     <script src="../../src/layout/footer/footer.js"></script>
     <script src="../../src/scripts/cursor.js"></script>
 
-    
+
     <title>Leaf With F</title>
 </head>
 
-<div id="header"></div>
 
 <body>
 
-
-    <div class="sobreposição">
-        <div class="bio-before">LeafwithF</div>
-        <div class="bio-after">SOBRE MIM</div>
-    </div>
-
-    <div class="containerBio">
-        <div class="centralize-text">
-            <h1 class="title-box">Franz Kafka</h1>
-            <h3><i>(escritor e filósofo)</i></h3>
-            <h4 class="containerLeft">
-                "A verdadeira arte não é entendida, ela é vivida, e no espaço entre a compreensão e o sofrimento,
-                encontra-se a verdadeira essência do que nos define." 
-            </h4>
-        </div>
-        <div class="centralize-text">
-            <h1 class="title-box">Schopenhauer</h1>
-            <h3><i>(filósofo alemão)</i></h3>
-            <h4 class="containerRight">
-                "A verdadeira arte transcende o entendimento racional e apela diretamente aos sentimentos."
-            </h4>
+    <div id="loader">
+        <div class="loader-container">
+            <div class="loader"></div>
         </div>
     </div>
-    
+
     <canvas id="inkCanvas"></canvas>
+
+    <div id="content" style="display: none;">
+        <div id="header"></div>
+
+        <div class="sobreposição">
+            <div class="bio-before">LeafwithF</div>
+            <div class="bio-after">SOBRE MIM</div>
+        </div>
+
+        <div class="containerBio">
+            <div class="centralize-text">
+                <h1 class="title-box">Franz Kafka</h1>
+                <h3><i>(escritor e filósofo)</i></h3>
+                <h4 class="containerLeft">
+                    "A verdadeira arte não é entendida, ela é vivida, e no espaço entre a compreensão e o sofrimento,
+                    encontra-se a verdadeira essência do que nos define."
+                </h4>
+            </div>
+            <div class="centralize-text">
+                <h1 class="title-box">Schopenhauer</h1>
+                <h3><i>(filósofo alemão)</i></h3>
+                <h4 class="containerRight">
+                    "A verdadeira arte transcende o entendimento racional e apela diretamente aos sentimentos."
+                </h4>
+            </div>
+        </div>
+    </div>
 
 
     <div id="footer"></div>

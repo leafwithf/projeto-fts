@@ -1,11 +1,14 @@
 function toggleMenu() {
     const menuItems = document.getElementById("menu-items");
+    const menuToggleIcon = document.querySelector('.menu-toggle i');
+
     menuItems.classList.toggle("active");
+    menuToggleIcon.classList.toggle("active");
 }
+
 function toggleCatalogo(event) {
     event.preventDefault();
     const submenuContainer = document.querySelector('.submenu-container');
-
     submenuContainer.classList.toggle('active');
 }
 
@@ -30,26 +33,13 @@ function closeMenu() {
     menu.classList.remove("active");
 }
 
-function toggleMenu() {
-    const menuItems = document.getElementById("menu-items");
-    menuItems.classList.toggle("active");
-}
-
-function toggleCatalogo(event) {
-    event.preventDefault();
-    const submenuContainer = document.querySelector('.submenu-container');
-
-    submenuContainer.classList.toggle('active');
-}
-
 const closeBtn = document.getElementById('close-btn');
 if (closeBtn) {
     closeBtn.addEventListener('click', closeMenu);
-} else {
 }
 
 fetch('../../src/layout/header/header.html')
     .then(res => res.text())
     .then(data => {
         document.getElementById("header").innerHTML = data;
-    });
+     });

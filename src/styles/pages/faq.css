@@ -1,7 +1,7 @@
 @import url(../../../src/styles/base/global.css);
 @import url(../../../src/styles/base/reset.css);
 @import url(../../../src/styles/base/responsive.css);
-
+@import url(../../../src/styles/pages/loader.css);
 
 .faq-container {
     max-width: 700px;

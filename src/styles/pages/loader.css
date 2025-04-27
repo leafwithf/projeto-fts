@@ -1,0 +1,49 @@
+@import url(../base/global.css);
+
+html {
+    background-color: var(--color-black);
+}
+
+.loader-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-black);
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease-out; 
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #261C1A, #4B3B34, #7A5A49, #9E7A63, #C8A78B, #E4D3B7, #F1E2D1);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+#content {
+    opacity: 0;
+    transition: opacity 1s ease-in; 
+    display: block; 
+}

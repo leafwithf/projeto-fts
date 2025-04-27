@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       <div class="grid-item">
         <img src="${img.secure_url || img.url}" 
              alt="${img.public_id.split('/').pop().replace(/\.[^/.]+$/, '')}" 
-             loading="lazy"
              class="gallery-image"
              onclick="openModal(this)">
       </div>
