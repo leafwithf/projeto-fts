@@ -28,6 +28,8 @@
 }
 
 .formulario-contato {
+    margin-top: 5%;
+    margin-bottom: 5%;
     width: 90%;
     max-width: 800px;
     display: flex;

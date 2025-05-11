@@ -3,23 +3,21 @@
 @import url(../../../src/styles/base/responsive.css);
 @import url(../../../src/styles/pages/loader.css);
 
-
 .text1 {
     margin-left: 35%;
     font-size: 2.5rem;
-    font-weight: 500; 
+    font-weight: 500;
     font-family: var(--font-primary);
     color: var(--color-white);
 }
 
 .text2 {
     font-size: 1.5rem;
-    font-weight: 300; 
+    font-weight: 300;
     color: var(--color-brownLight);
     font-family: var(--font-primary);
-    text-align: center; 
+    text-align: center;
     user-select: none;
-
 }
 
 .container {
@@ -30,7 +28,8 @@
     min-height: 100%;
     max-width: 100%;
     user-select: none;
-
+    margin-top: 15%;
+    margin-bottom: 15%;
 }
 
 /* TEXT EXPOSIÇOES - 768px */

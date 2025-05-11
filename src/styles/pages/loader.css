@@ -1,11 +1,35 @@
 @import url(../base/global.css);
 
 html {
-    background-color: var(--color-black);
+    background-color: var(--background-footer);
 }
-
-.loader-container {
-    position: absolute;
+.loader {
+    width: 45px;
+    aspect-ratio: 1;
+    --c: no-repeat linear-gradient(var(--color-white) 0 0);
+    background: 
+      var(--c) 0% 0%,
+      var(--c) 0% 100%, 
+      var(--c) 50% 0%,  
+      var(--c) 50% 100%, 
+      var(--c) 100% 0%, 
+      var(--c) 100% 100%;
+    animation: l12 1s infinite;
+    position: relative;
+    z-index: 10000;
+  }
+  
+  @keyframes l12 {
+    0%,100% { background-size: 20% 50% }
+    16.67% { background-size: 20% 30%, 20% 30%, 20% 50%, 20% 50%, 20% 50%, 20% 50% }
+    33.33% { background-size: 20% 30%, 20% 30%, 20% 30%, 20% 30%, 20% 50%, 20% 50% }
+    50% { background-size: 20% 30%, 20% 30%, 20% 30%, 20% 30%, 20% 30%, 20% 30% }
+    66.67% { background-size: 20% 50%, 20% 50%, 20% 30%, 20% 30%, 20% 30%, 20% 30% }
+    83.33% { background-size: 20% 50%, 20% 50%, 20% 50%, 20% 50%, 20% 30%, 20% 30% }
+  }
+  
+  .loader-container {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -13,37 +37,14 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-black);
+    background-color: var(--background);
     z-index: 9999;
     opacity: 1;
-    transition: opacity 1s ease-out; 
-}
-
-.loader {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, #261C1A, #4B3B34, #7A5A49, #9E7A63, #C8A78B, #E4D3B7, #F1E2D1);
-    animation: pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 0.8;
-    }
-    50% {
-        transform: scale(1.5);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0.8;
-    }
-}
-
-#content {
+    transition: opacity 0.5s ease-out;
+  }
+  
+  #content {
     opacity: 0;
-    transition: opacity 1s ease-in; 
-    display: block; 
-}
+    transition: opacity 0.5s ease-in;
+    display: block;
+  }

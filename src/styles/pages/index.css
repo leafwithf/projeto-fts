@@ -19,7 +19,7 @@
     position: absolute;
     width: 110%;
     height: 110%;
-    filter: brightness(0.7);
+    /* filter: brightness(0.7); */
     transition: filter 0.3s ease-in-out;
 }
 
@@ -89,12 +89,13 @@ p {
 
 .logo img {
     width: 6%;
-    transition: transform 0.3s ease-in-out;
+    /* transition: transform 0.3s ease-in-out; */
 }
 
+/* 
 .logo img:hover {
     transform: scale(1.1);
-}
+} */
 
 .logo a {
     cursor: none;

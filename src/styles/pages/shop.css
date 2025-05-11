@@ -70,6 +70,7 @@
     .container {
         flex-direction: column;
         padding: 1.5rem 1rem;
+        margin-top: 54%;
     }
 }
 

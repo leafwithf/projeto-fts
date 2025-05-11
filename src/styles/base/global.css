@@ -5,18 +5,18 @@
 
   --color-black: #121212;
   --color-gray: #3d3d3d;
-  --color-white: #ffffff;
+  --color-white: #F8F8F8;
   --color-brownLight: #74605d;
 
-  --background: #ffffff;
-  --background-footer: #f5f5f5;
+  --background: #D7CEC7;
+  --background-footer: #3A2A16;
 }
 
 [data-theme="dark"] {
   --background: #0D0C0B;
-  --background-footer: #261C1A;
-  --color-white: #ffffff;
-  --color-black: #121212;
+  --background-footer: #2B1D1B;
+  --color-white: #F8F8F8;
+  --color-black: #181818;
   --color-gray: #3d3d3d;
 }
 

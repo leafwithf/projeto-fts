@@ -52,6 +52,7 @@
     padding: 0 1.2rem;
     font-size: 1rem;
     color: var(--color-white);
+    user-select: none;
 }
 
 .faq-item.active .faq-answer {
