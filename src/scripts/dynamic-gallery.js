@@ -28,16 +28,34 @@ function renderGallery(images) {
       throw new Error('Nenhuma imagem encontrada na pasta finearts');
   }
 
-  gallery.innerHTML = fineArtsImages.map(img => `
-      <div class="grid-item">
-          <img src="${img.secure_url || img.url}" 
-               alt=""  <!-- Removido o texto alternativo -->
-               class="gallery-image"
-               onclick="openModal(this)">
-      </div>
-  `).join('');
+  let loadedImagesCount = 0;
+  const totalImages = fineArtsImages.length;
 
-  return fineArtsImages.length;
+  return new Promise(resolve => {
+    gallery.innerHTML = fineArtsImages.map(img => `
+        <div class="grid-item" style="opacity: 0; transition: opacity 0.5s ease-in-out;">
+            <img src="${img.secure_url || img.url}" 
+                 alt="${img.public_id.split('/').pop().replace(/\.[^/.]+$/, '')}" 
+                 class="gallery-image"
+                 onload="(() => {
+                     this.parentNode.style.opacity = '1';
+                     window.imageLoaded();
+                 })()"
+                 onerror="(() => {
+                     this.parentNode.style.opacity = '1';
+                     window.imageLoaded();
+                 })()"
+                 onclick="openModal(this)"> 
+        </div>
+    `).join('');
+
+    window.imageLoaded = () => {
+        loadedImagesCount++;
+        if (loadedImagesCount === totalImages) {
+            resolve();
+        }
+    };
+  });
 }
 
 window.openModal = function(imgElement) {
